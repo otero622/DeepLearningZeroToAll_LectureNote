@@ -124,7 +124,7 @@
                     
                     <ul>
                         <li class="recap_question">
-                            Hypothesis :     <p class="recap_answer" hidden><br>&nbsp;<img alt="H(X)=WX" src="https://latex.codecogs.com/gif.latex?H%28X%29%3DWX"><br></p>
+                            Hypothesis :     <p class="recap_answer" hidden><br>&nbsp;<img class="img-responsive" alt="H(X)=WX" src="https://latex.codecogs.com/gif.latex?H%28X%29%3DWX"><br></p>
                         </li><br>
                         <li class="recap_question">
                             Cost :       <p class="recap_answer" hidden><br>&nbsp;<img alt="cost(W)=\frac{1}{m}\sum (WX-y)^{2}" src="https://latex.codecogs.com/gif.latex?cost%28W%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum%20%28WX-y%29%5E%7B2%7D"><br></p>
@@ -165,56 +165,56 @@
                     <br>
                     <h3>결국 Linear Regression과 같다?</h3><br>
                     <p>Y값은 결국 0 or 1인데,
-                    기존의 linear regression의 hypothesis 함수는&nbsp;<img alt="H(x)=Wx+b" src="https://latex.codecogs.com/gif.latex?H%28x%29%3DWx&amp;plus;b"><br>위 식에 의하면 hypothesis 값은 충분히 1보다 크거나 0보다 작을 수 있다.<br>그렇기 때문에 linear regression과는 엄연히 다르다.</p>
+                    기존의 linear regression의 hypothesis 함수는&nbsp;<img class="img-responsive" alt="H(x)=Wx+b" src="https://latex.codecogs.com/gif.latex?H%28x%29%3DWx&amp;plus;b"><br>위 식에 의하면 hypothesis 값은 충분히 1보다 크거나 0보다 작을 수 있다.<br>그렇기 때문에 linear regression과는 엄연히 다르다.</p>
                     <br>
                     <h3>그래서 등장한 대안</h3><br>
-                    <p><img alt="g(z)=\frac{1}{(1+e^{-z})}" src="https://latex.codecogs.com/gif.latex?g%28z%29%3D%5Cfrac%7B1%7D%7B%281&amp;plus;e%5E%7B-z%7D%29%7D">&nbsp;&nbsp;&nbsp;a.k.a Sigmoid function<br></p><br>
-                    <img src="img/lect05_1.png" class="img-fluid" alt="Responsive image">
+                    <p><img class="img-responsive" alt="g(z)=\frac{1}{(1+e^{-z})}" src="https://latex.codecogs.com/gif.latex?g%28z%29%3D%5Cfrac%7B1%7D%7B%281&amp;plus;e%5E%7B-z%7D%29%7D">&nbsp;&nbsp;&nbsp;a.k.a Sigmoid function<br></p><br>
+                    <img src="img/lect05_1.png" class="img-responsive" alt="Responsive image">
                     <div class="line"></div>
                     <h2>Logistic Hypothesis</h2>
                     <br>
                     <p>정리</p>
-                    <p><img alt="z=WX" src="https://latex.codecogs.com/gif.latex?z%3DWX"><br></p><br>
-                    <p><img alt="H(x)=g(z)" src="https://latex.codecogs.com/gif.latex?H%28x%29%3Dg%28z%29"><br></p><br>
-                    <p><img alt="H(x)=\frac{1}{1+e^{-W^{T}X}}" src="https://latex.codecogs.com/gif.latex?H%28x%29%3D%5Cfrac%7B1%7D%7B1&amp;plus;e%5E%7B-W%5E%7BT%7DX%7D%7D"><br></p><br>
+                    <p><img class="img-responsive" alt="z=WX" src="https://latex.codecogs.com/gif.latex?z%3DWX"><br></p><br>
+                    <p><img class="img-responsive" alt="H(x)=g(z)" src="https://latex.codecogs.com/gif.latex?H%28x%29%3Dg%28z%29"><br></p><br>
+                    <p><img class="img-responsive" alt="H(x)=\frac{1}{1+e^{-W^{T}X}}" src="https://latex.codecogs.com/gif.latex?H%28x%29%3D%5Cfrac%7B1%7D%7B1&amp;plus;e%5E%7B-W%5E%7BT%7DX%7D%7D"><br></p><br>
                 </div>
                 
                 <div id="content2" hidden>
                     <h2>Cost</h2><br>
                     <p>기존의 cost함수(in linear regression)</p>
-                    <p>&nbsp;<img alt="cost(W,b)=\frac{1}{m}\sum_{i=1}^{m}(H(x^{(i)}-y^{(i)}))^{2}\;\;\; when\;\;H(x)=Wx+b" src="https://latex.codecogs.com/gif.latex?cost%28W%2Cb%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7Bi%3D1%7D%5E%7Bm%7D%28H%28x%5E%7B%28i%29%7D-y%5E%7B%28i%29%7D%29%29%5E%7B2%7D%5C%3B%5C%3B%5C%3B%20when%5C%3B%5C%3BH%28x%29%3DWx&amp;plus;b"><br></p>
-                    <img src="img/lect05_2.png" class="img-fluid" alt="Responsive image"><br><br><br>
-                    <p>&nbsp;<img alt="H(X)=\frac{1}{1+e^{-W^{T}X}}" src="https://latex.codecogs.com/gif.latex?H%28X%29%3D%5Cfrac%7B1%7D%7B1&amp;plus;e%5E%7B-W%5E%7BT%7DX%7D%7D"><br></p><br>
+                    <p>&nbsp;<img class="img-responsive" alt="cost(W,b)=\frac{1}{m}\sum_{i=1}^{m}(H(x^{(i)}-y^{(i)}))^{2}\;\;\; when\;\;H(x)=Wx+b" src="https://latex.codecogs.com/gif.latex?cost%28W%2Cb%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7Bi%3D1%7D%5E%7Bm%7D%28H%28x%5E%7B%28i%29%7D-y%5E%7B%28i%29%7D%29%29%5E%7B2%7D%5C%3B%5C%3B%5C%3B%20when%5C%3B%5C%3BH%28x%29%3DWx&amp;plus;b"><br></p>
+                    <img src="img/lect05_2.png" class="img-responsive" alt="Responsive image"><br><br><br>
+                    <p>&nbsp;<img class="img-responsive" alt="H(X)=\frac{1}{1+e^{-W^{T}X}}" src="https://latex.codecogs.com/gif.latex?H%28X%29%3D%5Cfrac%7B1%7D%7B1&amp;plus;e%5E%7B-W%5E%7BT%7DX%7D%7D"><br></p><br>
                     <p>logistic regression에서의 gradient descent로 나타낸 cost fucntion graph<br><small>- local minimum과 global minimum의 개념</small></p>
-                    <img src="img/lect05_3.png" class="img-fluid" alt="Responsive image"><br><br>
+                    <img src="img/lect05_3.png" class="img-responsive" alt="Responsive image"><br><br>
                     <p>시작점에 따라 minimized cost값이 달라지기 때문에 linear regression에서 사용한 gradient descent 알고리즘을 <u>사용할 수 없다!</u></p>
                     <div class="line"></div>
                     <h2>New cost function for logistic</h2><br>
-                    <p>&nbsp;<img alt="cost(W)=\frac{1}{m}\sum c(H(x),y)" src="https://latex.codecogs.com/gif.latex?cost%28W%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum%20c%28H%28x%29%2Cy%29"><br></p><br>
-                    <p>&nbsp;<img alt="c(H(x),y)=\begin{cases} &amp; -log( H(x)) \; \;\;\;\;\;\;:y=1\\ &amp; -log(1-H(x))\;:y=0 \end{cases}" src="https://latex.codecogs.com/gif.latex?c%28H%28x%29%2Cy%29%3D%5Cbegin%7Bcases%7D%20%26%20-log%28%20H%28x%29%29%20%5C%3B%20%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%3Ay%3D1%5C%5C%20%26%20-log%281-H%28x%29%29%5C%3B%3Ay%3D0%20%5Cend%7Bcases%7D"><br></p><br><br>
+                    <p>&nbsp;<img class="img-responsive" alt="cost(W)=\frac{1}{m}\sum c(H(x),y)" src="https://latex.codecogs.com/gif.latex?cost%28W%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum%20c%28H%28x%29%2Cy%29"><br></p><br>
+                    <p>&nbsp;<img class="img-responsive" alt="c(H(x),y)=\begin{cases} &amp; -log( H(x)) \; \;\;\;\;\;\;:y=1\\ &amp; -log(1-H(x))\;:y=0 \end{cases}" src="https://latex.codecogs.com/gif.latex?c%28H%28x%29%2Cy%29%3D%5Cbegin%7Bcases%7D%20%26%20-log%28%20H%28x%29%29%20%5C%3B%20%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%3Ay%3D1%5C%5C%20%26%20-log%281-H%28x%29%29%5C%3B%3Ay%3D0%20%5Cend%7Bcases%7D"><br></p><br><br>
                     <h3>understanding cost function</h3><br>
-                    <p>&nbsp;<img alt="c(H(x),y)=\begin{cases} &amp; -log( H(x)) \; \;\;\;\;\;\;:y=1\\ &amp; -log(1-H(x))\;:y=0 \end{cases}" src="https://latex.codecogs.com/gif.latex?c%28H%28x%29%2Cy%29%3D%5Cbegin%7Bcases%7D%20%26%20-log%28%20H%28x%29%29%20%5C%3B%20%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%3Ay%3D1%5C%5C%20%26%20-log%281-H%28x%29%29%5C%3B%3Ay%3D0%20%5Cend%7Bcases%7D"><br></p><br><br>
-                    <p>&nbsp;<img alt="H(x)=\frac{1}{1+e^{-x}}" src="https://latex.codecogs.com/gif.latex?H%28x%29%3D%5Cfrac%7B1%7D%7B1&amp;plus;e%5E%7B-x%7D%7D">&nbsp;이므로 x범위는 0보다 크고 1보다 작다.<br><br>&nbsp;y = 1, y = 0 에 해당하는 그래프를 그려서 분석해본다.</p><br>
-                    <p>&nbsp;<img alt="-log(x)\;\;\;\;\;(0<x<1)" src="https://latex.codecogs.com/gif.latex?-log%28x%29%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%280%3Cx%3C1%29"><br></p>
-                    <img src="img/lect05_4.png" class="img-fluid" alt="Responsive image"><br>
-                    <p>&nbsp;<img alt="H(x)=1\;\rightarrow \;cost(1)=0" src="https://latex.codecogs.com/gif.latex?H%28x%29%3D1%5C%3B%5Crightarrow%20%5C%3Bcost%281%29%3D0"><br></p>
-                    <p>&nbsp;<img alt="H(x)=0\;\rightarrow \;cost(0)=\infty" src="https://latex.codecogs.com/gif.latex?H%28x%29%3D0%5C%3B%5Crightarrow%20%5C%3Bcost%280%29%3D%5Cinfty"><br></p>
+                    <p>&nbsp;<img class="img-responsive" alt="c(H(x),y)=\begin{cases} &amp; -log( H(x)) \; \;\;\;\;\;\;:y=1\\ &amp; -log(1-H(x))\;:y=0 \end{cases}" src="https://latex.codecogs.com/gif.latex?c%28H%28x%29%2Cy%29%3D%5Cbegin%7Bcases%7D%20%26%20-log%28%20H%28x%29%29%20%5C%3B%20%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%3Ay%3D1%5C%5C%20%26%20-log%281-H%28x%29%29%5C%3B%3Ay%3D0%20%5Cend%7Bcases%7D"><br></p><br><br>
+                    <p>&nbsp;<img class="img-responsive" alt="H(x)=\frac{1}{1+e^{-x}}" src="https://latex.codecogs.com/gif.latex?H%28x%29%3D%5Cfrac%7B1%7D%7B1&amp;plus;e%5E%7B-x%7D%7D">&nbsp;이므로 x범위는 0보다 크고 1보다 작다.<br><br>&nbsp;y = 1, y = 0 에 해당하는 그래프를 그려서 분석해본다.</p><br>
+                    <p>&nbsp;<img class="img-responsive" alt="-log(x)\;\;\;\;\;(0<x<1)" src="https://latex.codecogs.com/gif.latex?-log%28x%29%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%280%3Cx%3C1%29"><br></p>
+                    <img src="img/lect05_4.png" class="img-responsive" alt="Responsive image"><br>
+                    <p>&nbsp;<img class="img-responsive" alt="H(x)=1\;\rightarrow \;cost(1)=0" src="https://latex.codecogs.com/gif.latex?H%28x%29%3D1%5C%3B%5Crightarrow%20%5C%3Bcost%281%29%3D0"><br></p>
+                    <p>&nbsp;<img class="img-responsive" alt="H(x)=0\;\rightarrow \;cost(0)=\infty" src="https://latex.codecogs.com/gif.latex?H%28x%29%3D0%5C%3B%5Crightarrow%20%5C%3Bcost%280%29%3D%5Cinfty"><br></p>
                     <p>목표 값 <u><em>y</em> 가 1일때</u> 예측 값 <em>H(x)</em> 값이 0에 가까울 수록 cost값이 매우 커지는 것을 확인할 수 있다.</p><br>
 
-                    <p>&nbsp;<img alt="-log(1-x)\;\;\;\;\;(0<x<1)" src="https://latex.codecogs.com/gif.latex?-log%281-x%29%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%280%3Cx%3C1%29"><br></p>
-                    <img src="img/lect05_5.png" class="img-fluid" alt="Responsive image"><br>
-                    <p>&nbsp;<img alt="H(x)=0\;\rightarrow \;cost(0)=0" src="https://latex.codecogs.com/gif.latex?H%28x%29%3D0%5C%3B%5Crightarrow%20%5C%3Bcost%280%29%3D0"><br></p>
+                    <p>&nbsp;<img class="img-responsive" alt="-log(1-x)\;\;\;\;\;(0<x<1)" src="https://latex.codecogs.com/gif.latex?-log%281-x%29%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%280%3Cx%3C1%29"><br></p>
+                    <img src="img/lect05_5.png" class="img-responsive" alt="Responsive image"><br>
+                    <p>&nbsp;<img class="img-responsive" alt="H(x)=0\;\rightarrow \;cost(0)=0" src="https://latex.codecogs.com/gif.latex?H%28x%29%3D0%5C%3B%5Crightarrow%20%5C%3Bcost%280%29%3D0"><br></p>
                     <p><img alt="H(x)=1\;\rightarrow \;cost(1)=\infty" src="https://latex.codecogs.com/gif.latex?H%28x%29%3D1%5C%3B%5Crightarrow%20%5C%3Bcost%281%29%3D%5Cinfty">&nbsp;<br></p>
                     <p>목표 값 <u><em>y</em> 가 0일때</u> 예측 값 <em>H(x)</em> 값이 1에 가까울 수록 cost값이 매우 커지는 것을 확인할 수 있다.</p>
                     <div class="line"></div>
                     <h2>Cost function <small>(Final definition)</small></h2><br>
-                    <p>&nbsp;<img alt="cost(W)=\frac{1}{m}\sum c(H(x),y)" src="https://latex.codecogs.com/gif.latex?cost%28W%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum%20c%28H%28x%29%2Cy%29"><br></p><br>
-                    <p>&nbsp;<img alt="c(H(x),y)=\begin{cases} &amp; -log( H(x)) \; \;\;\;\;\;\;:y=1\\ &amp; -log(1-H(x))\;:y=0 \end{cases}" src="https://latex.codecogs.com/gif.latex?c%28H%28x%29%2Cy%29%3D%5Cbegin%7Bcases%7D%20%26%20-log%28%20H%28x%29%29%20%5C%3B%20%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%3Ay%3D1%5C%5C%20%26%20-log%281-H%28x%29%29%5C%3B%3Ay%3D0%20%5Cend%7Bcases%7D"><br></p><br>
-                    <p>&nbsp;<img alt="C(H(x),y)=-ylog(H(x))-(1-y)log(1-H(x))" src="https://latex.codecogs.com/gif.latex?C%28H%28x%29%2Cy%29%3D-ylog%28H%28x%29%29-%281-y%29log%281-H%28x%29%29"><br></p>
+                    <p>&nbsp;<img class="img-responsive" alt="cost(W)=\frac{1}{m}\sum c(H(x),y)" src="https://latex.codecogs.com/gif.latex?cost%28W%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum%20c%28H%28x%29%2Cy%29"><br></p><br>
+                    <p>&nbsp;<img class="img-responsive" alt="c(H(x),y)=\begin{cases} &amp; -log( H(x)) \; \;\;\;\;\;\;:y=1\\ &amp; -log(1-H(x))\;:y=0 \end{cases}" src="https://latex.codecogs.com/gif.latex?c%28H%28x%29%2Cy%29%3D%5Cbegin%7Bcases%7D%20%26%20-log%28%20H%28x%29%29%20%5C%3B%20%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%3Ay%3D1%5C%5C%20%26%20-log%281-H%28x%29%29%5C%3B%3Ay%3D0%20%5Cend%7Bcases%7D"><br></p><br>
+                    <p>&nbsp;<img class="img-responsive" alt="C(H(x),y)=-ylog(H(x))-(1-y)log(1-H(x))" src="https://latex.codecogs.com/gif.latex?C%28H%28x%29%2Cy%29%3D-ylog%28H%28x%29%29-%281-y%29log%281-H%28x%29%29"><br></p>
                     <div class="line"></div>
                     <h2>Minimize cost - Gradient descent algorithm</h2><br>
-                    <p>&nbsp;<img alt="cost(W)=-\frac{1}{m}\sum ylog(H(x))+(1-y)log(1-H(x))" src="https://latex.codecogs.com/gif.latex?cost%28W%29%3D-%5Cfrac%7B1%7D%7Bm%7D%5Csum%20ylog%28H%28x%29%29&amp;plus;%281-y%29log%281-H%28x%29%29"><br></p><br>
-                    <p>&nbsp;<img alt="W:=W-\alpha \frac{\partial }{\partial W}cost(W)" src="https://latex.codecogs.com/gif.latex?W%3A%3DW-%5Calpha%20%5Cfrac%7B%5Cpartial%20%7D%7B%5Cpartial%20W%7Dcost%28W%29"><br></p><br>
+                    <p>&nbsp;<img class="img-responsive" alt="cost(W)=-\frac{1}{m}\sum ylog(H(x))+(1-y)log(1-H(x))" src="https://latex.codecogs.com/gif.latex?cost%28W%29%3D-%5Cfrac%7B1%7D%7Bm%7D%5Csum%20ylog%28H%28x%29%29&amp;plus;%281-y%29log%281-H%28x%29%29"><br></p><br>
+                    <p>&nbsp;<img class="img-responsive" alt="W:=W-\alpha \frac{\partial }{\partial W}cost(W)" src="https://latex.codecogs.com/gif.latex?W%3A%3DW-%5Calpha%20%5Cfrac%7B%5Cpartial%20%7D%7B%5Cpartial%20W%7Dcost%28W%29"><br></p><br>
                     <p>위 공식은 코드에서도 그대로 적용된다.</p>
                     <p>sample_code_logistic_regression.py</p>
                     <pre><code class="python"># cost function

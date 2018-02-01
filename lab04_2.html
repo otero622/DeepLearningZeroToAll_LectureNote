@@ -171,8 +171,9 @@ print("Your score will be ", sess.run(
 
 print("Other scores will be ", sess.run(hypothesis,
     feed_dict={X: [[60, 70, 110], [90, 100, 80]]}))</code></pre>
-    <p>result</p>
-    <pre><code class="c">/* print(x_data.shape, x_data, len(x_data)) */
+    <br><p>결과 창</p>
+    <pre><code class="md"># result
+/* print(x_data.shape, x_data, len(x_data)) */
  (25, 3) [[ 73.  80.  75.]
  [ 93.  88.  93.] [ 89.  91.  90.] [ 96.  98. 100.] [ 73.  66.  70.]
  [ 53.  46.  55.] [ 69.  74.  77.] [ 47.  56.  60.] [ 87.  79.  90.]
@@ -181,7 +182,7 @@ print("Other scores will be ", sess.run(hypothesis,
  [ 81.  90.  93.] [ 88.  92.  86.] [ 78.  83.  77.] [ 82.  86.  90.]
  [ 86.  82.  89.] [ 78.  83.  85.] [ 76.  83.  71.] [ 96.  93.  95.]] 25
 
- /* print(y_data,.shape, y_data) */
+/* print(y_data,.shape, y_data) */
  (25, 1) [[152.]
  [185.] [180.] [196.] [142.] [101.] [149.] [115.] [175.] [164.] [141.]
  [141.] [184.] [152.] [148.] [192.] [147.] [183.] [177.] [159.] [177.]
@@ -233,17 +234,16 @@ Prediction:
  [187.26833 ] [153.3315  ] [175.3862  ] [181.3706  ] [162.1332  ]
  [172.44307 ] [173.06042 ] [164.7337  ] [158.24257 ] [192.79166 ]]
 
- /* score prediction */
+/* score prediction */
  Your score will be  [[181.73279]]
  Other scores will be  [[145.86269] [187.2313 ]]
 </code></pre>
 
-                    <p id="slicing_ref">[참조] Slicing</p>
-
-                    <img src="img/lab04_6.png" class="img-fluid" alt="Responsive image">
+                    <br><p id="slicing_ref">[참조] Slicing</p>
+                    <img src="img/lab04_6.png" class="img-responsive" alt="Responsive image">
                     <div class="line"></div>
                     <h2>Queue Runners</h2>
-                    <img src="img/lab04_7.png" class="img-fluid" alt="Responsive image">
+                    <img src="img/lab04_7.png" class="img-responsive" alt="Responsive image">
                     <p>Queue Runner는 파일 용량이 커서 메모리에 한번에 올리기 힘들 때 tensorflow에서 제공하는 mechanism</p>
                     <ol>
                         <li><code>filename_queue = tf.train.string_input_producer(['data-01.csv', 'data-02.csv', ...], shuffle=False, name='filename_queue')</code><br>여러개의 정의 된 파일 이름을 이용해서 list에 따라 불러옴</li><br>
