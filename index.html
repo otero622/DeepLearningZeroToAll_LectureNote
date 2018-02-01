@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>lecture note</title>
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/vs2015.min.css">
+        <script src="js/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+
+
+
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3 class="korean">김성훈 교수님</h3>
+                    <a href="https://www.inflearn.com/course/%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%EB%94%A5%EB%9F%AC%EB%8B%9D-%EA%B0%95%EC%A2%8C/" target="_blank" data-toggle="tooltip" title="강의 보러 가기 click me"><h5 class="korean">모두를 위한 머신러닝/딥러닝</h5></a>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <p class="korean">INDEX</p>
+                    <li class="active">
+                        <a href="index.html">Intro</a>
+                    </li>
+                    <li>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Lect</a>
+                        <ul class="korean collapse list-unstyled" id="homeSubmenu">
+                            <li><a href="lect01.html">Lect01. 머신러닝의 개념과 용어</a></li>
+                            <li><a href="lect02.html">Lect02. Linear Regression의 개념</a></li>
+                            <li><a href="lect03.html">Lect03. Linear Regression cost 함수 최소화</a></li>
+                            <li><a href="lect04.html">Lect04. 여러개의 입력(feature)의 Linear Regression</a></li>
+                            <li><a href="lect05.html">Lect05. Logistic Classification (Regression)</a></li>
+                            <li><a href="lect06.html">Lect06. Softmax Regression (Multinomial Logistic Regression)</a></li>
+                            <li><a href="lect07.html">Lect07. ML의 실용과 몇 가지 팁</a></li>
+                            <li><a href="lect08.html">Lect08. 딥러닝의 기본 개념과 문제, 그리고 해결</a></li>
+                            <li><a href="lect09.html">Lect09. Neural Network 1 : XOR 문제와 학습방법, Backpropagation</a></li>
+                            <li><a href="lect10.html">Lect10. Neural Network 2 : ReLU and 초기 값 정하기 (2006/2007 breakthrough)</a></li>
+                            <li><a href="lect11.html">Lect11. Convolutional Neural Networks (a.k.a CNN)</a></li>
+                            <li><a href="lect12.html">Lect12. Recurrent Neural Network (a.k.a RNN)</a></li>
+                            <li><a href="lect13.html">Lect13. Deep Deep Network AWD에서 GPU와 돌려보기 (powered by AWS)</a></li>
+                            <li><a href="lect14.html">Lect14. AWS에서 저렴하게 Spot Instance를 터미네이션 걱정 없이 사용하기</a></li>
+                            <li><a href="lect15.html">Lect15. Google Cloud ML을 이용해 TensorFlow 실행하기</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">TF example</a>
+                        <ul class="korean collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="lab01.html">Lab 01. TensorFlow의 설치 및 기본적인 operations</a></li>
+                            <li><a href="lab02.html">Lab 02. Tensorflow로 간단한 linear regression을 구현</a></li>
+                            <li><a href="lab03.html">Lab 03. Linear Regression의 cost 최소화의 TensorFlow 구현</a></li>
+                            <li><a href="lab04_1.html">Lab 04_1. Multi-variable Linear Regression을 TensorFlow에서 구현하기</a></li>
+                            <li><a href="lab04_2.html">Lab 04_2. TensorFlow로 파일에서 데이타 읽어오기</a></li>
+                            <li><a href="lab05.html">Lab 05. TensorFlow로 Logistic Classification 구현하기</a></li>
+                            <li><a href="lab06_1.html">Lab 06_1. TensorFlow로 SoftmaxClassification 구현하기</a></li>
+                            <li><a href="lab06_2.html">Lab 06_2. TensorFlow로 Fancy Softmax Classification 구현하기</a></li>
+                            <li><a href="lab07_1.html">Lab 07_1. training/test dataset, learning rate, normalization</a></li>
+                            <li><a href="lab07_2.html">Lab 07_2. Meet MNIST Dataset</a></li>
+                            <li><a href="lab08.html">Lab 08. Tensor Manipulation</a></li>
+                            <li><a href="lab09_1.html">Lab 09_1. XOR을 위한 TensorFlow Deep Network</a></li>
+                            <li><a href="lab09_2.html">Lab 09_2. Tensor Board로 Deep Network 들여다 보기</a></li>
+                            <li><a href="lab10.html">Lab 10. 딥러닝으로 MNIST 98%이상 해보기</a></li>
+                            <li><a href="lab11_1.html">Lab 11_1. TensorFlow의 CNN 기본</a></li>
+                            <li><a href="lab11_2.html">Lab 11_2. TensorFlow로 구현하는 MNIST 99%</a></li>
+                            <li><a href="lab11_3.html">Lab 11_3. Class, tf.layers, Ensemble (MNIST 99.5%)</a></li>
+                            <li><a href="lab12_1.html">Lab 12_1. RNN - Basic</a></li>
+                            <li><a href="lab12_2.html">Lab 12_2. RNN - Hi Hello Training</a></li>
+                            <li><a href="lab12_3.html">Lab 12_3. Long Sequence RNN</a></li>
+                            <li><a href="lab12_4.html">Lab 12_4. Stacked RNN + Softmax Layer</a></li>
+                            <li><a href="lab12_5.html">Lab 12_5. Dynamic RNN</a></li>
+                            <li><a href="lab12_6.html">Lab 12_6. RNN with Time Series Data</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+
+                <ul class="list-unstyled CTAs">
+                    <li><a href="https://github.com/hunkim/DeepLearningZeroToAll/archive/master.zip" class="download">Download source</a></li>
+                    <br>
+                    <p class="korean">만든이에게</p>
+                    <li>
+                        <a href="https://www.facebook.com/yoonbaeJeon" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; 페이스북 연락하기</a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/u/0/103969879362546932609" target="_blank"><i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>&nbsp; 구글plus 연락하기</a>
+                    </li>
+                    <p>reference</p>
+                    <li>
+                        <a href="https://www.facebook.com/groups/TensorFlowKR/?fref=nf" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow KR 페이스북</a>
+                    </li>
+                    <li>
+                        <a href="https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/api_docs/" target="_blank"><i class="fa fa-book fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow API doc(KR)</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Page Content Holder -->
+            <div id="content">
+
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                                <i class="glyphicon glyphicon-align-left"></i>
+                                <span class="korean">사이드바 접기/펼치기</span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li id="content1_list" class="selected"><a>Intro</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <h2>제작동기</h2><br>
+                <p>&nbsp;홍콩 과기대의 김성훈 교수님의 <a href="https://www.inflearn.com/course/%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%EB%94%A5%EB%9F%AC%EB%8B%9D-%EA%B0%95%EC%A2%8C/" target="_blank" data-toggle="tooltip" title="모두를 위한 머신러닝 딥러닝"><code style=" background: #ddd;">모두를 위한 머신러닝/딥러닝</code></a>&nbsp;강의를 들으면서 강의 노트가 있으면 좋겠다는 생각이 들어서 직접 만들게 되었습니다.<br><small>TIP.</small>&nbsp;기본적으로 27인치 모니터 기준으로 작성하였습니다. 화면을 반씩 쪼개어 한쪽은 강의를 다른 한쪽은 강의 노트를 놓고 보시면 편합니다.</p>
+                <p>&nbsp;
+                이론 강의와 TensorFlow 코드 강의를 왼쪽 side bar에 나눠 놓았습니다.<br>
+                강의를 들으시면서 의문점이 있거나 TensorFlow에 대해 좀 더 공부를 하고 싶으시면 reference란의 TensorFlow KR 팀 공식 페이스북 페이지 타임라인에 질문을 남기시거나, 한글로 번역 된 공식  TensorFlow API document를 참조하시기 바랍니다.</p>
+                <p>&nbsp;본 강의 노트의 code syntax는 <em>visual studio 2015</em> 스타일로 작성 되었습니다.<br>만약 code syntax 스타일을 바꾸고 싶거나 강의 노트를 수정하고 싶으시면 저에게 연락을 주시기 바랍니다. ( <em>html5, javascript</em> 에 해박하신 분은 직접하시면 됩니다~ <i class="fa fa-smile-o" aria-hidden="true"></i>
+)</p>
+                <br><p>sample code (syntax : vs2015)</p>
+
+                <!-- highlight js 예제 -->
+                <!-- 절대로 자동 인덴트 시키지 말 것!! -->
+                <pre><code class="javascript">날짜 계산하기 (JavaScript snippet)
+var today = new Date();
+var timestamp = today.getFullYear()+"-"+(today.getMonth()+1)+"-"+today.getDate();
+document.write("hello world! "+timestamp); <script type="text/javascript">var today = new Date(); var timestamp = today.getFullYear()+"-"+(today.getMonth()+1)+"-"+today.getDate(); document.write("// hello world! "+timestamp);</script>
+/* some another code... */ </code></pre>
+
+                <p class="text-danger"><small>notice) IE를 browser로 사용하실 때 active X 관련 팝업이 뜨면 '허용' 버튼을 누르시면 콘텐츠가 누락되지 않습니다.  firefox나 chrome사용을 권장드리고, 오프라인 상태에서는 수식 관련 이미지가 누락됩니다.</small></p>
+                <!-- 점선 -->
+                <div class="line"></div>
+
+                <h2>감사의 말</h2><br>
+                <p>&nbsp;대한민국 공대생 혹은 비공대생들에게 머신러닝/딥러닝을 좀 더 쉽게 배울 수 있도록 해주신 김성훈 교수님께 감사의 말을 전해드립니다.</p>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- jQuery CDN -->
+        <script src="js/jquery-1.12.0.min.js"></script>
+        <!-- Bootstrap Js CDN -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#sidebar").mCustomScrollbar({
+                    theme: "minimal"
+                });
+
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar, #content').toggleClass('active');
+                    $('.collapse.in').toggleClass('in');
+                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                });
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+    </body>
+</html>

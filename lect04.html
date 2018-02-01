@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>lecture note</title>
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/vs2015.min.css">
+        <script src="js/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+
+
+
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3 class="korean">김성훈 교수님</h3>
+                    <a href="https://www.inflearn.com/course/%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%EB%94%A5%EB%9F%AC%EB%8B%9D-%EA%B0%95%EC%A2%8C/" target="_blank" data-toggle="tooltip" title="강의 보러 가기 click me"><h5 class="korean">모두를 위한 머신러닝/딥러닝</h5></a>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <p class="korean">INDEX</p>
+                    <li>
+                        <a href="index.html">Intro</a>
+                    </li>
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Lect</a>
+                        <ul class="korean collapse list-unstyled" id="homeSubmenu">
+                            <li><a href="lect01.html">Lect01. 머신러닝의 개념과 용어</a></li>
+                            <li><a href="lect02.html">Lect02. Linear Regression의 개념</a></li>
+                            <li><a href="lect03.html">Lect03. Linear Regression cost 함수 최소화</a></li>
+                            <li class="active"><a href="lect04.html">Lect04. 여러개의 입력(feature)의 Linear Regression</a></li>
+                            <li><a href="lect05.html">Lect05. Logistic Classification (Regression)</a></li>
+                            <li><a href="lect06.html">Lect06. Softmax Regression (Multinomial Logistic Regression)</a></li>
+                            <li><a href="lect07.html">Lect07. ML의 실용과 몇 가지 팁</a></li>
+                            <li><a href="lect08.html">Lect08. 딥러닝의 기본 개념과 문제, 그리고 해결</a></li>
+                            <li><a href="lect09.html">Lect09. Neural Network 1 : XOR 문제와 학습방법, Backpropagation</a></li>
+                            <li><a href="lect10.html">Lect10. Neural Network 2 : ReLU and 초기 값 정하기 (2006/2007 breakthrough)</a></li>
+                            <li><a href="lect11.html">Lect11. Convolutional Neural Networks (a.k.a CNN)</a></li>
+                            <li><a href="lect12.html">Lect12. Recurrent Neural Network (a.k.a RNN)</a></li>
+                            <li><a href="lect13.html">Lect13. Deep Deep Network AWD에서 GPU와 돌려보기 (powered by AWS)</a></li>
+                            <li><a href="lect14.html">Lect14. AWS에서 저렴하게 Spot Instance를 터미네이션 걱정 없이 사용하기</a></li>
+                            <li><a href="lect15.html">Lect15. Google Cloud ML을 이용해 TensorFlow 실행하기</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">TF example</a>
+                        <ul class="korean collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="lab01.html">Lab 01. TensorFlow의 설치 및 기본적인 operations</a></li>
+                            <li><a href="lab02.html">Lab 02. Tensorflow로 간단한 linear regression을 구현</a></li>
+                            <li><a href="lab03.html">Lab 03. Linear Regression의 cost 최소화의 TensorFlow 구현</a></li>
+                            <li><a href="lab04_1.html">Lab 04_1. Multi-variable Linear Regression을 TensorFlow에서 구현하기</a></li>
+                            <li><a href="lab04_2.html">Lab 04_2. TensorFlow로 파일에서 데이타 읽어오기</a></li>
+                            <li><a href="lab05.html">Lab 05. TensorFlow로 Logistic Classification 구현하기</a></li>
+                            <li><a href="lab06_1.html">Lab 06_1. TensorFlow로 SoftmaxClassification 구현하기</a></li>
+                            <li><a href="lab06_2.html">Lab 06_2. TensorFlow로 Fancy Softmax Classification 구현하기</a></li>
+                            <li><a href="lab07_1.html">Lab 07_1. training/test dataset, learning rate, normalization</a></li>
+                            <li><a href="lab07_2.html">Lab 07_2. Meet MNIST Dataset</a></li>
+                            <li><a href="lab08.html">Lab 08. Tensor Manipulation</a></li>
+                            <li><a href="lab09_1.html">Lab 09_1. XOR을 위한 TensorFlow Deep Network</a></li>
+                            <li><a href="lab09_2.html">Lab 09_2. Tensor Board로 Deep Network 들여다 보기</a></li>
+                            <li><a href="lab10.html">Lab 10. 딥러닝으로 MNIST 98%이상 해보기</a></li>
+                            <li><a href="lab11_1.html">Lab 11_1. TensorFlow의 CNN 기본</a></li>
+                            <li><a href="lab11_2.html">Lab 11_2. TensorFlow로 구현하는 MNIST 99%</a></li>
+                            <li><a href="lab11_3.html">Lab 11_3. Class, tf.layers, Ensemble (MNIST 99.5%)</a></li>
+                            <li><a href="lab12_1.html">Lab 12_1. RNN - Basic</a></li>
+                            <li><a href="lab12_2.html">Lab 12_2. RNN - Hi Hello Training</a></li>
+                            <li><a href="lab12_3.html">Lab 12_3. Long Sequence RNN</a></li>
+                            <li><a href="lab12_4.html">Lab 12_4. Stacked RNN + Softmax Layer</a></li>
+                            <li><a href="lab12_5.html">Lab 12_5. Dynamic RNN</a></li>
+                            <li><a href="lab12_6.html">Lab 12_6. RNN with Time Series Data</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+
+                <ul class="list-unstyled CTAs">
+                    <li><a href="https://github.com/hunkim/DeepLearningZeroToAll/archive/master.zip" class="download">Download source</a></li>
+                    <br>
+                    <p class="korean">만든이에게</p>
+                    <li>
+                        <a href="https://www.facebook.com/yoonbaeJeon" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; 페이스북 연락하기</a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/u/0/103969879362546932609" target="_blank"><i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>&nbsp; 구글plus 연락하기</a>
+                    </li>
+                    <p>reference</p>
+                    <li>
+                        <a href="https://www.facebook.com/groups/TensorFlowKR/?fref=nf" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow KR 페이스북</a>
+                    </li>
+                    <li>
+                        <a href="https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/api_docs/" target="_blank"><i class="fa fa-book fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow API doc(KR)</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Page Content Holder -->
+            <div id="content">
+
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                                <i class="glyphicon glyphicon-align-left"></i>
+                                <span class="korean">사이드바 접기/펼치기</span>
+                            </button>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li id="content1_list" class="selected"><a>multi-variable linear regression</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </nav>
+
+                <!-- content1 always all content start from index 1 -->
+                <div id="content1" hidden>
+                <h2>Recap</h2>
+                <p>[복습] 배웠던 개념 및 공식을 생각해 보기!</p>
+                
+                <ul>
+                    <li class="recap_question">
+                        Hypothesis<p class="recap_answer" hidden><br>&nbsp;<img alt="H(x)=Wx+b" src="https://latex.codecogs.com/gif.latex?H%28x%29%3DWx&amp;plus;b"><br></p>
+                    </li><br>
+                    <li class="recap_question">
+                        Cost function<p class="recap_answer" hidden><br>&nbsp;<img alt="cost(W,b) = \frac{1}{m}\sum_{i=1}^{m}(H(x^{(i)})-y^{(i)})^{2}" src="https://latex.codecogs.com/gif.latex?cost%28W%2Cb%29%20%3D%20%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7Bi%3D1%7D%5E%7Bm%7D%28H%28x%5E%7B%28i%29%7D%29-y%5E%7B%28i%29%7D%29%5E%7B2%7D"><br></p>
+                    </li><br>
+                    <li class="recap_question">
+                        Gradient descent algorithm<p class="recap_answer" hidden><br>&nbsp;<img alt="W:=W-\alpha \frac{\partial }{\partial W}cost(W)" src="https://latex.codecogs.com/gif.latex?W%3A%3DW-%5Calpha%20%5Cfrac%7B%5Cpartial%20%7D%7B%5Cpartial%20W%7Dcost%28W%29"><br><br>기울기 :&nbsp;&nbsp;<img alt="\frac{\partial }{\partial W}cost(W)" src="https://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cpartial%20%7D%7B%5Cpartial%20W%7Dcost%28W%29"><br>learning rate :&nbsp;&nbsp;<img alt="\alpha" src="https://latex.codecogs.com/gif.latex?%5Calpha">&nbsp;&nbsp;(Weight를 찾는 그래프에서 dot하나하나의 step 간극이 learning rate가 된다)<br></p>
+                    </li>
+                </ul>
+                <div class="line"></div>
+                <h2>Predicting exam score :<small>&nbsp;기존에 얻은 3가지 점수로 final term 점수를 예상해보기</small></h2>
+                <h3>regerssion using three input ( <em>x1</em>, <em>x2</em>, <em>x3 </em>)</h3><br>
+                <br>
+                <h2>Hypothesis</h2>
+                <br>
+                <p><img alt="H(x)=Wx+b" src="https://latex.codecogs.com/gif.latex?H%28x%29%3DWx&amp;plus;b"><br></p>
+                <br>
+                <p><img alt="H(x_{1}, x_{2}, x_{3}) = w_{1}x_{1} + w_{2}x_{2} + w_{3}x_{3} + b" src="https://latex.codecogs.com/gif.latex?H%28x_%7B1%7D%2C%20x_%7B2%7D%2C%20x_%7B3%7D%29%20%3D%20w_%7B1%7Dx_%7B1%7D%20&amp;plus;%20w_%7B2%7Dx_%7B2%7D%20&amp;plus;%20w_%7B3%7Dx_%7B3%7D%20&amp;plus;%20b"><br></p><br><br>
+
+                <h2>Cost function</h2>
+                <br>
+                <p><img alt="cost(W,b)=\frac{1}{m}\sum_{I=1}^{m}(H(x^{(i)}_{1},x^{(i)}_{2},x^{(i)}_{3})-y^{(i)})^{2}" src="https://latex.codecogs.com/gif.latex?cost%28W%2Cb%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7BI%3D1%7D%5E%7Bm%7D%28H%28x%5E%7B%28i%29%7D_%7B1%7D%2Cx%5E%7B%28i%29%7D_%7B2%7D%2Cx%5E%7B%28i%29%7D_%7B3%7D%29-y%5E%7B%28i%29%7D%29%5E%7B2%7D"><br></p>
+                <div class="line"></div>
+                <h2>Multi-variable</h2><br>
+                <p><img alt="H(x_{1},x_{2},x_{3},...,x_{n})= w_{1}x_{1}+w_{2}x_{2}+w_{3}x_{3}+...+w_{n}x_{n}+b" src="https://latex.codecogs.com/gif.latex?H%28x_%7B1%7D%2Cx_%7B2%7D%2Cx_%7B3%7D%2C...%2Cx_%7Bn%7D%29%3D%20w_%7B1%7Dx_%7B1%7D&amp;plus;w_%7B2%7Dx_%7B2%7D&amp;plus;w_%7B3%7Dx_%7B3%7D&amp;plus;...&amp;plus;w_%7Bn%7Dx_%7Bn%7D&amp;plus;b"><br></p>
+                <br>
+                <p><img alt="H(x)=Wx" src="https://latex.codecogs.com/gif.latex?H%28x%29%3DWx"><br></p>
+                <br>
+                <p>위와 같이 변수가 너무 많아지면 복잡성의 문제 때문에 Matrix개념을 도입</p><br>
+
+                <h2>Hypothesis using matrix</h2><br>
+                <p><img alt="(x_{1} \; x_{2}\; x_{3}) \begin{pmatrix} w_{1} \\w_{2}\\w_{3} \end{pmatrix}=(x_{1}w_{1}+x_{2}w_{2}+x_{3}w_{3})" src="https://latex.codecogs.com/gif.latex?%28x_%7B1%7D%20%5C%3B%20x_%7B2%7D%5C%3B%20x_%7B3%7D%29%20%5Cbegin%7Bpmatrix%7D%20w_%7B1%7D%20%5C%5Cw_%7B2%7D%5C%5Cw_%7B3%7D%20%5Cend%7Bpmatrix%7D%3D%28x_%7B1%7Dw_%7B1%7D&amp;plus;x_%7B2%7Dw_%7B2%7D&amp;plus;x_%7B3%7Dw_%7B3%7D%29"><br></p><br>
+                <p><img alt="\LARGE H(x)=XW" src="https://latex.codecogs.com/gif.latex?%5CLARGE%20H%28x%29%3DXW"><br></p>
+                <div class="line"></div>
+                
+                <h2>인스턴스(instance)란?</h2>
+                <br>
+                <img src="img/lab03_6.png" class="img-fluid" alt="Responsive image"><br>
+                <p>각 x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>, ... ,x<sub>n</sub>의 값들이 하나의 instance가 될 수 있다.</p><br>
+                <h2>Hypothesis using matrix</h2>
+                <p><img alt="w_{1}x_{1}+w_{2}x_{2}+w_{3}x_{3}+...+w_{n}x_{n}" src="https://latex.codecogs.com/gif.latex?w_%7B1%7Dx_%7B1%7D&amp;plus;w_%7B2%7Dx_%7B2%7D&amp;plus;w_%7B3%7Dx_%7B3%7D&amp;plus;...&amp;plus;w_%7Bn%7Dx_%7Bn%7D"><br></p>
+                <p><img alt="\begin{pmatrix} x_{11} &amp; x_{12} &amp; x_{13}\\ x_{21} &amp; x_{22} &amp; x_{23}\\ x_{31} &amp; x_{32} &amp; x_{33}\\ x_{41}&amp;x_{42}&amp;x_{43}\\ x_{51}&amp;x_{52}&amp;x_{53} \end{pmatrix}\cdot \begin{pmatrix}w_{1}\\w_{2}\\w_{3}\end{pmatrix} = \begin{pmatrix} x_{11}w_{1} + x_{12}w_{2} + x_{13}w_{3}\\ x_{21}w_{1} + x_{22}w_{2} + x_{23}w_{3}\\ x_{31}w_{1} + x_{32}w_{2} + x_{33}w_{3}\\ x_{41}w_{1}+x_{42}w_{2}+x_{43}w_{3}\\ x_{51}w_{1}+x_{52}w_{2}+x_{53}w_{3} \end{pmatrix}" src="https://latex.codecogs.com/gif.latex?%5Cbegin%7Bpmatrix%7D%20x_%7B11%7D%20%26%20x_%7B12%7D%20%26%20x_%7B13%7D%5C%5C%20x_%7B21%7D%20%26%20x_%7B22%7D%20%26%20x_%7B23%7D%5C%5C%20x_%7B31%7D%20%26%20x_%7B32%7D%20%26%20x_%7B33%7D%5C%5C%20x_%7B41%7D%26x_%7B42%7D%26x_%7B43%7D%5C%5C%20x_%7B51%7D%26x_%7B52%7D%26x_%7B53%7D%20%5Cend%7Bpmatrix%7D%5Ccdot%20%5Cbegin%7Bpmatrix%7Dw_%7B1%7D%5C%5Cw_%7B2%7D%5C%5Cw_%7B3%7D%5Cend%7Bpmatrix%7D%20%3D%20%5Cbegin%7Bpmatrix%7D%20x_%7B11%7Dw_%7B1%7D%20&amp;plus;%20x_%7B12%7Dw_%7B2%7D%20&amp;plus;%20x_%7B13%7Dw_%7B3%7D%5C%5C%20x_%7B21%7Dw_%7B1%7D%20&amp;plus;%20x_%7B22%7Dw_%7B2%7D%20&amp;plus;%20x_%7B23%7Dw_%7B3%7D%5C%5C%20x_%7B31%7Dw_%7B1%7D%20&amp;plus;%20x_%7B32%7Dw_%7B2%7D%20&amp;plus;%20x_%7B33%7Dw_%7B3%7D%5C%5C%20x_%7B41%7Dw_%7B1%7D&amp;plus;x_%7B42%7Dw_%7B2%7D&amp;plus;x_%7B43%7Dw_%7B3%7D%5C%5C%20x_%7B51%7Dw_%7B1%7D&amp;plus;x_%7B52%7Dw_%7B2%7D&amp;plus;x_%7B53%7Dw_%7B3%7D%20%5Cend%7Bpmatrix%7D"><br></p><br>
+                <p><img alt="\LARGE H(x)=XW" src="https://latex.codecogs.com/gif.latex?%5CLARGE%20H%28x%29%3DXW"><br></p>
+                <div class="line"></div>
+                <h2>WX vs <strong>XW</strong></h2><br>
+                <ul style="font-size: larger;">
+                    <li>
+                        Lecture(theory)
+                    </li>
+                    <p>&nbsp;&nbsp;&nbsp;<img alt="H(x)=Wx+b" src="https://latex.codecogs.com/gif.latex?H%28x%29%3DWx&amp;plus;b"><br></p>
+                    <li>
+                        Implementation 응용(TensorFlow)
+                    </li>
+                    <p>&nbsp;&nbsp;&nbsp;<img alt="H(x)=XW" src="https://latex.codecogs.com/gif.latex?H%28x%29%3DXW"><br></p>
+                </ul>
+                <p>수학적으로는 같은 의미이다.</p>
+                <!-- page navigation -->
+                <div class="footer">
+                    <ul class="pager">
+                        <li class="previous" id="prev_button" style="color:#00BFFF;"><a href="#">Previous</a></li>
+                        <li class="next" id="next_button" style="color:#00BFFF;"><a href="#">Next</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+        
+
+
+
+        <!-- jQuery CDN -->
+        <script src="js/jquery-1.12.0.min.js"></script>
+        <!-- Bootstrap Js CDN -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#sidebar").mCustomScrollbar({
+                    theme: "minimal"
+                });
+
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar, #content').toggleClass('active');
+                    $('.collapse.in').toggleClass('in');
+                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                });
+
+                var cnt = 0;
+                for(i=1;;i++){
+                    var local_id = "#content"+i;
+                    if($(local_id).length==0) break;
+                    cnt++;
+                }
+                if(cnt<=1){
+                    $("#prev_button").hide();
+                    $("#next_button").hide();     
+                }
+                var current = 1;
+                var local_id = "#content"+current;
+                $(local_id).show();
+                local_id+="_list";
+                $(local_id).addClass("selected");
+
+                $("#prev_button").click(function(){
+                    if(current>1){
+                        local_id = "#content"+current;
+                        $(local_id).hide();
+                        local_id += "_list";
+                        $(local_id).removeClass("selected");
+                        current--;
+                        local_id = "#content"+current;
+                        $(local_id).show();
+                        local_id += "_list";
+                        $(local_id).addClass("selected");
+                    }
+                });
+
+                $("#next_button").click(function(){
+                    if(current<cnt){
+                        local_id = "#content"+current;
+                        $(local_id).hide();
+                        local_id += "_list";
+                        $(local_id).removeClass("selected");
+                        current++;
+                        local_id = "#content"+current;
+                        $(local_id).show();
+                        local_id += "_list";
+                        $(local_id).addClass("selected");
+                    }
+                });
+
+                $(".recap_question").hover(function(){
+                    $(this).css("color","red");
+                    $(this).find(".recap_answer").show();
+                }, function(){
+                    $(this).css("color","black");
+                    $(this).find(".recap_answer").hide();
+                }); 
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+    </body>
+</html>

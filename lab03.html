@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>lecture note</title>
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/vs2015.min.css">
+        <script src="js/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3 class="korean">김성훈 교수님</h3>
+                    <a href="https://www.inflearn.com/course/%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%EB%94%A5%EB%9F%AC%EB%8B%9D-%EA%B0%95%EC%A2%8C/" target="_blank" data-toggle="tooltip" title="강의 보러 가기 click me"><h5 class="korean">모두를 위한 머신러닝/딥러닝</h5></a>
+                </div>
+                <ul class="list-unstyled components">
+                    <p class="korean">INDEX</p>
+                    <li>
+                        <a href="index.html">Intro</a>
+                    </li>
+                    <li>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Lect</a>
+                        <ul class="korean collapse list-unstyled" id="homeSubmenu">
+                            <li><a href="lect01.html">Lect01. 머신러닝의 개념과 용어</a></li>
+                            <li><a href="lect02.html">Lect02. Linear Regression의 개념</a></li>
+                            <li><a href="lect03.html">Lect03. Linear Regression cost 함수 최소화</a></li>
+                            <li><a href="lect04.html">Lect04. 여러개의 입력(feature)의 Linear Regression</a></li>
+                            <li><a href="lect05.html">Lect05. Logistic Classification (Regression)</a></li>
+                            <li><a href="lect06.html">Lect06. Softmax Regression (Multinomial Logistic Regression)</a></li>
+                            <li><a href="lect07.html">Lect07. ML의 실용과 몇 가지 팁</a></li>
+                            <li><a href="lect08.html">Lect08. 딥러닝의 기본 개념과 문제, 그리고 해결</a></li>
+                            <li><a href="lect09.html">Lect09. Neural Network 1 : XOR 문제와 학습방법, Backpropagation</a></li>
+                            <li><a href="lect10.html">Lect10. Neural Network 2 : ReLU and 초기 값 정하기 (2006/2007 breakthrough)</a></li>
+                            <li><a href="lect11.html">Lect11. Convolutional Neural Networks (a.k.a CNN)</a></li>
+                            <li><a href="lect12.html">Lect12. Recurrent Neural Network (a.k.a RNN)</a></li>
+                            <li><a href="lect13.html">Lect13. Deep Deep Network AWD에서 GPU와 돌려보기 (powered by AWS)</a></li>
+                            <li><a href="lect14.html">Lect14. AWS에서 저렴하게 Spot Instance를 터미네이션 걱정 없이 사용하기</a></li>
+                            <li><a href="lect15.html">Lect15. Google Cloud ML을 이용해 TensorFlow 실행하기</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">TF example</a>
+                        <ul class="korean collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="lab01.html">Lab 01. TensorFlow의 설치 및 기본적인 operations</a></li>
+                            <li><a href="lab02.html">Lab 02. Tensorflow로 간단한 linear regression을 구현</a></li>
+                            <li class="active"><a href="lab03.html">Lab 03. Linear Regression의 cost 최소화의 TensorFlow 구현</a></li>
+                            <li><a href="lab04_1.html">Lab 04_1. Multi-variable Linear Regression을 TensorFlow에서 구현하기</a></li>
+                            <li><a href="lab04_2.html">Lab 04_2. TensorFlow로 파일에서 데이타 읽어오기</a></li>
+                            <li><a href="lab05.html">Lab 05. TensorFlow로 Logistic Classification 구현하기</a></li>
+                            <li><a href="lab06_1.html">Lab 06_1. TensorFlow로 SoftmaxClassification 구현하기</a></li>
+                            <li><a href="lab06_2.html">Lab 06_2. TensorFlow로 Fancy Softmax Classification 구현하기</a></li>
+                            <li><a href="lab07_1.html">Lab 07_1. training/test dataset, learning rate, normalization</a></li>
+                            <li><a href="lab07_2.html">Lab 07_2. Meet MNIST Dataset</a></li>
+                            <li><a href="lab08.html">Lab 08. Tensor Manipulation</a></li>
+                            <li><a href="lab09_1.html">Lab 09_1. XOR을 위한 TensorFlow Deep Network</a></li>
+                            <li><a href="lab09_2.html">Lab 09_2. Tensor Board로 Deep Network 들여다 보기</a></li>
+                            <li><a href="lab10.html">Lab 10. 딥러닝으로 MNIST 98%이상 해보기</a></li>
+                            <li><a href="lab11_1.html">Lab 11_1. TensorFlow의 CNN 기본</a></li>
+                            <li><a href="lab11_2.html">Lab 11_2. TensorFlow로 구현하는 MNIST 99%</a></li>
+                            <li><a href="lab11_3.html">Lab 11_3. Class, tf.layers, Ensemble (MNIST 99.5%)</a></li>
+                            <li><a href="lab12_1.html">Lab 12_1. RNN - Basic</a></li>
+                            <li><a href="lab12_2.html">Lab 12_2. RNN - Hi Hello Training</a></li>
+                            <li><a href="lab12_3.html">Lab 12_3. Long Sequence RNN</a></li>
+                            <li><a href="lab12_4.html">Lab 12_4. Stacked RNN + Softmax Layer</a></li>
+                            <li><a href="lab12_5.html">Lab 12_5. Dynamic RNN</a></li>
+                            <li><a href="lab12_6.html">Lab 12_6. RNN with Time Series Data</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                <ul class="list-unstyled CTAs">
+                    <li><a href="https://github.com/hunkim/DeepLearningZeroToAll/archive/master.zip" class="download">Download source</a></li>
+                    <br>
+                    <p class="korean">만든이에게</p>
+                    <li>
+                        <a href="https://www.facebook.com/yoonbaeJeon" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; 페이스북 연락하기</a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/u/0/103969879362546932609" target="_blank"><i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>&nbsp; 구글plus 연락하기</a>
+                    </li>
+                    <p>reference</p>
+                    <li>
+                        <a href="https://www.facebook.com/groups/TensorFlowKR/?fref=nf" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow KR 페이스북</a>
+                    </li>
+                    <li>
+                        <a href="https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/api_docs/" target="_blank"><i class="fa fa-book fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow API doc(KR)</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Page Content Holder -->
+            <div id="content">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="glyphicon glyphicon-align-left"></i>
+                            <span class="korean">사이드바 접기/펼치기</span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li id="content1_list" class="selected"><a>Linear Regression의 cost 최소화 TensorFlow 구현</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- content1 always all content start from index 1 -->
+                <div id="content1" hidden>
+                    <h2>Simplified hypothesis</h2>
+                    <br>
+                    <p>cost가 최소화되는 w를 찾는 과정</p>
+                    <p><img alt="H(x)=Wx" src="https://latex.codecogs.com/gif.latex?H%28x%29%3DWx"><br></p>
+                    <br>
+                    <p><img alt="cost(w)=\frac{1}{m}\sum_{i=1}^{m}(Wx^{(i)}-y^{(i)})^{2}" src="https://latex.codecogs.com/gif.latex?cost%28w%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7Bi%3D1%7D%5E%7Bm%7D%28Wx%5E%7B%28i%29%7D-y%5E%7B%28i%29%7D%29%5E%7B2%7D"><br></p>
+                    <br>
+                    <p>minimizing_cost_show_graph.py</p>
+                                                            <pre><code class="python"># Lab 3 Minimizing Cost
+import tensorflow as tf
+import matplotlib.pyplot as plt
+tf.set_random_seed(777)  # for reproducibility
+X = [1, 2, 3]
+Y = [1, 2, 3]
+W = tf.placeholder(tf.float32)
+# Our hypothesis for linear model X * W
+hypothesis = X * W
+# cost/loss function
+cost = tf.reduce_mean(tf.square(hypothesis - Y))
+# Launch the graph in a session.
+sess = tf.Session()
+# Variables for plotting cost function
+W_history = []
+cost_history = []
+for i in range(-30, 50):
+    curr_W = i * 0.1
+    curr_cost = sess.run(cost, feed_dict={W: curr_W})
+    W_history.append(curr_W)
+    cost_history.append(curr_cost)
+# Show the cost function
+plt.plot(W_history, cost_history)
+plt.show() </code></pre><br>
+                    <p>result</p>
+                    <img src="img/lab03_1.png" class="img-fluid" alt="Responsive image">
+                    <br>
+                    <div class="line"></div>
+                    <h2>Gradient descent</h2>
+                    <img src="img/lab03_2.png" class="img-fluid" alt="Responsive image"><br><br>
+                    <p><img alt="W:=W-\alpha \frac{1}{m}\sum_{i=1}^{m}(Wx^{(i)}-y^{(i)})x^{(i)}" src="https://latex.codecogs.com/gif.latex?W%3A%3DW-%5Calpha%20%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7Bi%3D1%7D%5E%7Bm%7D%28Wx%5E%7B%28i%29%7D-y%5E%7B%28i%29%7D%29x%5E%7B%28i%29%7D"> 에 대하여<br></p>
+                    <p>순간 기울기 ( <img alt="\alpha \frac{1}{m}\sum_{i=1}^{m}(Wx^{(i)}-y^{(i)})x^{(i)}" src="https://latex.codecogs.com/gif.latex?%5Calpha%20%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7Bi%3D1%7D%5E%7Bm%7D%28Wx%5E%7B%28i%29%7D-y%5E%7B%28i%29%7D%29x%5E%7B%28i%29%7D"> )가 증가함에 따라 <em>W</em> (weight)는 감소하는 방향으로 이동하고, 순간 기울기가 감소함에 따라 <em>W</em> 는 증가하는 방향으로 이동한다. <br></p>
+                    <br>
+                    <p>minimizing_cost_gradient_update.py</p>
+                                        <pre><code class="python"># Lab 3 Minimizing Cost
+import tensorflow as tf
+tf.set_random_seed(777)  # for reproducibility
+x_data = [1, 2, 3]
+y_data = [1, 2, 3]
+# Try to find values for W and b to compute y_data = W * x_data + b
+# We know that W should be 1 and b should be 0
+# But let's use TensorFlow to figure it out
+W = tf.Variable(tf.random_normal([1]), name='weight')
+X = tf.placeholder(tf.float32)
+Y = tf.placeholder(tf.float32)
+# Our hypothesis for linear model X * W
+hypothesis = X * W
+# cost/loss function
+cost = tf.reduce_mean(tf.square(hypothesis - Y))
+# Minimize: Gradient Descent using derivative: W -= learning_rate * derivative
+learning_rate = 0.1
+gradient = tf.reduce_mean((W * X - Y) * X)
+descent = W - learning_rate * gradient
+update = W.assign(descent)
+# Launch the graph in a session.
+sess = tf.Session()
+# Initializes global variables in the graph.
+sess.run(tf.global_variables_initializer())
+for step in range(21):
+    sess.run(update, feed_dict={X: x_data, Y: y_data})
+print(step, sess.run(cost, feed_dict={X: x_data, Y: y_data}), sess.run(W))</code></pre>
+                    <p>result</p>
+                    <img src="img/lab03_3.png" class="img-fluid" alt="Responsive image">
+                    <br>
+                    <p>P.S. 여기서 # Minimize 부분을 tensorflow가 제공해주는 method로 간략화 시킬 수 있다.</p>
+<pre><code class="python"># Minimize: Gradient Descent using derivative: W -= learning_rate * derivative
+learning_rate = 0.1
+gradient = tf.reduce_mean((W * X - Y) * X)
+descent = W - learning_rate * gradient
+update = W.assign(descent)</code></pre>
+                    <h4>  &nbsp;=  </h4>
+<pre><code class="python"># Minimize: Gradient Descent Magic
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.1)
+train = optimizer.minimize(cost)</code></pre>
+                    <p>미분을 할 필요가 없어져서 매우 편리하다.</p>
+                    <div class="line"></div>
+                    <p>minimizing_cost_tf_optimizier.py</p>
+<pre><code class="python"># Lab 3 Minimizing Cost
+import tensorflow as tf
+tf.set_random_seed(777)  # for reproducibility
+# tf Graph Input
+X = [1, 2, 3]
+Y = [1, 2, 3]
+# Set wrong model weights
+W = tf.Variable(5.0)
+# Linear model
+hypothesis = X * W
+# cost/loss function
+cost = tf.reduce_mean(tf.square(hypothesis - Y))
+# Minimize: Gradient Descent Magic
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.1)
+train = optimizer.minimize(cost)
+# Launch the graph in a session.
+sess = tf.Session()
+# Initializes global variables in the graph.
+sess.run(tf.global_variables_initializer())
+for step in range(100):
+    print(step, sess.run(W))
+sess.run(train)
+</code></pre>
+                    <p>result</p>
+                    <img src="img/lab03_4.png" class="img-fluid" alt="Responsive image"><br><br>
+                    <p>W가 1로 수렴하는 것을 볼 수 있다.</p>
+                    <div class="line"></div>
+                    <p>minimizing_cost_tf_gradient.py</p>
+                    <pre><code class="python"># Lab 3 Minimizing Cost
+# This is optional :
+# 1) compute_gradient
+# 2) and apply_gradient
+
+import tensorflow as tf
+tf.set_random_seed(777)  # for reproducibility
+# tf Graph Input
+X = [1, 2, 3]
+Y = [1, 2, 3]
+# Set wrong model weights
+W = tf.Variable(5.)
+# Linear model
+hypothesis = X * W
+# Manual gradient
+gradient = tf.reduce_mean((W * X - Y) * X) * 2
+# cost/loss function
+cost = tf.reduce_mean(tf.square(hypothesis - Y))
+# Minimize: Gradient Descent Magic
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.01)
+train = optimizer.minimize(cost)
+# Get gradients
+gvs = optimizer.compute_gradients(cost, [W])
+# Optional: modify gradient if necessary
+# gvs = [(tf.clip_by_value(grad, -1., 1.), var) for grad, var in gvs]
+# Apply gradients
+apply_gradients = optimizer.apply_gradients(gvs)
+# Launch the graph in a session.
+sess = tf.Session()
+# Initializes global variables in the graph.
+sess.run(tf.global_variables_initializer())
+for step in range(100):
+    print(step, sess.run([gradient, W, gvs]))
+sess.run(apply_gradients)   # Same as sess.run(train)</code></pre>
+                    <p>result</p>
+                    <div class="korean mutated" style="font-size: smaller; margin-bottom: 5px;">step / 수식으로 계산한 gradient /&nbsp;&nbsp;<em>W</em>&nbsp;&nbsp;/  optimizer에 의해 계산된 gradient / optimizer에 의해 계산된 <em>W</em></div>
+                    <img src="img/lab03_5.png" class="img-fluid" alt="Responsive image"><br><br>
+                    
+                    
+                </div>
+                <!-- <div id="content2" hidden>helloworld!</div> -->
+                <!-- page navigation -->
+                <div class="footer">
+                    <ul class="pager">
+                        <li class="previous" id="prev_button" style="color:#00BFFF;"><a href="#">Previous</a></li>
+                        <li class="next" id="next_button" style="color:#00BFFF;"><a href="#">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- jQuery CDN -->
+        <script src="js/jquery-1.12.0.min.js"></script>
+        <!-- Bootstrap Js CDN -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+            var cnt = 0;
+            for(i=1;;i++){
+                var local_id = "#content"+i;
+                if($(local_id).length==0) break;
+                cnt++;
+            }
+            if(cnt<=1){
+                $("#prev_button").hide();
+                $("#next_button").hide();
+            }
+            var current = 1;
+            var local_id = "#content"+current;
+            $(local_id).show();
+            local_id+="_list";
+            $(local_id).addClass("selected");
+            $("#prev_button").click(function(){
+                if(current>1){
+                    local_id = "#content"+current;
+                    $(local_id).hide();
+                    local_id += "_list";
+                    $(local_id).removeClass("selected");
+                    current--;
+                    local_id = "#content"+current;
+                    $(local_id).show();
+                    local_id += "_list";
+                    $(local_id).addClass("selected");
+                }
+            });
+            $("#next_button").click(function(){
+                if(current<cnt){
+                    local_id = "#content"+current;
+                    $(local_id).hide();
+                    local_id += "_list";
+                    $(local_id).removeClass("selected");
+                    current++;
+                    local_id = "#content"+current;
+                    $(local_id).show();
+                    local_id += "_list";
+                    $(local_id).addClass("selected");
+                }
+            });
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
+    </body>
+</html>

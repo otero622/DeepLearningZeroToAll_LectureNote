@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>lecture note</title>
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/vs2015.min.css">
+        <script src="js/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+        <div class="wrapper container">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3 class="korean">김성훈 교수님</h3>
+                    <a href="https://www.inflearn.com/course/%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%EB%94%A5%EB%9F%AC%EB%8B%9D-%EA%B0%95%EC%A2%8C/" target="_blank" data-toggle="tooltip" title="강의 보러 가기 click me"><h5 class="korean">모두를 위한 머신러닝/딥러닝</h5></a>
+                </div>
+                <ul class="list-unstyled components">
+                    <p class="korean">INDEX</p>
+                    <li>
+                        <a href="index.html">Intro</a>
+                    </li>
+                    <li>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Lect</a>
+                        <ul class="korean collapse list-unstyled" id="homeSubmenu">
+                            <li><a href="lect01.html">Lect01. 머신러닝의 개념과 용어</a></li>
+                            <li><a href="lect02.html">Lect02. Linear Regression의 개념</a></li>
+                            <li><a href="lect03.html">Lect03. Linear Regression cost 함수 최소화</a></li>
+                            <li><a href="lect04.html">Lect04. 여러개의 입력(feature)의 Linear Regression</a></li>
+                            <li><a href="lect05.html">Lect05. Logistic Classification (Regression)</a></li>
+                            <li><a href="lect06.html">Lect06. Softmax Regression (Multinomial Logistic Regression)</a></li>
+                            <li><a href="lect07.html">Lect07. ML의 실용과 몇 가지 팁</a></li>
+                            <li><a href="lect08.html">Lect08. 딥러닝의 기본 개념과 문제, 그리고 해결</a></li>
+                            <li><a href="lect09.html">Lect09. Neural Network 1 : XOR 문제와 학습방법, Backpropagation</a></li>
+                            <li><a href="lect10.html">Lect10. Neural Network 2 : ReLU and 초기 값 정하기 (2006/2007 breakthrough)</a></li>
+                            <li><a href="lect11.html">Lect11. Convolutional Neural Networks (a.k.a CNN)</a></li>
+                            <li><a href="lect12.html">Lect12. Recurrent Neural Network (a.k.a RNN)</a></li>
+                            <li><a href="lect13.html">Lect13. Deep Deep Network AWD에서 GPU와 돌려보기 (powered by AWS)</a></li>
+                            <li><a href="lect14.html">Lect14. AWS에서 저렴하게 Spot Instance를 터미네이션 걱정 없이 사용하기</a></li>
+                            <li><a href="lect15.html">Lect15. Google Cloud ML을 이용해 TensorFlow 실행하기</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">TF example</a>
+                        <ul class="korean collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="lab01.html">Lab 01. TensorFlow의 설치 및 기본적인 operations</a></li>
+                            <li><a href="lab02.html">Lab 02. Tensorflow로 간단한 linear regression을 구현</a></li>
+                            <li><a href="lab03.html">Lab 03. Linear Regression의 cost 최소화의 TensorFlow 구현</a></li>
+                            <li><a href="lab04_1.html">Lab 04_1. Multi-variable Linear Regression을 TensorFlow에서 구현하기</a></li>
+                            <li><a href="lab04_2.html">Lab 04_2. TensorFlow로 파일에서 데이타 읽어오기</a></li>
+                            <li class="active"><a href="lab05.html">Lab 05. TensorFlow로 Logistic Classification 구현하기</a></li>
+                            <li><a href="lab06_1.html">Lab 06_1. TensorFlow로 SoftmaxClassification 구현하기</a></li>
+                            <li><a href="lab06_2.html">Lab 06_2. TensorFlow로 Fancy Softmax Classification 구현하기</a></li>
+                            <li><a href="lab07_1.html">Lab 07_1. training/test dataset, learning rate, normalization</a></li>
+                            <li><a href="lab07_2.html">Lab 07_2. Meet MNIST Dataset</a></li>
+                            <li><a href="lab08.html">Lab 08. Tensor Manipulation</a></li>
+                            <li><a href="lab09_1.html">Lab 09_1. XOR을 위한 TensorFlow Deep Network</a></li>
+                            <li><a href="lab09_2.html">Lab 09_2. Tensor Board로 Deep Network 들여다 보기</a></li>
+                            <li><a href="lab10.html">Lab 10. 딥러닝으로 MNIST 98%이상 해보기</a></li>
+                            <li><a href="lab11_1.html">Lab 11_1. TensorFlow의 CNN 기본</a></li>
+                            <li><a href="lab11_2.html">Lab 11_2. TensorFlow로 구현하는 MNIST 99%</a></li>
+                            <li><a href="lab11_3.html">Lab 11_3. Class, tf.layers, Ensemble (MNIST 99.5%)</a></li>
+                            <li><a href="lab12_1.html">Lab 12_1. RNN - Basic</a></li>
+                            <li><a href="lab12_2.html">Lab 12_2. RNN - Hi Hello Training</a></li>
+                            <li><a href="lab12_3.html">Lab 12_3. Long Sequence RNN</a></li>
+                            <li><a href="lab12_4.html">Lab 12_4. Stacked RNN + Softmax Layer</a></li>
+                            <li><a href="lab12_5.html">Lab 12_5. Dynamic RNN</a></li>
+                            <li><a href="lab12_6.html">Lab 12_6. RNN with Time Series Data</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                <ul class="list-unstyled CTAs">
+                    <li><a href="https://github.com/hunkim/DeepLearningZeroToAll/archive/master.zip" class="download">Download source</a></li>
+                    <br>
+                    <p class="korean">만든이에게</p>
+                    <li>
+                        <a href="https://www.facebook.com/yoonbaeJeon" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; 페이스북 연락하기</a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/u/0/103969879362546932609" target="_blank"><i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>&nbsp; 구글plus 연락하기</a>
+                    </li>
+                    <p>reference</p>
+                    <li>
+                        <a href="https://www.facebook.com/groups/TensorFlowKR/?fref=nf" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow KR 페이스북</a>
+                    </li>
+                    <li>
+                        <a href="https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/api_docs/" target="_blank"><i class="fa fa-book fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow API doc(KR)</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Page Content Holder -->
+            <div id="content">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="glyphicon glyphicon-align-left"></i>
+                            <span class="korean">사이드바 접기/펼치기</span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li id="content1_list" class="selected"><a>TensorFlow로 Logistic Classification 구현하기</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- content1 always all content start from index 1 -->
+                <div id="content1" hidden>
+                    <h2>Logistic Regression</h2><br>
+                    <p>코딩에 앞서 개념 다지기</p><br>
+                    <p><img alt="H(x)=\frac{1}{1+e^{-W^{T}X}}" src="https://latex.codecogs.com/gif.latex?H%28x%29%3D%5Cfrac%7B1%7D%7B1&amp;plus;e%5E%7B-W%5E%7BT%7DX%7D%7D">&nbsp;&nbsp;&nbsp;Sigmoid function<br></p><br>
+                    <p>&nbsp;<img alt="cost(W)=-\frac{1}{m}\sum ylog(H(x))+(1-y)log(1-H(x))" src="https://latex.codecogs.com/gif.latex?cost%28W%29%3D-%5Cfrac%7B1%7D%7Bm%7D%5Csum%20ylog%28H%28x%29%29&amp;plus;%281-y%29log%281-H%28x%29%29">&nbsp;&nbsp;&nbsp;cost function for logistic regression<br></p><br>
+                    <p>&nbsp;<img alt="W:=W-\alpha \frac{\partial }{\partial W}cost(W)" src="https://latex.codecogs.com/gif.latex?W%3A%3DW-%5Calpha%20%5Cfrac%7B%5Cpartial%20%7D%7B%5Cpartial%20W%7Dcost%28W%29"><br></p>
+                    <div class="line"></div>
+                    <h2>Training Data</h2><br>
+                    <p>Training에 앞서 어떤 형식의 training data를 사용할 것인지 살펴보기</p>
+<pre><code class="python"># Training data set
+x_data = [[1, 2], [2, 3], [3, 1], [4, 3], [5, 3], [6, 2]]
+y_data = [[0], [0], [0], [1], [1], [1]]     # y값은 항상 0 또는 1
+
+# placeholders for a tensor that will be always fed.
+X = tf.placeholder(tf.float32, shape=[None, 2])
+Y = tf.placeholder(tf.float32, shape=[None, 1])</code></pre><br>
+                    <p>( full code ) logistic_regression.py</p>
+    <pre><code class="python"># Lab 5 Logistic Regression Classifier
+import tensorflow as tf
+tf.set_random_seed(777)  # for reproducibility
+
+x_data = [[1, 2], [2, 3], [3, 1], [4, 3], [5, 3], [6, 2]]
+y_data = [[0], [0], [0], [1], [1], [1]]
+
+# placeholders for a tensor that will be always fed.
+X = tf.placeholder(tf.float32, shape=[None, 2])
+Y = tf.placeholder(tf.float32, shape=[None, 1])
+
+W = tf.Variable(tf.random_normal([2, 1]), name='weight')
+b = tf.Variable(tf.random_normal([1]), name='bias')
+
+# Hypothesis using sigmoid: tf.div(1., 1. + tf.exp(tf.matmul(X, W)))
+hypothesis = tf.sigmoid(tf.matmul(X, W) + b)
+
+# cost/loss function
+cost = -tf.reduce_mean(Y * tf.log(hypothesis) + (1 - Y) *
+                       tf.log(1 - hypothesis))
+
+train = tf.train.GradientDescentOptimizer(learning_rate=0.01).minimize(cost)
+
+# Accuracy computation
+# True if hypothesis>0.5 else False
+predicted = tf.cast(hypothesis > 0.5, dtype=tf.float32)
+accuracy = tf.reduce_mean(tf.cast(tf.equal(predicted, Y), dtype=tf.float32))
+
+# Launch graph
+with tf.Session() as sess:
+    # Initialize TensorFlow variables
+    sess.run(tf.global_variables_initializer())
+
+    for step in range(10001):
+        cost_val, _ = sess.run([cost, train], feed_dict={X: x_data, Y: y_data})
+        if step % 200 == 0:
+            print(step, cost_val)
+
+    # Accuracy report
+    h, c, a = sess.run([hypothesis, predicted, accuracy],
+                       feed_dict={X: x_data, Y: y_data})
+    print("\nHypothesis: ", h, "\nCorrect (Y): ", c, "\nAccuracy: ", a)</code></pre>
+
+                    <p>[참조] Slicing</p>
+                    <img src="img/lab04_6.png" class="img-fluid" alt="Responsive image">
+                    <div class="line"></div>
+                    <h2>Queue Runners</h2>
+                    <img src="img/lab04_7.png" class="img-fluid" alt="Responsive image">
+                    <p>Queue Runner는 파일 용량이 커서 메모리에 한번에 올리기 힘들 때 tensorflow에서 제공하는 mechanism</p>
+                    <ol>
+                        <li><code>filename_queue = tf.train.string_input_producer(['data-01.csv', 'data-02.csv', ...], shuffle=False, name='filename_queue')</code><br>여러개의 정의 된 파일 이름을 이용해서 list에 따라 불러옴</li><br>
+                        <li><code>reader=tf.TextLineReader()<br>key,value = reader.read(filename_queue)</code><br>key, value로 나누어서 읽겠다는 뜻</li><br>
+                        <li><code><em>record_defaults</em> = [[0.], [0.], [0.], [0.]]<br>xy = tf.decode_csv(value, record_defaults=<em>record_defaults</em>)</code>record_defaults인자를 통해 decoding시 default값을 정해줄 수 있다.</li>
+                    </ol>
+                    <p><em>Queue Runner에 대한 자세한 사항은 <a href="https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/how_tos/threading_and_queues/" target="_blank"><u style="color: skyblue;">여기서</u></a></em></p><br>
+                    <h2>tf.train.batch</h2>
+                    <p>tf_reader_linear_regression.py (snippets)</p>
+                                                            <pre><code class="python"># collect batches of csv in
+train_x_batch, train_y_batch = \
+    tf.train.batch([xy[0:-1], xy[-1:]], batch_size=10)
+
+# Launch the graph in a session.
+sess = tf.Session()
+
+...(skip)...
+
+# Start populating the filename queue.
+coord = tf.train.Coordinator()
+threads = tf.train.start_queue_runners(sess=sess, coord=coord)
+
+for step in range(2001):
+    x_batch, y_batch = sess.run([train_x_batch, train_y_batch])
+
+...(skip)...
+
+coord.request_stop()
+coord.join(threads)</code></pre>
+
+                    <p>그 외의 변수와 tensor및 작동 메커니즘에 대한 교수님의 간단한(?) 설명...</p>
+                    <p>batch, coord 그리고 threads를 주목해서 보면 될 것!
+                    </p>
+                    <p>그리고 엔간한건 tensorflow에 의해서 자동으로 처리된다고 한다. king god tf...</p><br>
+                    <p>tf_reader_linear_regression.py (full code)</p>
+                    <pre><code class="python"># Lab 4 Multi-variable linear regression
+<a href="https://www.tensorflow.org/programmers_guide/reading_data" target="_blank"># <u style="color: green;">https://www.tensorflow.org/programmers_guide/reading_data</u></a>
+
+import tensorflow as tf
+tf.set_random_seed(777)  # for reproducibility
+
+filename_queue = tf.train.string_input_producer(
+    ['data-01-test-score.csv'], shuffle=False, name='filename_queue')
+
+reader = tf.TextLineReader()
+key, value = reader.read(filename_queue)    # value에 csv에서 읽어온 값들이 저장됨
+
+# Default values, in case of empty columns. Also specifies the type of the
+# decoded result.
+record_defaults = [[0.], [0.], [0.], [0.]]
+xy = tf.decode_csv(value, record_defaults=record_defaults)
+
+# collect batches of csv in
+# batch는 펌프질을해서 데이터를 갖고오는 과정이라 생각하면 된다.
+train_x_batch, train_y_batch = tf.train.batch([xy[0:-1], xy[-1:]], batch_size=10)
+
+# placeholders for a tensor that will be always fed.
+X = tf.placeholder(tf.float32, shape=[None, 3])
+Y = tf.placeholder(tf.float32, shape=[None, 1])
+
+W = tf.Variable(tf.random_normal([3, 1]), name='weight')
+b = tf.Variable(tf.random_normal([1]), name='bias')
+
+# Hypothesis
+hypothesis = tf.matmul(X, W) + b
+
+# Simplified cost/loss function
+cost = tf.reduce_mean(tf.square(hypothesis - Y))
+
+# Minimize
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=1e-5)
+train = optimizer.minimize(cost)
+
+# Launch the graph in a session.
+sess = tf.Session()
+# Initializes global variables in the graph.
+sess.run(tf.global_variables_initializer())
+
+# Start populating the filename queue.
+# 밑에 두줄은 기본적으로 사용하는 문구라고 보면 됨
+coord = tf.train.Coordinator()
+threads = tf.train.start_queue_runners(sess=sess, coord=coord)
+
+for step in range(2001):
+    x_batch, y_batch = sess.run([train_x_batch, train_y_batch]) 
+    cost_val, hy_val, _ = sess.run(
+        [cost, hypothesis, train], feed_dict={X: x_batch, Y: y_batch})
+    if step % 10 == 0:
+        print(step, "Cost: ", cost_val, "\nPrediction:\n", hy_val)
+
+# 밑에 두줄 역시 기본적으로 위의 coord변수 선언과 같이 set로 따라다니는 기본 문구라고 보면 편하다.
+coord.request_stop()
+coord.join(threads)
+
+# Ask my score
+print("Your score will be ",
+      sess.run(hypothesis, feed_dict={X: [[100, 70, 101]]}))
+
+print("Other scores will be ",
+      sess.run(hypothesis, feed_dict={X: [[60, 70, 110], [90, 100, 80]]}))
+</code></pre>
+<p>result</p>
+<pre><code class="c">0 Cost:  7070.982 
+Prediction:
+ [[235.22786] [282.40146] [278.39618] [303.9158 ] [214.62396]
+ [159.15427] [228.5351 ] [170.92645] [264.6505 ] [246.59117]]
+10 Cost:  5.577785 
+Prediction:
+ [[154.65848] [185.555  ] [182.97673] [199.99612] [140.76091]
+ [104.69594] [150.7493 ] [113.26346] [174.13757] [162.75192]]
+20 Cost:  4.62937 
+Prediction:
+ [[154.11101 ] [184.90294 ] [182.33101 ] [199.2954  ] [140.26302 ]
+ [104.333435] [150.22685 ] [112.87885 ] [173.53265 ] [162.19771 ]]
+30 Cost:  4.618964 
+Prediction:
+ [[154.10362] [184.90007] [182.32486] [199.29121] [140.26024]
+ [104.33596] [150.22578] [112.88076] [173.53444] [162.20546]]
+40 Cost:  4.612851 
+Prediction:
+ [[154.09985] [184.90154] [182.32303] [199.29173] [140.26077]
+ [104.34094] [150.22823] [112.88527] [173.54027] [162.21696]]
+
+...
+
+1950 Cost:  4.228973 
+Prediction:
+ [[153.64238] [185.07217] [182.09341] [199.36737] [140.30066]
+ [104.95598] [150.56622] [113.50818] [174.26425] [163.6712 ]]
+1960 Cost:  4.228953 
+Prediction:
+ [[153.64095 ] [185.07262 ] [182.09265 ] [199.36763 ] [140.30061 ]
+ [104.957886] [150.56744 ] [113.51045 ] [174.26653 ] [163.6759  ]]
+1970 Cost:  4.2289743 
+Prediction:
+ [[153.63954 ] [185.07306 ] [182.09189 ] [199.36792 ] [140.30058 ]
+ [104.95979 ] [150.56866 ] [113.512726] [174.26875 ] [163.68057 ]]
+1980 Cost:  4.229003 
+Prediction:
+ [[153.63815 ] [185.07352 ] [182.09116 ] [199.36818 ] [140.30055 ]
+ [104.96169 ] [150.5699  ] [113.514984] [174.271   ] [163.68524 ]]
+1990 Cost:  4.229022 
+Prediction:
+ [[153.63675 ] [185.07394 ] [182.09041 ] [199.36845 ] [140.30052 ]
+ [104.96358 ] [150.5711  ] [113.517235] [174.27322 ] [163.68988 ]]
+2000 Cost:  4.229044 
+Prediction:
+ [[153.63535] [185.07439] [182.08965] [199.36871] [140.30048]
+ [104.96546] [150.5723 ] [113.51948] [174.2754 ] [163.69449]]
+
+/* Ask score */
+your score wil be  [[185.33531]]
+other scores will be  [[178.36246] [177.03687]]</code></pre>
+                    <br>
+                    <div class="line"></div>
+                    <p>[참조] shuffle_batch</p>
+<pre><code class="python"># min_after_dequeue defines how big a buffer we will ranomly sample
+#   from -- bigger means better shuffling but slower start up and more
+#   memory used.
+# capacity must be larger than min_after_dequeue and the amount larger
+#   determines the maximum we will prefetch.
+#   Recommendation : 
+#   min_after_dequeue + (num_threads + a small safety margin) * batch_size
+#   example code...
+
+min_after_dequeue = 10000
+capacity = min_after_dequeue + 3 * batch_size
+example_batch, label_betch = tf.train.shuffle_batch(
+    [example, label], batch_size=batch_size, capacity=capacity,
+    min_after_dequeue=min_after_dequeue)
+# [reference] <a href="https://www.tensorflow.org/api_docs/python/tf/train/shuffle_batch" target="_blank">https://www.tensorflow.org/api_docs/python/tf/train/shuffle_batch<a/
+</code></pre>
+                </div>
+                <!-- <div id="content2" hidden>helloworld!</div> -->
+                <!-- page navigation -->
+                <div class="footer">
+                    <ul class="pager">
+                        <li class="previous" id="prev_button" style="color:#00BFFF;"><a href="#">Previous</a></li>
+                        <li class="next" id="next_button" style="color:#00BFFF;"><a href="#">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- jQuery CDN -->
+        <script src="js/jquery-1.12.0.min.js"></script>
+        <!-- Bootstrap Js CDN -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+            var cnt = 0;
+            for(i=1;;i++){
+                var local_id = "#content"+i;
+                if($(local_id).length==0) break;
+                cnt++;
+            }
+            if(cnt<=1){
+                $("#prev_button").hide();
+                $("#next_button").hide();
+            }
+            var current = 1;
+            var local_id = "#content"+current;
+            $(local_id).show();
+            local_id+="_list";
+            $(local_id).addClass("selected");
+            $("#prev_button").click(function(){
+                if(current>1){
+                    local_id = "#content"+current;
+                    $(local_id).hide();
+                    local_id += "_list";
+                    $(local_id).removeClass("selected");
+                    current--;
+                    local_id = "#content"+current;
+                    $(local_id).show();
+                    local_id += "_list";
+                    $(local_id).addClass("selected");
+                }
+            });
+            $("#next_button").click(function(){
+                if(current<cnt){
+                    local_id = "#content"+current;
+                    $(local_id).hide();
+                    local_id += "_list";
+                    $(local_id).removeClass("selected");
+                    current++;
+                    local_id = "#content"+current;
+                    $(local_id).show();
+                    local_id += "_list";
+                    $(local_id).addClass("selected");
+                }
+            });
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
+    </body>
+</html>
