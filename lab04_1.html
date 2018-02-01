@@ -166,19 +166,62 @@ for step in range(2001):
     feed_dict={x1: x1_data, x2: x2_data, x3: x3_data, Y: y_data})
     if step % 10 == 0:
         print(step, "Cost: ", cost_val, "\nPrediction:\n", hy_val)</code></pre>
-                    <p>result</p>
-                    <img src="img/lab04_1.png" class="img-fluid" alt="Responsive image">
-                    <h4>...</h4>
-                    <img src="img/lab04_2.png" class="img-fluid" alt="Responsive image">
-                    <br>
+                    <br><p>결과 창</p>
+                    <pre><code class="md"># result
+0 Cost:  62547.3 
+Prediction:
+ [-75.963455 -78.27629  -83.83015  -90.80437  -56.976486]
+10 Cost:  14.468595 
+Prediction:
+ [145.26408 187.59541 178.152   194.48584 145.81136]
+20 Cost:  13.822476 
+Prediction:
+ [145.9478  188.39001 178.94908 195.3521  146.41212]
+30 Cost:  13.749173 
+Prediction:
+ [145.96422 188.38261 178.95592 195.35777 146.4012 ]
+40 Cost:  13.676283 
+Prediction:
+ [145.97855 188.37279 178.96031 195.36081 146.38843]
+50 Cost:  13.603777 
+Prediction:
+ [145.99286 188.36302 178.96472 195.36388 146.3757 ]
+60 Cost:  13.5316725 
+Prediction:
+ [146.00713 188.35326 178.96912 195.3669  146.36302]
+70 Cost:  13.459955 
+Prediction:
+ [146.02135 188.34352 178.97348 195.36992 146.35036]
+
+...
+
+1940 Cost:  5.0503902 
+Prediction:
+ [148.1074  186.91605 179.61594 195.80896 144.49889]
+1950 Cost:  5.024487 
+Prediction:
+ [148.11597 186.91019 179.61856 195.81073 144.4913 ]
+1960 Cost:  4.9987173 
+Prediction:
+ [148.12451 186.90434 179.6212  195.8125  144.48375]
+1970 Cost:  4.973094 
+Prediction:
+ [148.13303 186.89851 179.62383 195.81427 144.47621]
+1980 Cost:  4.9475794 
+Prediction:
+ [148.14154 186.8927  179.62646 195.81604 144.4687 ]
+1990 Cost:  4.9222364 
+Prediction:
+ [148.15001 186.8869  179.62907 195.81778 144.46121]
+2000 Cost:  4.897023 
+Prediction:
+ [148.15846 186.88113 179.63168 195.81953 144.45374]</code></pre>
                     <div class="line"></div>
                     <h2>Matrix</h2>
                     <p><img alt="(x_{1} \; x_{2}\; x_{3}) \begin{pmatrix} w_{1} \\w_{2}\\w_{3} \end{pmatrix}=(x_{1}w_{1}+x_{2}w_{2}+x_{3}w_{3})" src="https://latex.codecogs.com/gif.latex?%28x_%7B1%7D%20%5C%3B%20x_%7B2%7D%5C%3B%20x_%7B3%7D%29%20%5Cbegin%7Bpmatrix%7D%20w_%7B1%7D%20%5C%5Cw_%7B2%7D%5C%5Cw_%7B3%7D%20%5Cend%7Bpmatrix%7D%3D%28x_%7B1%7Dw_%7B1%7D&amp;plus;x_%7B2%7Dw_%7B2%7D&amp;plus;x_%7B3%7Dw_%7B3%7D%29"><br></p><br>
-                    <p><img alt="\LARGE H(x)=XW" src="https://latex.codecogs.com/gif.latex?%5CLARGE%20H%28x%29%3DXW"><br></p>
-                    
+                    <p><img alt="\LARGE H(x)=XW" src="https://latex.codecogs.com/gif.latex?%5CLARGE%20H%28x%29%3DXW"><br></p><br>
                     <p>multi_variable_matmul_linear_regression.py</p>
-                    <br>
-                                        <pre><code class="python"># Lab 4 Multi-variable linear regression
+                    <pre><code class="python"># Lab 4 Multi-variable linear regression
 import tensorflow as tf
 tf.set_random_seed(777)  # for reproducibility
 
@@ -223,10 +266,74 @@ for step in range(2001):
         [cost, hypothesis, train], feed_dict={X: x_data, Y: y_data})
     if step % 10 == 0:
         print(step, "Cost: ", cost_val, "\nPrediction:\n", hy_val)</code></pre>
-                    <p>result</p>
-                    <img src="img/lab04_3.png" class="img-fluid" alt="Responsive image">
-                    <h4>...</h4>
-                    <img src="img/lab04_4.png" class="img-fluid" alt="Responsive image">
+                    <br><p>결과 창</p>
+                    <pre><code class="md"># result
+0 Cost:  22655.951 
+Prediction:
+ [[22.048063]
+ [21.619772]
+ [24.096693]
+ [22.29302 ]
+ [18.633902]]
+10 Cost:  6.041774 
+Prediction:
+ [[155.17453]
+ [181.64262]
+ [181.76219]
+ [193.98836]
+ [140.69339]]
+20 Cost:  5.813161 
+Prediction:
+ [[155.5695 ]
+ [182.13208]
+ [182.23674]
+ [194.50673]
+ [141.06908]]
+30 Cost:  5.7920403 
+Prediction:
+ [[155.56291]
+ [182.13885]
+ [182.23573]
+ [194.50717]
+ [141.0766 ]]
+
+...
+
+1960 Cost:  3.2102711 
+Prediction:
+ [[154.37814]
+ [182.93849]
+ [181.85661]
+ [194.35728]
+ [142.02115]]
+1970 Cost:  3.2023563 
+Prediction:
+ [[154.3734 ]
+ [182.94167]
+ [181.85507]
+ [194.3568 ]
+ [142.0248 ]]
+1980 Cost:  3.1945186 
+Prediction:
+ [[154.3687 ]
+ [182.94484]
+ [181.85358]
+ [194.35634]
+ [142.02843]]
+1990 Cost:  3.1866727 
+Prediction:
+ [[154.36398]
+ [182.948  ]
+ [181.85202]
+ [194.35585]
+ [142.03204]]
+2000 Cost:  3.178887 
+Prediction:
+ [[154.3593 ]
+ [182.95117]
+ [181.85052]
+ [194.3554 ]
+ [142.03566]]</code></pre>
                 </div>
                 <!-- <div id="content2" hidden>helloworld!</div> -->
                 <!-- page navigation -->

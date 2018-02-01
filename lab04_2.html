@@ -238,7 +238,7 @@ Prediction:
  Other scores will be  [[145.86269] [187.2313 ]]
 </code></pre>
 
-                    <p>[참조] Slicing</p>
+                    <p id="slicing_ref">[참조] Slicing</p>
 
                     <img src="img/lab04_6.png" class="img-fluid" alt="Responsive image">
                     <div class="line"></div>
@@ -345,8 +345,9 @@ print("Your score will be ",
 print("Other scores will be ",
       sess.run(hypothesis, feed_dict={X: [[60, 70, 110], [90, 100, 80]]}))
 </code></pre>
-<p>result</p>
-<pre><code class="c">0 Cost:  7070.982 
+<br><p>결과 창</p>
+<pre><code class="md"># result
+0 Cost:  7070.982 
 Prediction:
  [[235.22786] [282.40146] [278.39618] [303.9158 ] [214.62396]
  [159.15427] [228.5351 ] [170.92645] [264.6505 ] [246.59117]]
@@ -400,7 +401,7 @@ other scores will be  [[178.36246] [177.03687]]</code></pre>
                     <br>
                     <div class="line"></div>
                     <p>[참조] shuffle_batch</p>
-<pre><code class="python"># min_after_dequeue defines how big a buffer we will ranomly sample
+                    <pre><code class="python"># min_after_dequeue defines how big a buffer we will ranomly sample
 #   from -- bigger means better shuffling but slower start up and more
 #   memory used.
 # capacity must be larger than min_after_dequeue and the amount larger
@@ -413,9 +414,8 @@ min_after_dequeue = 10000
 capacity = min_after_dequeue + 3 * batch_size
 example_batch, label_betch = tf.train.shuffle_batch(
     [example, label], batch_size=batch_size, capacity=capacity,
-    min_after_dequeue=min_after_dequeue)
-# [reference] <a href="https://www.tensorflow.org/api_docs/python/tf/train/shuffle_batch" target="_blank">https://www.tensorflow.org/api_docs/python/tf/train/shuffle_batch<a/
-</code></pre>
+    min_after_dequeue=min_after_dequeue)</code></pre>
+                    <p>&nbsp;<a href="https://www.tensorflow.org/api_docs/python/tf/train/shuffle_batch" target="_blank" style="color: skyblue;" data-toggle="tooltip" title="https://www.tensorflow.org/api_docs/python/tf/train/shuffle_batch">[참조] TensorFlow API - shuffle_batch</a></p>
                 </div>
                 <!-- <div id="content2" hidden>helloworld!</div> -->
                 <!-- page navigation -->
