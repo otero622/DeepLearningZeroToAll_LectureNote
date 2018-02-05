@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>lecture note</title>
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/vs2015.min.css">
+        <script src="js/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3 class="korean">김성훈 교수님</h3>
+                    <a href="https://www.inflearn.com/course/%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%EB%94%A5%EB%9F%AC%EB%8B%9D-%EA%B0%95%EC%A2%8C/" target="_blank" data-toggle="tooltip" title="강의 보러 가기 click me"><h5 class="korean">모두를 위한 머신러닝/딥러닝</h5></a>
+                </div>
+                <ul class="list-unstyled components">
+                    <p class="korean">INDEX</p>
+                    <li>
+                        <a href="index.html">Intro</a>
+                    </li>
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Lect</a>
+                        <ul class="korean collapse list-unstyled" id="homeSubmenu">
+                            <li><a href="lect01.html">Lect01. 머신러닝의 개념과 용어</a></li>
+                            <li><a href="lect02.html">Lect02. Linear Regression의 개념</a></li>
+                            <li><a href="lect03.html">Lect03. Linear Regression cost 함수 최소화</a></li>
+                            <li><a href="lect04.html">Lect04. 여러개의 입력(feature)의 Linear Regression</a></li>
+                            <li><a href="lect05.html">Lect05. Logistic Classification (Regression)</a></li>
+                            <li class="active"><a href="lect06.html">Lect06. Softmax Regression (Multinomial Logistic Regression)</a></li>
+                            <li><a href="lect07.html">Lect07. ML의 실용과 몇 가지 팁</a></li>
+                            <li><a href="lect08.html">Lect08. 딥러닝의 기본 개념과 문제, 그리고 해결</a></li>
+                            <li><a href="lect09.html">Lect09. Neural Network 1 : XOR 문제와 학습방법, Backpropagation</a></li>
+                            <li><a href="lect10.html">Lect10. Neural Network 2 : ReLU and 초기 값 정하기 (2006/2007 breakthrough)</a></li>
+                            <li><a href="lect11.html">Lect11. Convolutional Neural Networks (a.k.a CNN)</a></li>
+                            <li><a href="lect12.html">Lect12. Recurrent Neural Network (a.k.a RNN)</a></li>
+                            <li><a href="lect13.html">Lect13. Deep Deep Network AWD에서 GPU와 돌려보기 (powered by AWS)</a></li>
+                            <li><a href="lect14.html">Lect14. AWS에서 저렴하게 Spot Instance를 터미네이션 걱정 없이 사용하기</a></li>
+                            <li><a href="lect15.html">Lect15. Google Cloud ML을 이용해 TensorFlow 실행하기</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">TF example</a>
+                        <ul class="korean collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="lab01.html">Lab 01. TensorFlow의 설치 및 기본적인 operations</a></li>
+                            <li><a href="lab02.html">Lab 02. Tensorflow로 간단한 linear regression을 구현</a></li>
+                            <li><a href="lab03.html">Lab 03. Linear Regression의 cost 최소화의 TensorFlow 구현</a></li>
+                            <li><a href="lab04_1.html">Lab 04_1. Multi-variable Linear Regression을 TensorFlow에서 구현하기</a></li>
+                            <li><a href="lab04_2.html">Lab 04_2. TensorFlow로 파일에서 데이타 읽어오기</a></li>
+                            <li><a href="lab05.html">Lab 05. TensorFlow로 Logistic Classification 구현하기</a></li>
+                            <li><a href="lab06_1.html">Lab 06_1. TensorFlow로 SoftmaxClassification 구현하기</a></li>
+                            <li><a href="lab06_2.html">Lab 06_2. TensorFlow로 Fancy Softmax Classification 구현하기</a></li>
+                            <li><a href="lab07_1.html">Lab 07_1. training/test dataset, learning rate, normalization</a></li>
+                            <li><a href="lab07_2.html">Lab 07_2. Meet MNIST Dataset</a></li>
+                            <li><a href="lab08.html">Lab 08. Tensor Manipulation</a></li>
+                            <li><a href="lab09_1.html">Lab 09_1. XOR을 위한 TensorFlow Deep Network</a></li>
+                            <li><a href="lab09_2.html">Lab 09_2. Tensor Board로 Deep Network 들여다 보기</a></li>
+                            <li><a href="lab10.html">Lab 10. 딥러닝으로 MNIST 98%이상 해보기</a></li>
+                            <li><a href="lab11_1.html">Lab 11_1. TensorFlow의 CNN 기본</a></li>
+                            <li><a href="lab11_2.html">Lab 11_2. TensorFlow로 구현하는 MNIST 99%</a></li>
+                            <li><a href="lab11_3.html">Lab 11_3. Class, tf.layers, Ensemble (MNIST 99.5%)</a></li>
+                            <li><a href="lab12_1.html">Lab 12_1. RNN - Basic</a></li>
+                            <li><a href="lab12_2.html">Lab 12_2. RNN - Hi Hello Training</a></li>
+                            <li><a href="lab12_3.html">Lab 12_3. Long Sequence RNN</a></li>
+                            <li><a href="lab12_4.html">Lab 12_4. Stacked RNN + Softmax Layer</a></li>
+                            <li><a href="lab12_5.html">Lab 12_5. Dynamic RNN</a></li>
+                            <li><a href="lab12_6.html">Lab 12_6. RNN with Time Series Data</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                <ul class="list-unstyled CTAs">
+                    <li><a href="https://github.com/hunkim/DeepLearningZeroToAll/archive/master.zip" class="download">Download source</a></li>
+                    <br>
+                    <p class="korean">만든이에게</p>
+                    <li>
+                        <a href="https://www.facebook.com/yoonbaeJeon" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; 페이스북 연락하기</a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/u/0/103969879362546932609" target="_blank"><i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>&nbsp; 구글plus 연락하기</a>
+                    </li>
+                    <p>reference</p>
+                    <li>
+                        <a href="https://www.facebook.com/groups/TensorFlowKR/?fref=nf" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow KR 페이스북</a>
+                    </li>
+                    <li>
+                        <a href="https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/api_docs/" target="_blank"><i class="fa fa-book fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow API doc(KR)</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Page Content Holder -->
+            <div id="content">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="glyphicon glyphicon-align-left"></i>
+                            <span class="korean">사이드바 접기/펼치기</span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li id="content1_list" class="selected"><a>Multinomial 개념 소개</a></li>
+                                <li id="content2_list"><a>Cost 함수 소개</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- content1 always all content start from index 1 -->
+                <div id="content1" hidden>
+                    <h2>Logistic regression</h2><br>
+                    <p><img alt="{\color{DarkGreen} H_{L}(x)=Wx}" src="https://latex.codecogs.com/gif.latex?%7B%5Ccolor%7BDarkGreen%7D%20H_%7BL%7D%28x%29%3DWx%7D"><br></p>
+                    <p><img alt="{\color{DarkGreen} z=H_{L}(x)}" src="https://latex.codecogs.com/gif.latex?%7B%5Ccolor%7BDarkGreen%7D%20z%3DH_%7BL%7D%28x%29%7D"><br></p>
+                    <p><img alt="{\color{Magenta} g(z)=\frac{1}{1+e^{-z}}}" src="https://latex.codecogs.com/gif.latex?%7B%5Ccolor%7BMagenta%7D%20g%28z%29%3D%5Cfrac%7B1%7D%7B1&amp;plus;e%5E%7B-z%7D%7D%7D"><br></p>
+                    <img src="img/lect06_1.png" class="img-responsive" alt="Responsive image">
+
+                    <div class="line"></div>
+
+                    <h2>Multinomial Classification<br><small><em>각각의 독립된 classifier</em></small></h2><br>
+                    <img src="img/lect06_2.png" class="img-responsive" alt="Responsive image">
+                    <br>
+                    <img src="img/lect06_4.png" class="img-responsive" alt="Responsive image"><br>
+                    <p><img alt="{\color{DarkGreen} \begin{bmatrix} w_{A1} &amp; w_{A2} &amp; w_{A3}\\ w_{B1} &amp; w_{B2} &amp; w_{B3}\\ w_{C1} &amp; w_{C2} &amp; w_{C3} \end{bmatrix}}{\color{Magenta} \begin{bmatrix} x_{1}\\ x_{2}\\ x_{3} \end{bmatrix}}=\begin{bmatrix} w_{A1}x_{1} &amp; w_{A2}x_2 &amp; w_{A3}x_3\\ w_{B1}x_1 &amp; w_{B2}x_2 &amp; w_{B3}x_3\\ w_{C1}x_1 &amp; w_{C2}x_2 &amp; w_{C3}x_3 \end{bmatrix}= \begin{bmatrix} \bar{y}_A \\ \bar{y}_B \\ \bar{y}_C \end{bmatrix}" src="https://latex.codecogs.com/gif.latex?%7B%5Ccolor%7BDarkGreen%7D%20%5Cbegin%7Bbmatrix%7D%20w_%7BA1%7D%20%26%20w_%7BA2%7D%20%26%20w_%7BA3%7D%5C%5C%20w_%7BB1%7D%20%26%20w_%7BB2%7D%20%26%20w_%7BB3%7D%5C%5C%20w_%7BC1%7D%20%26%20w_%7BC2%7D%20%26%20w_%7BC3%7D%20%5Cend%7Bbmatrix%7D%7D%7B%5Ccolor%7BMagenta%7D%20%5Cbegin%7Bbmatrix%7D%20x_%7B1%7D%5C%5C%20x_%7B2%7D%5C%5C%20x_%7B3%7D%20%5Cend%7Bbmatrix%7D%7D%3D%5Cbegin%7Bbmatrix%7D%20w_%7BA1%7Dx_%7B1%7D%20%26%20w_%7BA2%7Dx_2%20%26%20w_%7BA3%7Dx_3%5C%5C%20w_%7BB1%7Dx_1%20%26%20w_%7BB2%7Dx_2%20%26%20w_%7BB3%7Dx_3%5C%5C%20w_%7BC1%7Dx_1%20%26%20w_%7BC2%7Dx_2%20%26%20w_%7BC3%7Dx_3%20%5Cend%7Bbmatrix%7D%3D%20%5Cbegin%7Bbmatrix%7D%20%5Cbar%7By%7D_A%20%5C%5C%20%5Cbar%7By%7D_B%20%5C%5C%20%5Cbar%7By%7D_C%20%5Cend%7Bbmatrix%7D"><br></p>
+                    
+                </div>
+                
+                <div id="content2" hidden>
+                    <h2>sigmoid?</h2><br>
+                    <p>Logistic Classifier를 통과한 후 계산 된 Y값에 대하여 분류 개수(예제에서는 3개)에 따라 Y값이 나뉜다.</p>
+                    <img src="img/lect06_5.png" class="img-responsive" alt="Responsive image">
+                    <p>&nbsp;&nbsp;&nbsp;총 합은 1&nbsp;:&nbsp;<img alt="\sum {\color{DarkBlue} P}\;=\;{\color{DarkBlue} 1}" src="https://latex.codecogs.com/gif.latex?%5Csum%20%7B%5Ccolor%7BDarkBlue%7D%20P%7D%5C%3B%3D%5C%3B%7B%5Ccolor%7BDarkBlue%7D%201%7D"><br></p>
+                    <p>&nbsp;&nbsp;&nbsp;각각의 p를 확률로 볼 수 있다.</p>
+
+                    <img src="img/lect06_6.png" class="img-responsive" alt="Responsive image">
+
+                    <div class="line"></div>
+
+                    <h2> Cost function<br><small>CROSS-ENTROPY</small></h2><br>
+
+                    <img src="img/lect06_7.png" class="img-responsive" alt="Responsive image"><br>
+
+                    <p>Cross-entropy cost function</p>
+                    <p><img alt="-\sum_{i}{\color{Cyan} L_{i}}log({\color{Orange} \bar{Y}_{i}})" src="https://latex.codecogs.com/gif.latex?-%5Csum_%7Bi%7D%7B%5Ccolor%7BCyan%7D%20L_%7Bi%7D%7Dlog%28%7B%5Ccolor%7BOrange%7D%20%5Cbar%7BY%7D_%7Bi%7D%7D%29">&nbsp;에서&nbsp;<img alt="-log({\color{Orange} \bar{Y}_{i}})" src="https://latex.codecogs.com/gif.latex?-log%28%7B%5Ccolor%7BOrange%7D%20%5Cbar%7BY%7D_%7Bi%7D%7D%29">&nbsp;를 plot해보면,<br></p>
+                    <img src="img/lect06_8.png" class="img-responsive" alt="Responsive image">
+                    <p>1에 가까워 질 수록 0에 가깝고, 0에 가까울 수록 무한대의 값을 나타낸다.<br>예측 값이 틀리게 되면 cost값이 매우 커지게 된다.</p>
+                    <h3>example</h3>
+                    <img src="img/lect06_9.png" class="img-responsive" alt="Responsive image">
+                    <p>실제 값 B에 대한 예, 예측이 맞을 경우 cost = 0 틀릴 경우 cost = &infin;</p><br>
+
+                    <img src="img/lect06_10.png" class="img-responsive" alt="Responsive image">
+                    <p>실제 값 A에 대한 예, 예측이 맞을 경우 cost = 0 틀릴 경우 cost = &infin;</p>
+
+                    <div class="line"></div>
+
+                    <h2>Logistic cost vs Cross entropy</h2><br>
+                    <p>교수님께서 결국 Logistic cost 함수와 cross entropy가 같다고 하셨다.</p>
+                    <p><img alt="C:(H(x),y)=-ylog(H(x))-(1-y)log(1-H(x))" src="https://latex.codecogs.com/gif.latex?C%3A%28H%28x%29%2Cy%29%3D-ylog%28H%28x%29%29-%281-y%29log%281-H%28x%29%29"><br><em>Logistic cost function</em></p><br>
+                    <p><img alt="D(S,L)=-\sum_{i}L_{i}log(S_{i})\;\;(S=H(x),\;L=y\;in\;\;C)" src="https://latex.codecogs.com/gif.latex?D%28S%2CL%29%3D-%5Csum_%7Bi%7DL_%7Bi%7Dlog%28S_%7Bi%7D%29%5C%3B%5C%3B%28S%3DH%28x%29%2C%5C%3BL%3Dy%5C%3Bin%5C%3B%5C%3BC%29"><br><em>Cross entropy</em></p><br><br>
+                    <p>logistic cost function에서 <em>y = 0 or 1</em>&nbsp;값을 가지게 된다.<br>이때 <em>y = 0</em>&nbsp;의 경우를 one-hot encoding 벡터로 바꿔보면,&nbsp;<img alt="y=0\rightarrow \begin{bmatrix} 0\\1\end{bmatrix}" src="https://latex.codecogs.com/gif.latex?y%3D0%5Crightarrow%20%5Cbegin%7Bbmatrix%7D%200%5C%5C1%5Cend%7Bbmatrix%7D"><br><em>y = 1</em>&nbsp;의 경우는,&nbsp;<img alt="y=1\rightarrow \begin{bmatrix} 1\\0\end{bmatrix}" src="https://latex.codecogs.com/gif.latex?y%3D1%5Crightarrow%20%5Cbegin%7Bbmatrix%7D%201%5C%5C0%5Cend%7Bbmatrix%7D">&nbsp;와 같다.<br>
+                    이 때 <em>y = L, H(x) = S</em>&nbsp;이므로 <em>y = 0, 1</em>&nbsp;각각의 경우에 실 대입하여 적용 시켜 보면,<br><br>
+                    <img alt="y=0\rightarrow L:\begin{bmatrix} 1\\0\end{bmatrix},S=1-H(x):\begin{bmatrix} 1\\0\end{bmatrix} \\ \\ \sum _{i}(\begin{bmatrix} 1\\0\end{bmatrix}*-log(\begin{bmatrix} 1\\0\end{bmatrix}))=0" src="https://latex.codecogs.com/gif.latex?y%3D0%5Crightarrow%20L%3A%5Cbegin%7Bbmatrix%7D%201%5C%5C0%5Cend%7Bbmatrix%7D%2CS%3D1-H%28x%29%3A%5Cbegin%7Bbmatrix%7D%201%5C%5C0%5Cend%7Bbmatrix%7D%20%5C%5C%20%5C%5C%20-%5Csum%20_%7Bi%7D%28%5Cbegin%7Bbmatrix%7D%201%5C%5C0%5Cend%7Bbmatrix%7D*-log%28%5Cbegin%7Bbmatrix%7D%201%5C%5C0%5Cend%7Bbmatrix%7D%29%29%3D0"><br><br>
+                    <img alt="y=1\rightarrow L:\begin{bmatrix} 0\\1\end{bmatrix},S=H(x):\begin{bmatrix} 0\\1\end{bmatrix} \\ \\ -\sum _{i}(\begin{bmatrix} 0\\1\end{bmatrix}*-log(\begin{bmatrix} 0\\1\end{bmatrix}))=0" src="https://latex.codecogs.com/gif.latex?y%3D1%5Crightarrow%20L%3A%5Cbegin%7Bbmatrix%7D%200%5C%5C1%5Cend%7Bbmatrix%7D%2CS%3DH%28x%29%3A%5Cbegin%7Bbmatrix%7D%200%5C%5C1%5Cend%7Bbmatrix%7D%20%5C%5C%20%5C%5C%20-%5Csum%20_%7Bi%7D%28%5Cbegin%7Bbmatrix%7D%200%5C%5C1%5Cend%7Bbmatrix%7D*-log%28%5Cbegin%7Bbmatrix%7D%200%5C%5C1%5Cend%7Bbmatrix%7D%29%29%3D0"><br><br>
+                    같음을 알 수 있다.</p>
+                    <div class="line"></div>
+                    <h2>Total Cost(Loss) function</h2><br>
+                    <p><img alt="\L ={\color{Red}\frac{1}{N}}{\color{DarkGreen}\sum_{\color{Red}i}}D({\color{Orange} S(W}X_{{\color{Red} i}}{\color{DarkGreen} +}{\color{Orange}b)},L_{\color{Red}i})" src="https://latex.codecogs.com/gif.latex?%5CL%20%3D%7B%5Ccolor%7BRed%7D%5Cfrac%7B1%7D%7BN%7D%7D%7B%5Ccolor%7BDarkGreen%7D%5Csum_%7B%5Ccolor%7BRed%7Di%7D%7DD%28%7B%5Ccolor%7BOrange%7D%20S%28W%7DX_%7B%7B%5Ccolor%7BRed%7D%20i%7D%7D%7B%5Ccolor%7BDarkGreen%7D%20&amp;plus;%7D%7B%5Ccolor%7BOrange%7Db%29%7D%2CL_%7B%5Ccolor%7BRed%7Di%7D%29"><br></p><br>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;explanation<img src="img/lect06_11.png" class="img-responsive" alt="Responsive image"></p>
+                    <div class="line"></div>
+                    <h2>Gradient Descent</h2><br>
+                    <p>이전에 배운 Logistic Regression의 Gradient Descent와 마찬가지로 밥그릇 모양의 곡선으로, 시작점에 관계 없이 항상 Minimized cost로 도달할 수 있다.</p>
+                </div>
+
+                <div class="footer">
+                    <ul class="pager">
+                        <li class="previous" id="prev_button" style="color:#00BFFF;"><a href="#">Previous</a></li>
+                        <li class="next" id="next_button" style="color:#00BFFF;"><a href="#">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- jQuery CDN -->
+        <script src="js/jquery-1.12.0.min.js"></script>
+        <!-- Bootstrap Js CDN -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        
+        <script type="text/javascript">
+        $(document).ready(function () {
+        $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+        });
+        $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+        var cnt = 0;
+        for(i=1;;i++){
+        var local_id = "#content"+i;
+        if($(local_id).length==0) break;
+        cnt++;
+        }
+        if(cnt<=1){
+        $("#prev_button").hide();
+        $("#next_button").hide();
+        }
+        var current = 1;
+        var local_id = "#content"+current;
+        $(local_id).show();
+        local_id+="_list";
+        $(local_id).addClass("selected");
+        $("#prev_button").click(function(){
+        if(current>1){
+        local_id = "#content"+current;
+        $(local_id).hide();
+        local_id += "_list";
+        $(local_id).removeClass("selected");
+        current--;
+        local_id = "#content"+current;
+        $(local_id).show();
+        local_id += "_list";
+        $(local_id).addClass("selected");
+        }
+        });
+        $("#next_button").click(function(){
+        if(current<cnt){
+        local_id = "#content"+current;
+        $(local_id).hide();
+        local_id += "_list";
+        $(local_id).removeClass("selected");
+        current++;
+        local_id = "#content"+current;
+        $(local_id).show();
+        local_id += "_list";
+        $(local_id).addClass("selected");
+        }
+        });
+        $(".recap_question").hover(function(){
+            $(this).css("color","red");
+            $(this).find(".recap_answer").show();
+            }, function(){
+            $(this).css("color","black");
+            $(this).find(".recap_answer").hide();
+        }); 
+        $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
+    </body>
+</html>

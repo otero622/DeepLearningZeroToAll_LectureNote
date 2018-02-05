@@ -57,9 +57,9 @@
                             <li><a href="lab03.html">Lab 03. Linear Regression의 cost 최소화의 TensorFlow 구현</a></li>
                             <li><a href="lab04_1.html">Lab 04_1. Multi-variable Linear Regression을 TensorFlow에서 구현하기</a></li>
                             <li><a href="lab04_2.html">Lab 04_2. TensorFlow로 파일에서 데이타 읽어오기</a></li>
-                            <li class="active"><a href="lab05.html">Lab 05. TensorFlow로 Logistic Classification 구현하기</a></li>
+                            <li><a href="lab05.html">Lab 05. TensorFlow로 Logistic Classification 구현하기</a></li>
                             <li><a href="lab06_1.html">Lab 06_1. TensorFlow로 SoftmaxClassification 구현하기</a></li>
-                            <li><a href="lab06_2.html">Lab 06_2. TensorFlow로 Fancy Softmax Classification 구현하기</a></li>
+                            <li class="active"><a href="lab06_2.html">Lab 06_2. TensorFlow로 Fancy Softmax Classification 구현하기</a></li>
                             <li><a href="lab07_1.html">Lab 07_1. training/test dataset, learning rate, normalization</a></li>
                             <li><a href="lab07_2.html">Lab 07_2. Meet MNIST Dataset</a></li>
                             <li><a href="lab08.html">Lab 08. Tensor Manipulation</a></li>
@@ -110,213 +110,142 @@
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
-                                <li id="content1_list" class="selected"><a>TensorFlow로 Logistic Classification 구현하기</a></li>
+                                <li id="content1_list" class="selected"><a>TensorFlow로 Fancy Softmax Classification 구현하기</a></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
                 <!-- content1 always all content start from index 1 -->
                 <div id="content1" hidden>
-                    <h2>Logistic Regression</h2><br>
-                    <p>코딩에 앞서 개념 다지기</p><br>
-                    <p><img alt="H(x)=\frac{1}{1+e^{-W^{T}X}}" src="https://latex.codecogs.com/gif.latex?H%28x%29%3D%5Cfrac%7B1%7D%7B1&amp;plus;e%5E%7B-W%5E%7BT%7DX%7D%7D">&nbsp;&nbsp;&nbsp;1. Sigmoid function<br></p><br>
-                    <p>&nbsp;<img alt="cost(W)=-\frac{1}{m}\sum ylog(H(x))+(1-y)log(1-H(x))" src="https://latex.codecogs.com/gif.latex?cost%28W%29%3D-%5Cfrac%7B1%7D%7Bm%7D%5Csum%20ylog%28H%28x%29%29&amp;plus;%281-y%29log%281-H%28x%29%29">&nbsp;&nbsp;&nbsp;2. cost function for logistic regression<br></p><br>
-                    <p>&nbsp;<img alt="W:=W-\alpha \frac{\partial }{\partial W}cost(W)" src="https://latex.codecogs.com/gif.latex?W%3A%3DW-%5Calpha%20%5Cfrac%7B%5Cpartial%20%7D%7B%5Cpartial%20W%7Dcost%28W%29">&nbsp;&nbsp;3. cost function의 미분<br></p>
+                    <h2>Softmax_cross_entropy_with_logits</h2><br>
+                    <h4 style="font-family: consolas;">&nbsp;&nbsp;logits = tf.matmul(X, W) + b</h4>
+                    <h4 style="font-family: consolas;">&nbsp;&nbsp;hypothesis = tf.nn.softmax(logits)</h4><br>
+                    <p>In TensorFlow</p>
+                    <pre><code class="python"># Cross entropy cost/loss --- (1)
+cost = tf.reduce_mean(-tf.reduce_sum(Y * tf.log(hypothesis), axis = 1))
+
+# Cross entropy cost/loss --- (2)
+cost_i = tf.nn.softmax_cross_entropy_with_logits(logits = logits, labels = Y_one_hot)
+cost = tf.reduce_mean(cost_i)
+# important! 1번이나 2번이나 cost의 결과 값은 같다.</code></pre><br>
+                    <img src="img/lab06_3.png" class="img-responsive">
                     <div class="line"></div>
-                    <h2>Training Data</h2><br>
-                    <p>Training에 앞서 어떤 형식의 training data를 사용할 것인지 살펴보기</p>
-<pre><code class="python"># Training data set
-x_data = [[1, 2], [2, 3], [3, 1], [4, 3], [5, 3], [6, 2]]
-y_data = [[0], [0], [0], [1], [1], [1]]     # y값은 항상 0 또는 1
 
-# placeholders for a tensor that will be always fed.
-X = tf.placeholder(tf.float32, shape=[None, 2])
-Y = tf.placeholder(tf.float32, shape=[None, 1])</code></pre><br>
-                    <p>( full code ) logistic_regression.py</p>
-    <pre><code class="python"># Lab 5 Logistic Regression Classifier
-import tensorflow as tf
-tf.set_random_seed(777)  # for reproducibility
-
-x_data = [[1, 2], [2, 3], [3, 1], [4, 3], [5, 3], [6, 2]]
-y_data = [[0], [0], [0], [1], [1], [1]]
-
-# placeholders for a tensor that will be always fed.
-X = tf.placeholder(tf.float32, shape=[None, 2])
-Y = tf.placeholder(tf.float32, shape=[None, 1])
-
-W = tf.Variable(tf.random_normal([2, 1]), name='weight')
-b = tf.Variable(tf.random_normal([1]), name='bias')
-# W = tf.random_normal()에서 앞의 2는 들어오는 X feature의 개수,
-# 뒤의 1는 나가는 Y feature의 개수
-# b(bias)는 항상 나가는 값(=Y)의 개수에 맞춰야한다.
-
-# Hypothesis using sigmoid: tf.div(1., 1. + tf.exp(tf.matmul(X, W))) 1번식 적용
-hypothesis = tf.sigmoid(tf.matmul(X, W) + b)
-# 위의 각주대로 수식 그대로 직접 구현해도 무관
-
-# cost/loss function 2번식 적용
-cost = -tf.reduce_mean(Y * tf.log(hypothesis) + (1 - Y) *
-                       tf.log(1 - hypothesis))
-
-# 3번식 적용
-train = tf.train.GradientDescentOptimizer(learning_rate=0.01).minimize(cost)
-
-# Accuracy computation
-# True if hypothesis>0.5 else False ---> 0.5를 threshold로 쓰겠다는 뜻
-predicted = tf.cast(hypothesis > 0.5, dtype=tf.float32)
-# float32 type을 0 / 1 casting
-accuracy = tf.reduce_mean(tf.cast(tf.equal(predicted, Y), dtype=tf.float32))
-
-# Launch graph
-with tf.Session() as sess:
-    # Initialize TensorFlow variables
-    sess.run(tf.global_variables_initializer())
-
-    for step in range(10001):
-        cost_val, _ = sess.run([cost, train], feed_dict={X: x_data, Y: y_data})
-        if step % 200 == 0:
-            print(step, cost_val)
-
-    # Accuracy report
-    h, c, a = sess.run([hypothesis, predicted, accuracy],
-                       feed_dict={X: x_data, Y: y_data})
-    print("\nHypothesis: ", h, "\nCorrect (Y): ", c, "\nAccuracy: ", a)</code></pre>
+                    <h2>Animal classification<br><small>with <em>softmax_cross_entropy_with_logits</em></small></h2><br>
+                    <p class="text-success">data-04-zoo.csv</p>
+                    <img src="img/lab06_4.png" class="img-responsive"><br><br>
+                    <pre><code class="python"># Predicting animal type based on various features
+xy = np.loadtxt('data-04-zoo.csv', delimiter=',', dtype=np.float32)
+x_data = xy[:, 0:-1]
+y_data = xy[:, [-1]] # 마지막 행은 종 분류</code></pre>
+                    
                     <div class="line"></div>
-                    <h2>Train the model <small>(학습 모델 구체화 단계)</small></h2><br>
-                    <pre><code class="python"># Launch graph
-with tf.Session() as sess:
-    # Initialize TensorFlow variables
-    sess.run(tf.global_variables_initializer())
 
-    for step in range(10001):
-        cost_val, _ = sess.run([cost, train], feed_dict={X: x_data, Y: y_data})
-        # _ 변수는 train관련 정보가 담기는데 현재 우리에겐 관심사항 X
-        if step % 200 == 0:
-            print(step, cost_val)
-
-    # Accuracy report
-    h, c, a = sess.run([hypothesis, predicted, accuracy],
-                       feed_dict={X: x_data, Y: y_data})
-    print("\nHypothesis: ", h, "\nCorrect (Y): ", c, "\nAccuracy: ", a)</code></pre>
-                    <br><p>결과 창</p>
-                    <pre><code class="md"># result
-0 1.7307831
-200 0.5715118
-400 0.5074139
-600 0.4718242
-800 0.44758487
-...
-9000 0.16165249
-9200 0.15906553
-9400 0.1565599
-9600 0.15413196
-9800 0.15177834
-10000 0.1494956
-
-Hypothesis:  [[0.03074028]
- [0.15884677]
- [0.30486736]
- [0.7813819 ]
- [0.93957496]
- [0.9801688 ]] 
-Correct (Y):  [[0.]
- [0.]
- [0.]
- [1.]
- [1.]
- [1.]] 
-Accuracy:  1.0</code></pre>
+                    <h2>tf.one_hot and reshape</h2><br>
+                    <img src="img/lab06_5.png" class="img-responsive"><br>
+                    <h4 style="font-family: Courier New;">Y=tf.placeholder(tf.int32, [None, 1]) <small><em># 0~6, shape = (?, 1)</em></small><br>Y_one_hot=tf.one_hot(Y, nb_classes) <small><em># one hot shape = (?, 1, 7)</em></small><br>Y_one_hot=tf.reshape(Y_one_hot, [-1, nb_classes]) <small><em># shape = (?, 7)</em></small></h4><br>
+                    <p>one-hot encoding을 위한 Y라는 int형 [?, 1]의 1차원 placeholder생성하여<br> tf.one_hot으로 넘겨주면 한 차원을 더 wrapping한 [?, 1, nb_classes]꼴로 return 됨<br>때문에 reshape로 한 차원 더해진 wrapper를 변형해 주어야 한다.</p>
+                    <a href="https://www.tensorflow.org/api_docs/python/tf/one_hot" target="_blank" style="color: skyblue;">https://www.tensorflow.org/api_docs/python/tf/one_hot</a><br>
                     <div class="line"></div>
-                    <h2>Classifying diabets <small>당뇨병 진단 예제</small></h2><br>
-                    <p class="text-success">data-03-diabetes.csv</p>
-                    <img src="img/lab05_4.png" class="img-responsive" alt="Responsive image">
-                    <p>[결과] : 마지막 열(column) 당뇨병으로 진단됨 = 1 </p><br>
-                    <p>코드에 앞서 input data 분석</p>
-                    <pre><code class="python">xy = np.loadtxt('data-03-diabetes.csv', delimmiter=',', dtype=np.float32)
-x_data = xy[:, 0:-1]    # 모든 column 에서 index 0부터 마지막index - 1 까지의 값
-y_data = xy[:, [-1]]    # 모든 column 에서 마지막index 값
-# np array형의 slicing을 까먹었다면 <a href="lab04_2.html#slicing_ref"><u>이곳을 클릭</u></a></code></pre><br>
-                    <p>logistic_regression_diabets.py</p>
-                    <pre><code class="python"># Lab 5 Logistic Regression Classifier
+                    <p>softmax_zoo_classifier.py</p>
+                    <pre><code class="python"># Lab 6 Softmax Classifier
 import tensorflow as tf
 import numpy as np
 tf.set_random_seed(777)  # for reproducibility
 
-xy = np.loadtxt('data-03-diabetes.csv', delimiter=',', dtype=np.float32)
+# Predicting animal type based on various features
+xy = np.loadtxt('data-04-zoo.csv', delimiter=',', dtype=np.float32)
 x_data = xy[:, 0:-1]
 y_data = xy[:, [-1]]
 
 print(x_data.shape, y_data.shape)
 
-# placeholders for a tensor that will be always fed.
-X = tf.placeholder(tf.float32, shape=[None, 8])
-Y = tf.placeholder(tf.float32, shape=[None, 1])
+nb_classes = 7  # 0 ~ 6
 
-W = tf.Variable(tf.random_normal([8, 1]), name='weight')
-b = tf.Variable(tf.random_normal([1]), name='bias')
+X = tf.placeholder(tf.float32, [None, 16])
+Y = tf.placeholder(tf.int32, [None, 1])  # 0 ~ 6
 
-# Hypothesis using sigmoid: tf.div(1., 1. + tf.exp(tf.matmul(X, W)))
-hypothesis = tf.sigmoid(tf.matmul(X, W) + b)
+Y_one_hot = <strong>tf.one_hot(Y, nb_classes)</strong>  # one hot
+print("one_hot", Y_one_hot)
+Y_one_hot = tf.reshape(Y_one_hot, [-1, nb_classes])
+print("reshape", Y_one_hot) # 출력된 것을 보면 3차원에서 2차원으로 바뀐다.
 
-# cost/loss function
-cost = -tf.reduce_mean(Y * tf.log(hypothesis) + (1 - Y) *
-                       tf.log(1 - hypothesis))
+W = tf.Variable(tf.random_normal([16, nb_classes]), name='weight')
+b = tf.Variable(tf.random_normal([nb_classes]), name='bias')
 
-train = tf.train.GradientDescentOptimizer(learning_rate=0.01).minimize(cost)
+# tf.nn.softmax computes softmax activations
+# softmax = exp(logits) / reduce_sum(exp(logits), dim)
+logits = tf.matmul(X, W) + b
+hypothesis = tf.nn.softmax(logits)
 
-# Accuracy computation
-# True if hypothesis>0.5 else False
-predicted = tf.cast(hypothesis > 0.5, dtype=tf.float32)
-accuracy = tf.reduce_mean(tf.cast(tf.equal(predicted, Y), dtype=tf.float32))
+# Cross entropy cost/loss ---&gt; fancy version
+cost_i = tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=Y_one_hot)
+cost = tf.reduce_mean(cost_i)
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.1).minimize(cost)
+
+prediction = tf.argmax(hypothesis, 1)   <a href="https://www.tensorflow.org/api_docs/python/tf/argmax" target="_blank"><u style="color: green;"># tf.argmax 참조(공식API doc)</u></a>
+correct_prediction = tf.equal(prediction, tf.argmax(Y_one_hot, 1))
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+# tf.cast를 까먹었다면,
+<a href="lab05.html"><u style="color: green;">#lab05.html</u>&nbsp;혹은&nbsp;</a><a href="https://www.tensorflow.org/api_docs/python/tf/cast" target="_blank"><u style="color: green;">https://www.tensorflow.org/api_docs/python/tf/cast</u>&nbsp;참조</a>
 
 # Launch graph
 with tf.Session() as sess:
-    # Initialize TensorFlow variables
     sess.run(tf.global_variables_initializer())
 
-    for step in range(10001):
-        cost_val, _ = sess.run([cost, train], feed_dict={X: x_data, Y: y_data})
-        if step % 200 == 0:
-            print(step, cost_val)
+    for step in range(2000):
+        sess.run(optimizer, feed_dict={X: x_data, Y: y_data})
+        if step % 100 == 0:
+            loss, acc = sess.run([cost, accuracy], feed_dict={X: x_data, Y: y_data})
+            print("Step: {:5}\tLoss: {:.3f}\tAcc: {:.2%}".format(step, loss, acc))
 
-    # Accuracy report
-    h, c, a = sess.run([hypothesis, predicted, accuracy],
-                       feed_dict={X: x_data, Y: y_data})
-    print("\nHypothesis: ", h, "\nCorrect (Y): ", c, "\nAccuracy: ", a)</code></pre>
+    # Let's see if we can predict
+    pred = sess.run(prediction, feed_dict={X: x_data})
+    # y_data: (N,1) = flatten =&gt; (N, ) matches pred.shape
+    # 그니깐 y = [[1], [0]]을 y = [1, 0]으로 바꿔줌 
+    for p, y in zip(pred, y_data.flatten()):
+        print("[{}] Prediction: {} True Y: {}".format(p == int(y), p, int(y)))
+        # [{}]는 []안에 True or False가 출력 됨</code></pre>
                     <br><p>결과 창</p>
-<pre><code class="md"># result
-0 0.82793975
-200 0.75518084
-400 0.7263554
-600 0.70517915
-800 0.6866307
-1000 0.669853
-...
-9200 0.4934804
-9400 0.49275032
-9600 0.49205622
-9800 0.49139577
-10000 0.4907668
+                    <pre><code class="md"># result
+one_hot Tensor("one_hot:0", shape=(?, 1, 7), dtype=float32)
+reshape Tensor("Reshape:0", shape=(?, 7), dtype=float32)
 
+Step :     0    Loss: 5.106 Acc: 37.623763%
+Step :   100    Loss: 0.800 Acc: 79.207921%
+Step :   200    Loss: 0.486 Acc: 88.118809%
+Step :   300    Loss: 0.349 Acc: 90.099013%
+Step :   400    Loss: 0.272 Acc: 94.059408%
+Step :   500    Loss: 0.222 Acc: 95.049506%
+Step :   600    Loss: 0.187 Acc: 97.029704%
+Step :   700    Loss: 0.161 Acc: 97.029704%
+Step :   800    Loss: 0.140 Acc: 97.029704%
+Step :   900    Loss: 0.124 Acc: 97.029704%
+Step :  1000    Loss: 0.111 Acc: 97.029704%
+Step :  1100    Loss: 0.101 Acc: 99.009901%
+Step :  1200    Loss: 0.092 Acc: 100.000000%
+Step :  1300    Loss: 0.084 Acc: 100.000000%
 ...
 
- [1.]
- [1.]
- [1.]
- [1.]] 
-Accuracy:  0.7628459</code></pre>
-                    <div class="line"></div>
-                    <h2>Exercise</h2><br>
-                    <ul>
-                        <li>
-                            CSV reading using tf.decode_csv
-                            <p>&nbsp;tensorflow의 decode_csv모듈 사용해보기</p>
-                        </li><br>
-                        <li>
-                            Try other classification data from Kaggle
-                            <p>&nbsp;<a href="https://www.kaggle.com" target="_blank" style="color: skyblue;" data-toggle="tooltip" title="https://www.kaggle.com">Kaggle 웹 사이트에</a> 가서 여러가지 데이터를 다운받아 classify 실행해보기</p>
-                        </li>
-                    </ul>
+[True] Prediction: 0 True Y: 0
+[True] Prediction: 0 True Y: 0
+[True] Prediction: 3 True Y: 3
+[True] Prediction: 0 True Y: 0
+[True] Prediction: 0 True Y: 0
+[True] Prediction: 0 True Y: 0
+[True] Prediction: 0 True Y: 0
+[True] Prediction: 3 True Y: 3
+[True] Prediction: 3 True Y: 3
+[True] Prediction: 0 True Y: 0
+[True] Prediction: 0 True Y: 0
+[True] Prediction: 1 True Y: 1
+[True] Prediction: 3 True Y: 3
+[True] Prediction: 6 True Y: 6
+[True] Prediction: 6 True Y: 6
+[True] Prediction: 6 True Y: 6
+[True] Prediction: 1 True Y: 1
+[True] Prediction: 0 True Y: 0
+...</code></pre>
                 </div>
                 <!-- <div id="content2" hidden>helloworld!</div> -->
                 <!-- page navigation -->
