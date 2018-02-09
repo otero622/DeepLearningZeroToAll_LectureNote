@@ -118,13 +118,13 @@
                 <!-- content1 always all content start from index 1 -->
                 <div id="content1" hidden>
                     <h2>Hypothesis using matrix</h2><br>
-                    <p><img alt="H(x_{1}, x_{2}, x_{3}) = w_{1}x_{1} + w_{2}x_{2} + w_{3}x_{3}" src="https://latex.codecogs.com/gif.latex?H%28x_%7B1%7D%2C%20x_%7B2%7D%2C%20x_%7B3%7D%29%20%3D%20w_%7B1%7Dx_%7B1%7D%20&amp;plus;%20w_%7B2%7Dx_%7B2%7D%20&amp;plus;%20w_%7B3%7Dx_%7B3%7D%20&amp;"><br></p>
+                    <p><img alt="H(x_{1}, x_{2}, x_{3}) = w_{1}x_{1} + w_{2}x_{2} + w_{3}x_{3}" src="https://latex.codecogs.com/gif.latex?H%28x_%7B1%7D%2C%20x_%7B2%7D%2C%20x_%7B3%7D%29%20%3D%20w_%7B1%7Dx_%7B1%7D%20&amp;plus;%20w_%7B2%7Dx_%7B2%7D%20&amp;plus;%20w_%7B3%7Dx_%7B3%7D%20&amp;" class="img-responsive"><br></p>
                     
                     <img src="img/lab03_7.png" class="img-responsive" alt="Responsive image">
                     <p>multi variables로 W찾기</p>
                     <p>학습해야할 Weight(W)의 개수 : 3개( <em>w1, w2, w3</em> )</p><br><br>
                     <h3>multi variable hypothesis</h3>
-                    <p><img alt="H(x_{1}, x_{2}, x_{3}) = w_{1}x_{1} + w_{2}x_{2} + w_{3}x_{3} + b" src="https://latex.codecogs.com/gif.latex?H%28x_%7B1%7D%2C%20x_%7B2%7D%2C%20x_%7B3%7D%29%20%3D%20w_%7B1%7Dx_%7B1%7D%20&amp;plus;%20w_%7B2%7Dx_%7B2%7D%20&amp;plus;%20w_%7B3%7Dx_%7B3%7D%20&amp;plus;%20b"><br></p>
+                    <p><img alt="H(x_{1}, x_{2}, x_{3}) = w_{1}x_{1} + w_{2}x_{2} + w_{3}x_{3} + b" src="https://latex.codecogs.com/gif.latex?H%28x_%7B1%7D%2C%20x_%7B2%7D%2C%20x_%7B3%7D%29%20%3D%20w_%7B1%7Dx_%7B1%7D%20&amp;plus;%20w_%7B2%7Dx_%7B2%7D%20&amp;plus;%20w_%7B3%7Dx_%7B3%7D%20&amp;plus;%20b" class="img-responsive"><br></p>
                     <p>multi_variable_linear_regression.py</p>
                                                             <pre><code class="python"># Lab 4 Multi-variable linear regression
 import tensorflow as tf
@@ -218,8 +218,8 @@ Prediction:
  [148.15846 186.88113 179.63168 195.81953 144.45374]</code></pre>
                     <div class="line"></div>
                     <h2>Matrix</h2>
-                    <p><img alt="(x_{1} \; x_{2}\; x_{3}) \begin{pmatrix} w_{1} \\w_{2}\\w_{3} \end{pmatrix}=(x_{1}w_{1}+x_{2}w_{2}+x_{3}w_{3})" src="https://latex.codecogs.com/gif.latex?%28x_%7B1%7D%20%5C%3B%20x_%7B2%7D%5C%3B%20x_%7B3%7D%29%20%5Cbegin%7Bpmatrix%7D%20w_%7B1%7D%20%5C%5Cw_%7B2%7D%5C%5Cw_%7B3%7D%20%5Cend%7Bpmatrix%7D%3D%28x_%7B1%7Dw_%7B1%7D&amp;plus;x_%7B2%7Dw_%7B2%7D&amp;plus;x_%7B3%7Dw_%7B3%7D%29"><br></p><br>
-                    <p><img alt="\LARGE H(x)=XW" src="https://latex.codecogs.com/gif.latex?%5CLARGE%20H%28x%29%3DXW"><br></p><br>
+                    <p><img alt="(x_{1} \; x_{2}\; x_{3}) \begin{pmatrix} w_{1} \\w_{2}\\w_{3} \end{pmatrix}=(x_{1}w_{1}+x_{2}w_{2}+x_{3}w_{3})" src="https://latex.codecogs.com/gif.latex?%28x_%7B1%7D%20%5C%3B%20x_%7B2%7D%5C%3B%20x_%7B3%7D%29%20%5Cbegin%7Bpmatrix%7D%20w_%7B1%7D%20%5C%5Cw_%7B2%7D%5C%5Cw_%7B3%7D%20%5Cend%7Bpmatrix%7D%3D%28x_%7B1%7Dw_%7B1%7D&amp;plus;x_%7B2%7Dw_%7B2%7D&amp;plus;x_%7B3%7Dw_%7B3%7D%29" class="img-responsive"><br></p><br>
+                    <p><img alt="\LARGE H(x)=XW" src="https://latex.codecogs.com/gif.latex?%5CLARGE%20H%28x%29%3DXW" class="img-responsive"><br></p><br>
                     <p>multi_variable_matmul_linear_regression.py</p>
                     <pre><code class="python"># Lab 4 Multi-variable linear regression
 import tensorflow as tf

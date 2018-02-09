@@ -119,9 +119,9 @@
                 <div id="content1" hidden>
                     <h2>Simplified hypothesis</h2>
                     <p>cost가 최소화되는 w를 찾는 과정</p><br>
-                    <p><img alt="H(x)=Wx" src="https://latex.codecogs.com/gif.latex?H%28x%29%3DWx"><br></p>
+                    <p><img alt="H(x)=Wx" src="https://latex.codecogs.com/gif.latex?H%28x%29%3DWx" class="img-responsive"><br></p>
                     <br>
-                    <p><img alt="cost(w)=\frac{1}{m}\sum_{i=1}^{m}(Wx^{(i)}-y^{(i)})^{2}" src="https://latex.codecogs.com/gif.latex?cost%28w%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7Bi%3D1%7D%5E%7Bm%7D%28Wx%5E%7B%28i%29%7D-y%5E%7B%28i%29%7D%29%5E%7B2%7D"><br></p>
+                    <p><img alt="cost(w)=\frac{1}{m}\sum_{i=1}^{m}(Wx^{(i)}-y^{(i)})^{2}" src="https://latex.codecogs.com/gif.latex?cost%28w%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7Bi%3D1%7D%5E%7Bm%7D%28Wx%5E%7B%28i%29%7D-y%5E%7B%28i%29%7D%29%5E%7B2%7D" class="img-responsive"><br></p>
                     <br>
                     <p>minimizing_cost_show_graph.py</p>
                     <pre><code class="python"># Lab 3 Minimizing Cost
@@ -149,13 +149,13 @@ for i in range(-30, 50):
 plt.plot(W_history, cost_history)
 plt.show() </code></pre>
                     <br><p>결과 창</p>
-                    <img src="img/lab03_1.png" class="img-fluid" alt="Responsive image">
+                    <img src="img/lab03_1.png" class="img-responsive" alt="Responsive image">
                     <br>
                     <div class="line"></div>
                     <h2>Gradient descent</h2>
                     <img src="img/lab03_2.png" class="img-responsive" alt="Responsive image"><br><br>
                     <p><img alt="W:=W-\alpha \frac{1}{m}\sum_{i=1}^{m}(Wx^{(i)}-y^{(i)})x^{(i)}" src="https://latex.codecogs.com/gif.latex?W%3A%3DW-%5Calpha%20%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7Bi%3D1%7D%5E%7Bm%7D%28Wx%5E%7B%28i%29%7D-y%5E%7B%28i%29%7D%29x%5E%7B%28i%29%7D"> 에 대하여<br></p>
-                    <p>순간 기울기 ( <img alt="\alpha \frac{1}{m}\sum_{i=1}^{m}(Wx^{(i)}-y^{(i)})x^{(i)}" src="https://latex.codecogs.com/gif.latex?%5Calpha%20%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7Bi%3D1%7D%5E%7Bm%7D%28Wx%5E%7B%28i%29%7D-y%5E%7B%28i%29%7D%29x%5E%7B%28i%29%7D"> )가 증가함에 따라 <em>W</em> (weight)는 감소하는 방향으로 이동하고, 순간 기울기가 감소함에 따라 <em>W</em> 는 증가하는 방향으로 이동한다. <br></p>
+                    <p>순간 기울기 ( <img alt="\alpha \frac{1}{m}\sum_{i=1}^{m}(Wx^{(i)}-y^{(i)})x^{(i)}" src="https://latex.codecogs.com/gif.latex?%5Calpha%20%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7Bi%3D1%7D%5E%7Bm%7D%28Wx%5E%7B%28i%29%7D-y%5E%7B%28i%29%7D%29x%5E%7B%28i%29%7D" class="img-responsive"> )가 증가함에 따라 <em>W</em> (weight)는 감소하는 방향으로 이동하고, 순간 기울기가 감소함에 따라 <em>W</em> 는 증가하는 방향으로 이동한다. <br></p>
                     <br>
                     <p>minimizing_cost_gradient_update.py</p>
                                         <pre><code class="python"># Lab 3 Minimizing Cost
