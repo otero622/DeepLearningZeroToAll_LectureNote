@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>lecture note</title>
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/vs2015.min.css">
+        <script src="js/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+        <div class="wrapper container">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3 class="korean">김성훈 교수님</h3>
+                    <a href="https://www.inflearn.com/course/%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%EB%94%A5%EB%9F%AC%EB%8B%9D-%EA%B0%95%EC%A2%8C/" target="_blank" data-toggle="tooltip" title="강의 보러 가기 click me"><h5 class="korean">모두를 위한 머신러닝/딥러닝</h5></a>
+                </div>
+                <ul class="list-unstyled components">
+                    <p class="korean">INDEX</p>
+                    <li>
+                        <a href="index.html">Intro</a>
+                    </li>
+                    <li>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Lect</a>
+                        <ul class="korean collapse list-unstyled" id="homeSubmenu">
+                            <li><a href="lect01.html">Lect01. 머신러닝의 개념과 용어</a></li>
+                            <li><a href="lect02.html">Lect02. Linear Regression의 개념</a></li>
+                            <li><a href="lect03.html">Lect03. Linear Regression cost 함수 최소화</a></li>
+                            <li><a href="lect04.html">Lect04. 여러개의 입력(feature)의 Linear Regression</a></li>
+                            <li><a href="lect05.html">Lect05. Logistic Classification (Regression)</a></li>
+                            <li><a href="lect06.html">Lect06. Softmax Regression (Multinomial Logistic Regression)</a></li>
+                            <li><a href="lect07.html">Lect07. ML의 실용과 몇 가지 팁</a></li>
+                            <li><a href="lect08.html">Lect08. 딥러닝의 기본 개념과 문제, 그리고 해결</a></li>
+                            <li><a href="lect09.html">Lect09. Neural Network 1 : XOR 문제와 학습방법, Backpropagation</a></li>
+                            <li><a href="lect10.html">Lect10. Neural Network 2 : ReLU and 초기 값 정하기 (2006/2007 breakthrough)</a></li>
+                            <li><a href="lect11.html">Lect11. Convolutional Neural Networks (a.k.a CNN)</a></li>
+                            <li><a href="lect12.html">Lect12. Recurrent Neural Network (a.k.a RNN)</a></li>
+                            <li><a href="lect13.html">Lect13. Deep Deep Network AWD에서 GPU와 돌려보기 (powered by AWS)</a></li>
+                            <li><a href="lect14.html">Lect14. AWS에서 저렴하게 Spot Instance를 터미네이션 걱정 없이 사용하기</a></li>
+                            <li><a href="lect15.html">Lect15. Google Cloud ML을 이용해 TensorFlow 실행하기</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">TF example</a>
+                        <ul class="korean collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="lab01.html">Lab 01. TensorFlow의 설치 및 기본적인 operations</a></li>
+                            <li><a href="lab02.html">Lab 02. Tensorflow로 간단한 linear regression을 구현</a></li>
+                            <li><a href="lab03.html">Lab 03. Linear Regression의 cost 최소화의 TensorFlow 구현</a></li>
+                            <li><a href="lab04_1.html">Lab 04_1. Multi-variable Linear Regression을 TensorFlow에서 구현하기</a></li>
+                            <li><a href="lab04_2.html">Lab 04_2. TensorFlow로 파일에서 데이타 읽어오기</a></li>
+                            <li><a href="lab05.html">Lab 05. TensorFlow로 Logistic Classification 구현하기</a></li>
+                            <li><a href="lab06_1.html">Lab 06_1. TensorFlow로 SoftmaxClassification 구현하기</a></li>
+                            <li><a href="lab06_2.html">Lab 06_2. TensorFlow로 Fancy Softmax Classification 구현하기</a></li>
+                            <li class="active"><a href="lab07_1.html">Lab 07_1. training/test dataset, learning rate, normalization</a></li>
+                            <li><a href="lab07_2.html">Lab 07_2. Meet MNIST Dataset</a></li>
+                            <li><a href="lab08.html">Lab 08. Tensor Manipulation</a></li>
+                            <li><a href="lab09_1.html">Lab 09_1. XOR을 위한 TensorFlow Deep Network</a></li>
+                            <li><a href="lab09_2.html">Lab 09_2. Tensor Board로 Deep Network 들여다 보기</a></li>
+                            <li><a href="lab10.html">Lab 10. 딥러닝으로 MNIST 98%이상 해보기</a></li>
+                            <li><a href="lab11_1.html">Lab 11_1. TensorFlow의 CNN 기본</a></li>
+                            <li><a href="lab11_2.html">Lab 11_2. TensorFlow로 구현하는 MNIST 99%</a></li>
+                            <li><a href="lab11_3.html">Lab 11_3. Class, tf.layers, Ensemble (MNIST 99.5%)</a></li>
+                            <li><a href="lab12_1.html">Lab 12_1. RNN - Basic</a></li>
+                            <li><a href="lab12_2.html">Lab 12_2. RNN - Hi Hello Training</a></li>
+                            <li><a href="lab12_3.html">Lab 12_3. Long Sequence RNN</a></li>
+                            <li><a href="lab12_4.html">Lab 12_4. Stacked RNN + Softmax Layer</a></li>
+                            <li><a href="lab12_5.html">Lab 12_5. Dynamic RNN</a></li>
+                            <li><a href="lab12_6.html">Lab 12_6. RNN with Time Series Data</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                <ul class="list-unstyled CTAs">
+                    <li><a href="https://github.com/hunkim/DeepLearningZeroToAll/archive/master.zip" class="download">Download source</a></li>
+                    <br>
+                    <p class="korean">만든이에게</p>
+                    <li>
+                        <a href="https://www.facebook.com/yoonbaeJeon" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; 페이스북 연락하기</a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/u/0/103969879362546932609" target="_blank"><i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>&nbsp; 구글plus 연락하기</a>
+                    </li>
+                    <p>reference</p>
+                    <li>
+                        <a href="https://www.facebook.com/groups/TensorFlowKR/?fref=nf" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow KR 페이스북</a>
+                    </li>
+                    <li>
+                        <a href="https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/api_docs/" target="_blank"><i class="fa fa-book fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow API doc(KR)</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Page Content Holder -->
+            <div id="content">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="glyphicon glyphicon-align-left"></i>
+                            <span class="korean">사이드바 접기/펼치기</span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li id="content1_list" class="selected"><a>TensorFlow로 Fancy Softmax Classification 구현하기</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- content1 always all content start from index 1 -->
+                <div id="content1" hidden>
+                    <h2>Training and Test datasets</h2><br>
+                    <p>&nbsp;7장 부터는 Training data set과 Test dataset을 나눠서 학습 후 Test해본다.<br>이전에 Training dataset과 Test dataset을 동일하게 사용했던 것은 잘못된 방법이다.<br>이 후로는 dataset을 반드시 나눠서 진행한다.</p><br>
+                    <p>learning rate and evaluation.py</p>
+                                        <pre><code id = "source_code" class="python"># Lab 7 Learning rate and Evaluation
+import tensorflow as tf
+tf.set_random_seed(777)  # for reproducibility
+x_data = [[1, 2, 1], [1, 3, 2], [1, 3, 4], [1, 5, 5], [1, 7, 5], [1, 2, 5], [1, 6, 6], [1, 7, 7]]
+y_data = [[0, 0, 1], [0, 0, 1], [0, 0, 1], [0, 1, 0], [0, 1, 0], [0, 1, 0], [1, 0, 0], [1, 0, 0]]
+# Evaluation our model using this test dataset
+x_test = [[2, 1, 1], [3, 1, 2], [3, 3, 4]]
+y_test = [[0, 0, 1], [0, 0, 1], [0, 0, 1]]
+X = tf.placeholder("float", [None, 3])
+Y = tf.placeholder("float", [None, 3])
+W = tf.Variable(tf.random_normal([3, 3]))
+b = tf.Variable(tf.random_normal([3]))
+# tf.nn.softmax computes softmax activations
+# softmax = exp(logits) / reduce_sum(exp(logits), dim)
+hypothesis = tf.nn.softmax(tf.matmul(X, W) + b)
+# Cross entropy cost/loss
+cost = tf.reduce_mean(-tf.reduce_sum(Y * tf.log(hypothesis), axis=1))
+# Try to change learning_rate to small numbers
+optimizer = tf.train.GradientDescentOptimizer(
+                learning_rate=1e-10).minimize(cost)
+# Correct prediction Test model
+prediction = tf.arg_max(hypothesis, 1)
+is_correct = tf.equal(prediction, tf.arg_max(Y, 1))
+accuracy = tf.reduce_mean(tf.cast(is_correct, tf.float32))
+# Launch graph
+with tf.Session() as sess:
+    # Initialize TensorFlow variables
+    sess.run(tf.global_variables_initializer())
+    for step in range(201):
+        cost_val, W_val, _ = sess.run([cost, W, optimizer],
+                    feed_dict={X: x_data, Y: y_data})
+        if step % 10 == 0 :
+            print(step, cost_val, W_val)
+    # predict
+    print("Prediction:", sess.run(prediction, feed_dict={X: x_test}))
+    # Calculate the accuracy
+print("Accuracy: ", sess.run(accuracy, feed_dict={X: x_test, Y: y_test}))</code></pre><br>
+                    <p>결과 창</p>
+                                        <pre><code class="md"># when learning_rate = 0.1
+0 5.7320304 [[ 0.8026957  0.6786129 -1.2172831]
+ [-0.3051686 -0.3032113  1.508257 ]
+ [ 0.7572236 -0.7008909 -2.108204 ]]
+10 1.8107473 [[ 0.51069576  0.7242208  -0.97089106]
+ [-0.6880559  -0.07979492  1.667728  ]
+ [ 0.09174844 -0.2783959  -1.8652234 ]]
+20 1.6319022 [[ 0.34424353  0.697731   -0.77794915]
+ [-0.5087992  -0.1511724   1.5598489 ]
+ [-0.01327916 -0.21204934 -1.8265425 ]]
+30 1.4866805 [[ 0.19042481  0.66771364 -0.59411305]
+ [-0.36517674 -0.18683061  1.4518847 ]
+ [-0.09453441 -0.1751083  -1.7822282 ]]
+40 1.3655303 [[ 0.04948435  0.63452643 -0.4199854 ]
+ [-0.2499466  -0.19529302  1.345117  ]
+ [-0.15579163 -0.16278853 -1.7332908 ]]
+50 1.2616253 [[-0.07961339  0.5995439  -0.25590512]
+ [-0.15577514 -0.18450925  1.2401617 ]
+ [-0.20293105 -0.16779882 -1.681141  ]]
+60 1.1709411 [[-0.19820727  0.56406736 -0.10183473]
+ [-0.07677641 -0.16100253  1.1376562 ]
+ [-0.24041046 -0.18429044 -1.6271698 ]]
+70 1.0911509 [[-0.3076231   0.5291084   0.04254003]
+ [-0.00888473 -0.12956117  1.0383233 ]
+ [-0.27108765 -0.20800221 -1.5727808 ]]
+80 1.0208256 [[-0.4090549   0.49540257  0.17767768]
+ [ 0.05055725 -0.09362645  0.9429468 ]
+ [-0.29664138 -0.23582587 -1.5194033 ]]
+90 0.95901155 [[-0.5035256   0.46347186  0.30407912]
+ [ 0.10324585 -0.05571542  0.8523472 ]
+ [-0.31798553 -0.265427   -1.4684582 ]]
+100 0.9049994 [[-0.5918855   0.43368164  0.42222935]
+ [ 0.15024284 -0.01771591  0.76735073]
+ [-0.33556888 -0.29500777 -1.421294  ]]
+ ...
+ 190 0.66970575 [[-1.201988    0.2770909   1.188923  ]
+ [ 0.36946362  0.21526524  0.31514907]
+ [-0.36544818 -0.42804983 -1.2583727 ]]
+200 0.6719701 [[-1.2573261   0.27155524  1.249797  ]
+ [ 0.3714512   0.23348567  0.29494116]
+ [-0.36554793 -0.42326292 -1.2630599 ]]
+Prediction: [2 2 2]
+Accuracy:  1.0</code></pre>
+                    <div class="line"></div>
+                    <h2>Learning rate : <span style="color: orange;">NaN!</span></h2><br>
+                    <p>&nbsp;기존의 learning_rate는 <span class="text-primary">0.1</span> 또는 <span class="text-primary">0.01</span>로 무작정 정하여 진행하였다.<br>learning_rate를 잘못 설정할 경우 아래 두 가지 상황에 직면할 수 있다.</p>
+                    <img src="img/lab07_1.png" class="img-responsive"><br><br>
+                    <p>위의 <a href="#source_code" style="color:skyblue;">SourceCode</a>에서 learning_rate만 바꾸어서 결과를 관측해보자.</p><br>
+                    <p>overshooting case (large learning rate)</p>
+                                        <pre><code class="md"># result when learning_rate = 1.5
+0 5.7320304 [[ 0.8026957  0.6786129 -1.2172831]
+ [-0.3051686 -0.3032113  1.508257 ]
+ [ 0.7572236 -0.7008909 -2.108204 ]]
+10 nan [[nan nan nan]   &lt;-- 이부분에서 이미 overshooting이 일어남 --&gt;
+ [nan nan nan]
+ [nan nan nan]]
+20 nan [[nan nan nan]
+ [nan nan nan]
+ [nan nan nan]]
+30 nan [[nan nan nan]
+ [nan nan nan]
+ [nan nan nan]]
+40 nan [[nan nan nan]
+ [nan nan nan]
+ [nan nan nan]]
+...
+190 nan [[nan nan nan]
+ [nan nan nan]
+ [nan nan nan]]
+200 nan [[nan nan nan]
+ [nan nan nan]
+ [nan nan nan]]
+Prediction: [0 0 0]
+Accuracy:  0.0</code></pre><br>
+                    <p>local minimum에 갇힌 경우 (small learning rate)</p>
+                                        <pre><code class="md"># result when learning_rate = 1e-10
+0 5.7320304 [[ 0.8026957  0.6786129 -1.2172831]
+ [-0.3051686 -0.3032113  1.508257 ]
+ [ 0.7572236 -0.7008909 -2.108204 ]]
+10 5.7320304 [[ 0.8026957  0.6786129 -1.2172831]
+ [-0.3051686 -0.3032113  1.508257 ]
+ [ 0.7572236 -0.7008909 -2.108204 ]]
+20 5.7320304 [[ 0.8026957  0.6786129 -1.2172831]
+ [-0.3051686 -0.3032113  1.508257 ]
+ [ 0.7572236 -0.7008909 -2.108204 ]]
+30 5.7320304 [[ 0.8026957  0.6786129 -1.2172831]
+ [-0.3051686 -0.3032113  1.508257 ]
+ [ 0.7572236 -0.7008909 -2.108204 ]]
+40 5.7320304 [[ 0.8026957  0.6786129 -1.2172831]
+ [-0.3051686 -0.3032113  1.508257 ]
+ [ 0.7572236 -0.7008909 -2.108204 ]]
+50 5.7320304 [[ 0.8026957  0.6786129 -1.2172831]
+ [-0.3051686 -0.3032113  1.508257 ]
+ [ 0.7572236 -0.7008909 -2.108204 ]]
+60 5.7320304 [[ 0.8026957  0.6786129 -1.2172831]
+ [-0.3051686 -0.3032113  1.508257 ]
+ [ 0.7572236 -0.7008909 -2.108204 ]]
+70 5.7320304 [[ 0.8026957  0.6786129 -1.2172831]
+ [-0.3051686 -0.3032113  1.508257 ]
+ [ 0.7572236 -0.7008909 -2.108204 ]]
+80 5.7320304 [[ 0.8026957  0.6786129 -1.2172831]
+ [-0.3051686 -0.3032113  1.508257 ]
+ [ 0.7572236 -0.7008909 -2.108204 ]]
+90 5.7320304 [[ 0.8026957  0.6786129 -1.2172831]
+ [-0.3051686 -0.3032113  1.508257 ]
+ [ 0.7572236 -0.7008909 -2.108204 ]]
+100 5.7320304 [[ 0.8026957  0.6786129 -1.2172831]   &lt;-- 당최 아무리 --&gt;
+ [-0.3051686 -0.3032113  1.508257 ]
+ [ 0.7572236 -0.7008909 -2.108204 ]]
+ ...
+ 190 5.7320304 [[ 0.8026957  0.6786129 -1.2172831] &lt;-- 학습을 시켜도 --&gt;
+ [-0.3051686 -0.3032113  1.508257 ]
+ [ 0.7572236 -0.7008909 -2.108204 ]]
+200 5.7320304 [[ 0.8026957  0.6786129 -1.2172831]   &lt;-- cost값이 변하지 않음 --&gt;
+ [-0.3051686 -0.3032113  1.508257 ]
+ [ 0.7572236 -0.7008909 -2.108204 ]]
+Prediction: [0 0 0]                                 &lt;-- 참혹한 결과 --&gt;
+Accuracy:  0.0</code></pre>
+                    <div class="line"></div>
+                    <h2>Non-normalized inputs</h2><br>
+                                        <pre><code class="python">xy = np.array([[828.659973, 833.450012, 908100, 828.349976, 831.659973],
+               [823.02002, 828.070007, 1828100, 821.655029, 828.070007],
+               [819.929993, 824.400024, 1438100, 818.97998, 824.159973],
+               [816, 820.958984, 1008100, 815.48999, 819.23999],
+               [819.359985, 823, 1188100, 818.469971, 818.97998],
+               [819, 823, 1198100, 816, 820.450012],
+               [811.700012, 815.25, 1098100, 809.780029, 813.669983],
+               [809.51001, 816.659973, 1398100, 804.539978, 809.559998]])</code></pre>
+                    <p>위와 같이 input data간의 큰 격차는<kbd>(ex 833, 908100)</kbd> 한쪽으로 치우친 cost함수를 생성하게 된다.</p>
+                    <img src="img/lab07_2.png" class="img-responsive"><br>
+                    <p>linear_regression_without_min_max.py</p>
+                                        <pre><code class="python">import tensorflow as tf
+import numpy as np
+tf.set_random_seed(777)  # for reproducibility
+xy = np.array([[828.659973, 833.450012, 908100, 828.349976, 831.659973],
+[823.02002, 828.070007, 1828100, 821.655029, 828.070007],
+[819.929993, 824.400024, 1438100, 818.97998, 824.159973],
+[816, 820.958984, 1008100, 815.48999, 819.23999],
+[819.359985, 823, 1188100, 818.469971, 818.97998],
+[819, 823, 1198100, 816, 820.450012],
+[811.700012, 815.25, 1098100, 809.780029, 813.669983],
+[809.51001, 816.659973, 1398100, 804.539978, 809.559998]])
+x_data = xy[:, 0:-1]
+y_data = xy[:, [-1]]
+# placeholders for a tensor that will be always fed.
+X = tf.placeholder(tf.float32, shape=[None, 4])
+Y = tf.placeholder(tf.float32, shape=[None, 1])
+W = tf.Variable(tf.random_normal([4, 1]), name='weight')
+b = tf.Variable(tf.random_normal([1]), name='bias')
+# Hypothesis
+hypothesis = tf.matmul(X, W) + b
+# Simplified cost/loss function
+cost = tf.reduce_mean(tf.square(hypothesis - Y))
+# Minimize
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=1e-5)
+train = optimizer.minimize(cost)
+# Launch the graph in a session.
+sess = tf.Session()
+# Initializes global variables in the graph.
+sess.run(tf.global_variables_initializer())
+for step in range(101):
+cost_val, hy_val, _ = sess.run(
+[cost, hypothesis, train], feed_dict={X: x_data, Y: y_data})
+print(step, "Cost: ", cost_val, "\nPrediction:\n", hy_val)</code></pre><br>
+                    <p>결과 창</p>
+                                    <pre><code class="md">#result
+0 Cost :  2455327000000.0 
+Prediction :
+[[-1104436.2]
+[-2224343. ]
+[-1749606.6]
+[-1226179.4]
+[-1445287.1]
+[-1457459.5]
+[-1335740.5]
+[-1700924.5]]
+1 Cost :  2.6976194e+27 
+Prediction :
+[[3.6637145e+13]
+[7.3754328e+13]
+[5.8019874e+13]
+[4.0671625e+13]
+[4.7933681e+13]
+[4.8337131e+13]
+[4.4302651e+13]
+[5.6406082e+13]]
+2 Cost :  inf 
+Prediction :
+[[-1.2143876e+21]
+[-2.4446867e+21]
+[-1.9231470e+21]
+[-1.3481158e+21]
+[-1.5888265e+21]
+[-1.6021993e+21]
+[-1.4684711e+21]
+[-1.8696556e+21]]
+3 Cost :  inf 
+Prediction :
+[[4.0252517e+28]
+[8.1032447e+28]
+[6.3745303e+28]
+[4.4685119e+28]
+[5.2663803e+28]
+[5.3107063e+28]
+[4.8674461e+28]
+[6.1972262e+28]]
+4 Cost :  inf 
+Prediction :
+[[-1.3342241e+36]
+[-2.6859295e+36]
+[-2.1129240e+36]
+[-1.4811485e+36]
+[-1.7456126e+36]
+[-1.7603051e+36]
+[-1.6133804e+36]
+[-2.0541541e+36]]
+5 Cost :  inf 
+Prediction :
+[[inf]
+[inf]
+[inf]
+[inf]
+[inf]
+[inf]
+[inf]
+[inf]]
+...</code></pre>
+                    <div class="line"></div>
+                    <h2>Normalized inputs (min-max scale)</h2><br>
+                    <pre><code class="python">xy = np.array([[828.659973, 833.450012, 908100, 828.349976, 831.659973],
+               [823.02002, 828.070007, 1828100, 821.655029, 828.070007],
+               [819.929993, 824.400024, 1438100, 818.97998, 824.159973],
+               [816, 820.958984, 1008100, 815.48999, 819.23999],
+               [819.359985, 823, 1188100, 818.469971, 818.97998],
+               [819, 823, 1198100, 816, 820.450012],
+               [811.700012, 815.25, 1098100, 809.780029, 813.669983],
+               [809.51001, 816.659973, 1398100, 804.539978, 809.559998]])
+xy = MinMaxScaler(xy)
+print(xy)
+</code><code class="md">#result
+[[0.99999999 0.99999999 0.         1.         1.        ]
+ [0.70548491 0.70439552 1.         0.71881782 0.83755791]
+ [0.54412549 0.50274824 0.57608696 0.606468   0.6606331 ]
+ [0.33890353 0.31368023 0.10869565 0.45989134 0.43800918]
+ [0.51436    0.42582389 0.30434783 0.58504805 0.42624401]
+ [0.49556179 0.42582389 0.31521739 0.48131134 0.49276137]
+ [0.11436064 0.         0.20652174 0.22007776 0.18597238]
+ [0.         0.07747099 0.5326087  0.         0.        ]]</code></pre><br>
+                <p>linear_regression_min_max.py (full code)</p>
+                <pre><code class="python">import tensorflow as tf
+import numpy as np
+tf.set_random_seed(777)  # for reproducibility
+
+
+def MinMaxScaler(data):
+    numerator = data - np.min(data, 0)
+    denominator = np.max(data, 0) - np.min(data, 0)
+    # noise term prevents the zero division
+    return numerator / (denominator + 1e-7)
+
+
+xy = np.array([[828.659973, 833.450012, 908100, 828.349976, 831.659973],
+               [823.02002, 828.070007, 1828100, 821.655029, 828.070007],
+               [819.929993, 824.400024, 1438100, 818.97998, 824.159973],
+               [816, 820.958984, 1008100, 815.48999, 819.23999],
+               [819.359985, 823, 1188100, 818.469971, 818.97998],
+               [819, 823, 1198100, 816, 820.450012],
+               [811.700012, 815.25, 1098100, 809.780029, 813.669983],
+               [809.51001, 816.659973, 1398100, 804.539978, 809.559998]])
+
+# very important. It does not work without it.
+xy = MinMaxScaler(xy)
+print(xy)
+
+x_data = xy[:, 0:-1]
+y_data = xy[:, [-1]]
+
+# placeholders for a tensor that will be always fed.
+X = tf.placeholder(tf.float32, shape=[None, 4])
+Y = tf.placeholder(tf.float32, shape=[None, 1])
+
+W = tf.Variable(tf.random_normal([4, 1]), name='weight')
+b = tf.Variable(tf.random_normal([1]), name='bias')
+
+# Hypothesis
+hypothesis = tf.matmul(X, W) + b
+
+# Simplified cost/loss function
+cost = tf.reduce_mean(tf.square(hypothesis - Y))
+
+# Minimize
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=1e-5)
+train = optimizer.minimize(cost)
+
+# Launch the graph in a session.
+sess = tf.Session()
+# Initializes global variables in the graph.
+sess.run(tf.global_variables_initializer())
+
+for step in range(101):
+    cost_val, hy_val, _ = sess.run(
+        [cost, hypothesis, train], feed_dict={X: x_data, Y: y_data})
+    print(step, "Cost: ", cost_val, "\nPrediction:\n", hy_val)</code></pre><br>
+                <p>결과 창</p>
+                <pre><code class="md">#result
+0 Cost:  5.701778 
+Prediction:
+ [[-0.8370166]
+ [-2.7884693]
+ [-2.1851637]
+ [-1.4416122]
+ [-1.777324 ]
+ [-1.6582248]
+ [-1.8058345]
+ [-2.0025578]]
+1 Cost:  5.7013655 
+Prediction:
+ [[-0.83690214]
+ [-2.788354  ]
+ [-2.1850677 ]
+ [-1.4415381 ]
+ [-1.7772365 ]
+ [-1.6581401 ]
+ [-1.8057759 ]
+ [-2.0024986 ]]
+2 Cost:  5.7009525 
+Prediction:
+ [[-0.8367877]
+ [-2.7882385]
+ [-2.1849718]
+ [-1.441464 ]
+ [-1.777149 ]
+ [-1.6580553]
+ [-1.8057173]
+ [-2.0024395]]
+3 Cost:  5.7005396 
+Prediction:
+ [[-0.83667326]
+ [-2.7881231 ]
+ [-2.184876  ]
+ [-1.4413898 ]
+ [-1.7770612 ]
+ [-1.6579704 ]
+ [-1.8056587 ]
+ [-2.0023804 ]]
+4 Cost:  5.700126 
+Prediction:
+ [[-0.8365588]
+ [-2.7880077]
+ [-2.1847796]
+ [-1.4413158]
+ [-1.7769737]
+ [-1.6578856]
+ [-1.8056   ]
+ [-2.0023215]]
+
+...
+
+99 Cost:  5.6610622 
+Prediction:
+ [[-0.8257135]
+ [-2.7770646]
+ [-2.1756787]
+ [-1.4342905]
+ [-1.7686745]
+ [-1.6498458]
+ [-1.8000441]
+ [-1.9967239]]
+100 Cost:  5.6606526 
+Prediction:
+ [[-0.82559955]
+ [-2.7769496 ]
+ [-2.1755831 ]
+ [-1.4342167 ]
+ [-1.7685872 ]
+ [-1.6497614 ]
+ [-1.7999856 ]
+ [-1.9966651 ]]</code></pre>
+                </div>
+                <!-- <div id="content2" hidden>helloworld!</div> -->
+                <!-- page navigation -->
+                <div class="footer">
+                    <ul class="pager">
+                        <li class="previous" id="prev_button" style="color:#00BFFF;"><a href="#">Previous</a></li>
+                        <li class="next" id="next_button" style="color:#00BFFF;"><a href="#">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- jQuery CDN -->
+        <script src="js/jquery-1.12.0.min.js"></script>
+        <!-- Bootstrap Js CDN -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        
+        <script type="text/javascript">
+        $(document).ready(function () {
+        $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+        });
+        $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+        var cnt = 0;
+        for(i=1;;i++){
+        var local_id = "#content"+i;
+        if($(local_id).length==0) break;
+        cnt++;
+        }
+        if(cnt<=1){
+        $("#prev_button").hide();
+        $("#next_button").hide();
+        }
+        var current = 1;
+        var local_id = "#content"+current;
+        $(local_id).show();
+        local_id+="_list";
+        $(local_id).addClass("selected");
+        $("#prev_button").click(function(){
+        if(current>1){
+        local_id = "#content"+current;
+        $(local_id).hide();
+        local_id += "_list";
+        $(local_id).removeClass("selected");
+        current--;
+        local_id = "#content"+current;
+        $(local_id).show();
+        local_id += "_list";
+        $(local_id).addClass("selected");
+        }
+        });
+        $("#next_button").click(function(){
+        if(current<cnt){
+        local_id = "#content"+current;
+        $(local_id).hide();
+        local_id += "_list";
+        $(local_id).removeClass("selected");
+        current++;
+        local_id = "#content"+current;
+        $(local_id).show();
+        local_id += "_list";
+        $(local_id).addClass("selected");
+        }
+        });
+        $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
+    </body>
+</html>
