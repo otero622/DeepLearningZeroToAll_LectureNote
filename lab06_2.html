@@ -82,13 +82,13 @@
                 <ul class="list-unstyled CTAs">
                     <li><a href="https://github.com/hunkim/DeepLearningZeroToAll/archive/master.zip" class="download">Download source</a></li>
                     <br>
-                    <p class="korean">만든이에게</p>
+                    <!-- <p class="korean">만든이에게</p>
                     <li>
                         <a href="https://www.facebook.com/yoonbaeJeon" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; 페이스북 연락하기</a>
                     </li>
                     <li>
                         <a href="https://plus.google.com/u/0/103969879362546932609" target="_blank"><i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>&nbsp; 구글plus 연락하기</a>
-                    </li>
+                    </li> -->
                     <p>reference</p>
                     <li>
                         <a href="https://www.facebook.com/groups/TensorFlowKR/?fref=nf" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow KR 페이스북</a>
@@ -143,9 +143,12 @@ y_data = xy[:, [-1]] # 마지막 행은 종 분류</code></pre>
 
                     <h2>tf.one_hot and reshape</h2><br>
                     <img src="img/lab06_5.png" class="img-responsive"><br>
-                    <h4 style="font-family: Courier New;">Y=tf.placeholder(tf.int32, [None, 1]) <small><em># 0~6, shape = (?, 1)</em></small><br>Y_one_hot=tf.one_hot(Y, nb_classes) <small><em># one hot shape = (?, 1, 7)</em></small><br>Y_one_hot=tf.reshape(Y_one_hot, [-1, nb_classes]) <small><em># shape = (?, 7)</em></small></h4><br>
-                    <p>one-hot encoding을 위한 Y라는 int형 [?, 1]의 1차원 placeholder생성하여<br> tf.one_hot으로 넘겨주면 한 차원을 더 wrapping한 [?, 1, nb_classes]꼴로 return 됨<br>때문에 reshape로 한 차원 더해진 wrapper를 변형해 주어야 한다.</p>
-                    <a href="https://www.tensorflow.org/api_docs/python/tf/one_hot" target="_blank" style="color: skyblue;">https://www.tensorflow.org/api_docs/python/tf/one_hot</a><br>
+                    <pre><code class="python">Y = tf.placeholder(tf.int32, [None, 1]) # 0~6, shape = (?, 1)
+Y_one_hot = tf.one_hot(Y, nb_classes) # one hot shape = (?, 1, 7)
+Y_one_hot = tf.reshape(Y_one_hot, [-1, nb_classes]) # shape = (?, 7)</code></pre>
+                    
+                    <p>one-hot encoding을 위한 Y라는 int[?, 1]의 1차원 placeholder생성하여<br> tf.one_hot으로 넘겨주면 한 차원을 더 wrapping한 [?, 1, nb_classes]꼴로 return 됨<br>때문에 reshape로 한 차원 더해진 wrapper를 변형해 주어야 한다.</p>
+                    <a href="https://www.tensorflow.org/api_docs/python/tf/one_hot" target="_blank" class="text-primary">https://www.tensorflow.org/api_docs/python/tf/one_hot</a><br>
                     <div class="line"></div>
                     <p>softmax_zoo_classifier.py</p>
                     <pre><code class="python"># Lab 6 Softmax Classifier
