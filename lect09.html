@@ -4,9 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
         <title>lecture note</title>
-
         <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- Our Custom CSS -->
@@ -19,9 +17,6 @@
         <script>hljs.initHighlightingOnLoad();</script>
     </head>
     <body>
-
-
-
         <div class="wrapper">
             <!-- Sidebar Holder -->
             <nav id="sidebar">
@@ -29,7 +24,6 @@
                     <h3 class="korean">김성훈 교수님</h3>
                     <a href="https://www.inflearn.com/course/%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%EB%94%A5%EB%9F%AC%EB%8B%9D-%EA%B0%95%EC%A2%8C/" target="_blank" data-toggle="tooltip" title="강의 보러 가기 click me"><h5 class="korean">모두를 위한 머신러닝/딥러닝</h5></a>
                 </div>
-
                 <ul class="list-unstyled components">
                     <p class="korean">INDEX</p>
                     <li>
@@ -40,13 +34,13 @@
                         <ul class="korean collapse list-unstyled" id="homeSubmenu">
                             <li><a href="lect01.html">Lect01. 머신러닝의 개념과 용어</a></li>
                             <li><a href="lect02.html">Lect02. Linear Regression의 개념</a></li>
-                            <li class="active"><a href="lect03.html">Lect03. Linear Regression cost 함수 최소화</a></li>
+                            <li><a href="lect03.html">Lect03. Linear Regression cost 함수 최소화</a></li>
                             <li><a href="lect04.html">Lect04. 여러개의 입력(feature)의 Linear Regression</a></li>
                             <li><a href="lect05.html">Lect05. Logistic Classification (Regression)</a></li>
                             <li><a href="lect06.html">Lect06. Softmax Regression (Multinomial Logistic Regression)</a></li>
                             <li><a href="lect07.html">Lect07. ML의 실용과 몇 가지 팁</a></li>
                             <li><a href="lect08.html">Lect08. 딥러닝의 기본 개념과 문제, 그리고 해결</a></li>
-                            <li><a href="lect09.html">Lect09. Neural Network 1 : XOR 문제와 학습방법, Backpropagation</a></li>
+                            <li class="active"><a href="lect09.html">Lect09. Neural Network 1 : XOR 문제와 학습방법, Backpropagation</a></li>
                             <li><a href="lect10.html">Lect10. Neural Network 2 : ReLU and 초기 값 정하기 (2006/2007 breakthrough)</a></li>
                             <li><a href="lect11.html">Lect11. Convolutional Neural Networks (a.k.a CNN)</a></li>
                             <li><a href="lect12.html">Lect12. Recurrent Neural Network (a.k.a RNN)</a></li>
@@ -85,17 +79,10 @@
                     </li>
                     
                 </ul>
-
                 <ul class="list-unstyled CTAs">
                     <li><a href="https://github.com/hunkim/DeepLearningZeroToAll/archive/master.zip" class="download">Download source</a></li>
                     <br>
-                    <!-- <p class="korean">만든이에게</p>
-                    <li>
-                        <a href="https://www.facebook.com/yoonbaeJeon" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; 페이스북 연락하기</a>
-                    </li>
-                    <li>
-                        <a href="https://plus.google.com/u/0/103969879362546932609" target="_blank"><i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>&nbsp; 구글plus 연락하기</a>
-                    </li> -->
+
                     <p>reference</p>
                     <li>
                         <a href="https://www.facebook.com/groups/TensorFlowKR/?fref=nf" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow KR 페이스북</a>
@@ -108,81 +95,68 @@
 
             <!-- Page Content Holder -->
             <div id="content">
-
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">
-
                         <div class="navbar-header">
                             <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                                <i class="glyphicon glyphicon-align-left"></i>
-                                <span class="korean sidebar_flag">사이드바 접기/펼치기</span>
+                            <i class="glyphicon glyphicon-align-left"></i>
+                            <span class="korean sidebar_flag">사이드바 접기/펼치기</span>
                             </button>
                         </div>
-
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
-                                <li id="content1_list" class="selected"><a>Linear Regression의 cost 최소화 알고리즘의 원리</a></li>
+                                <li id="content1_list" class="selected"><a>XOR 문제 딥러닝으로 풀기</a></li>
+                                <li id="content2_list"><a>딥넷트웍 학습 시키기(backpropagation)</a></li>
                             </ul>
                         </div>
-
                     </div>
                 </nav>
-
                 <!-- content1 always all content start from index 1 -->
-                <div id="content1" hidden>
-                <h2>hypothesis and cost</h2>
-                <br><br>
-                <p><img alt="H(x)=Wx+b" src="https://latex.codecogs.com/gif.latex?H%28x%29%3DWx&amp;plus;b" class="img-responsive"><br></p>
-                <br>
-                <p><img alt="cost(W,b) = \frac{1}{m}\sum_{i=1}^{m}(H(x^{(i)})-y^{(i)})^{2}" src="https://latex.codecogs.com/gif.latex?cost%28W%2Cb%29%20%3D%20%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7Bi%3D1%7D%5E%7Bm%7D%28H%28x%5E%7B%28i%29%7D%29-y%5E%7B%28i%29%7D%29%5E%7B2%7D" class="img-responsive"><br></p>
-                <div class="line"></div>
-                <h2>Simplified hypothesis</h2>
-                <p>이번엔 bias를 0으로 하여 cost function을 간소화 해봅니다.</p>
-                <br>
-                <p><img alt="H(x)=Wx" src="https://latex.codecogs.com/gif.latex?H%28x%29%3DWx" class="img-responsive"><br></p>
-                <br>
-                <p><img alt="cost(w)=\frac{1}{m}\sum_{i=1}^{m}(Wx^{(i)}-y^{(i)})^{2}" src="https://latex.codecogs.com/gif.latex?cost%28w%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7Bi%3D1%7D%5E%7Bm%7D%28Wx%5E%7B%28i%29%7D-y%5E%7B%28i%29%7D%29%5E%7B2%7D" class="img-responsive"><br></p><br>
-                <h2>How to Minimize cost?</h2>
-                <p>cost값을 최소화 하기 위해 포물선의 극이 되는 W를 찾아야한다.</p>
-                <br>
-                <h2>Gradient Descent Algorithm</h2><br>
-                <ul>
-                    <li>Minimize cost function</li><br>
-                    <li>Gradient descent is used many minimization problems</li><br>
-                    <li>For a given cost function, <em>cost(W,b)</em>, it will find <em>W, b</em> to minimize cost</li><br>
-                    <li>It can be applied to more general function : <em>cost(w1, w2,...)</em></li><br>
-                </ul>
-                <div class="line"></div>
-                <h2>Formal Definition</h2>
-                <br>
-                <p>cost function을
-                <em>W</em> 에 대하여 미분을 하면,</p>
-                <p><img alt="W:=W-\alpha \frac{1}{m}\sum_{i=1}^{m}(Wx^{(i)}-y^{(i)})x^{(i)}" src="https://latex.codecogs.com/gif.latex?W%3A%3DW-%5Calpha%20%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7Bi%3D1%7D%5E%7Bm%7D%28Wx%5E%7B%28i%29%7D-y%5E%7B%28i%29%7D%29x%5E%7B%28i%29%7D" class="img-responsive"><br></p>
-                <br>
-                <p>결국 Gradient Descent Algorithm은 아래와 같이 나타낼 수 있다.</p>
-                <p><img alt="W:=W-\alpha \frac{1}{m}\sum_{i=1}^{m}(Wx^{(i)}-y^{(i)})x^{(i)}" src="https://latex.codecogs.com/gif.latex?W%3A%3DW-%5Calpha%20%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7Bi%3D1%7D%5E%7Bm%7D%28Wx%5E%7B%28i%29%7D-y%5E%7B%28i%29%7D%29x%5E%7B%28i%29%7D" class="img-responsive"><br></p>
-                <br>
-                <p>한편, cost function이 </p>
-                <p><img alt="cost(W,b) = \frac{1}{m}\sum_{i=1}^{m}(H(x^{(i)})-y^{(i)})^{2}" src="https://latex.codecogs.com/gif.latex?cost%28W%2Cb%29%20%3D%20%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7Bi%3D1%7D%5E%7Bm%7D%28H%28x%5E%7B%28i%29%7D%29-y%5E%7B%28i%29%7D%29%5E%7B2%7D" class="img-responsive"><br></p>
-                <p>를 만족할 때 <code>convex function</code>이라고 하며, cost function이 convex function을 만족할 때, Gradient Descent Algorithm을 사용할 수 있다.</p>
-                <p>따라서, cost function을 잘 설계하는것이 중요하다.</p>
+                <div id="content1" hidden="true">
+                    <h3>One logistic regression unit cannot separate XOR</h3><br>
+                    <img src="img/lect09_1.png" class="img-responsive">
+                    <p>한 개의 logistic regression으로는 XOR을 해결할 수 없다는 것이 증명됨.</p>
+
+                    <div class="line"></div>
+
+                    <h2>XOR using NN</h2><br>
+                    <img src="img/lect09_2.png" class="img-responsive">
+                    <br>
+                    <p>위의 XOR을 linear하게 구분 할 수 없던 문제를 3개의 network로 해결해본다.</p><br>
+                    <h3>Neural Net</h3>
+                    <p>3개의 Network로 정말 XOR을 풀 수 있는지 증명해보자.</p><br>
+                    <img src="img/lect09_3.png" class="img-responsive">
+                    <br>
+                    <p><img alt="Y_{1}=sigmoid(XW_{1}+b_{1})" src="https://latex.codecogs.com/gif.latex?Y_%7B1%7D%3Dsigmoid%28XW_%7B1%7D&amp;plus;b_%7B1%7D%29"><br></p>
+                    <p><img alt="Y_{2}=sigmoid(XW_{2}+b_{2})" src="https://latex.codecogs.com/gif.latex?Y_%7B2%7D%3Dsigmoid%28XW_%7B2%7D&amp;plus;b_%7B2%7D%29"><br></p>
+                    <p><img alt="\bar{Y}=sigmoid(YW_{3}+b_{3})" src="https://latex.codecogs.com/gif.latex?%5Cbar%7BY%7D%3Dsigmoid%28YW_%7B3%7D&amp;plus;b_%7B3%7D%29"><br></p>
+                    <p>위의 식을 차례대로 계산해서 결과를 얻을 수 있다.</p><br>
+
+                    <p><img alt="{\color{Blue} w_{1}=\begin{bmatrix} 5 \\ 5 \end{bmatrix},\;b_{1}=-8}" src="https://latex.codecogs.com/gif.latex?%7B%5Ccolor%7BDarkBlue%7D%20w_%7B1%7D%3D%5Cbegin%7Bbmatrix%7D%205%20%5C%5C%205%20%5Cend%7Bbmatrix%7D%2C%5C%3Bb_%7B1%7D%3D-8%7D"><br></p>
+                    <p><img alt="{\color{Magenta} w_{2}=\begin{bmatrix} -7 \\ -7 \end{bmatrix},\;b_{2}=3}" src="https://latex.codecogs.com/gif.latex?%7B%5Ccolor%7BMagenta%7D%20w_%7B2%7D%3D%5Cbegin%7Bbmatrix%7D%20-7%20%5C%5C%20-7%20%5Cend%7Bbmatrix%7D%2C%5C%3Bb_%7B2%7D%3D3%7D"><br></p>
+                    <p><img alt="{\color{Orange} w_{3}=\begin{bmatrix} -11 \\ -11\end{bmatrix},\;b_{3}=6}" src="https://latex.codecogs.com/gif.latex?%7B%5Ccolor%7BOrange%7D%20w_%7B3%7D%3D%5Cbegin%7Bbmatrix%7D%20-11%20%5C%5C%20-11%5Cend%7Bbmatrix%7D%2C%5C%3Bb_%7B3%7D%3D6%7D"><br></p><br>
+                    <p>각 weight와 bias가 위와 같이 주어졌다고 가정하고 문제를 풀어보면,<br>아래와 같은 결과가 나온다.</p>
+                    <img src="img/lect09_4.png" class="img-responsive">
+                    <p><small><span class="text-danger">p.s.</span>&nbsp;직접 계산해보는 것을 강력히 권장한다.</small></p>
+
+                    <div class="line"></div>
+
+                    <h2>Forward propagation</h2><br>
+                    
                 </div>
-                <!-- page navigation -->
+                <div id="content2" hidden="true"> 
+                    
+                </div>
+
                 <div class="footer">
                     <ul class="pager">
                         <li class="previous" id="prev_button" style="color:#00BFFF;"><a href="#">Previous</a></li>
                         <li class="next" id="next_button" style="color:#00BFFF;"><a href="#">Next</a></li>
                     </ul>
                 </div>
-
-
             </div>
         </div>
-
         
-
-
-
         <!-- jQuery CDN -->
         <script src="js/jquery-1.12.0.min.js"></script>
         <!-- Bootstrap Js CDN -->
@@ -190,65 +164,67 @@
         <!-- jQuery Custom Scroller CDN -->
         <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
         
-
         <script type="text/javascript">
-            $(document).ready(function () {
-                $("#sidebar").mCustomScrollbar({
-                    theme: "minimal"
-                });
-
-                $('#sidebarCollapse').on('click', function () {
-                    $('#sidebar, #content').toggleClass('active');
-                    $('.collapse.in').toggleClass('in');
-                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-                });
-
-                var cnt = 0;
-                for(i=1;;i++){
-                    var local_id = "#content"+i;
-                    if($(local_id).length==0) break;
-                    cnt++;
-                }
-                if(cnt<=1){
-                    $("#prev_button").hide();
-                    $("#next_button").hide();
-                    $(".sidebar_flag").show();
-                }
-                var current = 1;
-                var local_id = "#content"+current;
-                $(local_id).show();
-                local_id+="_list";
-                $(local_id).addClass("selected");
-
-                $("#prev_button").click(function(){
-                    if(current>1){
-                        local_id = "#content"+current;
-                        $(local_id).hide();
-                        local_id += "_list";
-                        $(local_id).removeClass("selected");
-                        current--;
-                        local_id = "#content"+current;
-                        $(local_id).show();
-                        local_id += "_list";
-                        $(local_id).addClass("selected");
-                    }
-                });
-
-                $("#next_button").click(function(){
-                    if(current<cnt){
-                        local_id = "#content"+current;
-                        $(local_id).hide();
-                        local_id += "_list";
-                        $(local_id).removeClass("selected");
-                        current++;
-                        local_id = "#content"+current;
-                        $(local_id).show();
-                        local_id += "_list";
-                        $(local_id).addClass("selected");
-                    }
-                });
-                $('[data-toggle="tooltip"]').tooltip();
-            });
+        $(document).ready(function () {
+        $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+        });
+        $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+        var cnt = 0;
+        for(i=1;;i++){
+        var local_id = "#content"+i;
+        if($(local_id).length==0) break;
+        cnt++;
+        }
+        if(cnt<=1){
+        $("#prev_button").hide();
+        $("#next_button").hide();
+        $(".sidebar_flag").show();
+        }
+        var current = 1;
+        var local_id = "#content"+current;
+        $(local_id).show();
+        local_id+="_list";
+        $(local_id).addClass("selected");
+        $("#prev_button").click(function(){
+        if(current>1){
+        local_id = "#content"+current;
+        $(local_id).hide();
+        local_id += "_list";
+        $(local_id).removeClass("selected");
+        current--;
+        local_id = "#content"+current;
+        $(local_id).show();
+        local_id += "_list";
+        $(local_id).addClass("selected");
+        }
+        });
+        $("#next_button").click(function(){
+        if(current<cnt){
+        local_id = "#content"+current;
+        $(local_id).hide();
+        local_id += "_list";
+        $(local_id).removeClass("selected");
+        current++;
+        local_id = "#content"+current;
+        $(local_id).show();
+        local_id += "_list";
+        $(local_id).addClass("selected");
+        }
+        });
+        $(".recap_question").hover(function(){
+            $(this).css("color","red");
+            $(this).find(".recap_answer").show();
+            }, function(){
+            $(this).css("color","black");
+            $(this).find(".recap_answer").hide();
+        }); 
+        $('[data-toggle="tooltip"]').tooltip();
+        });
         </script>
     </body>
 </html>

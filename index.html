@@ -115,7 +115,7 @@
                         <div class="navbar-header">
                             <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
                                 <i class="glyphicon glyphicon-align-left"></i>
-                                <span class="korean">사이드바 접기/펼치기</span>
+                                <span class="korean sidebar_flag">사이드바 접기/펼치기</span>
                             </button>
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -178,6 +178,7 @@ document.write("hello world! "+timestamp); <script type="text/javascript">var to
                     $('a[aria-expanded=true]').attr('aria-expanded', 'false');
                 });
                 $('[data-toggle="tooltip"]').tooltip();
+                $(".sidebar_flag").show();
             });
         </script>
     </body>

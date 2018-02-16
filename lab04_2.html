@@ -105,7 +105,7 @@
                         <div class="navbar-header">
                             <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
                             <i class="glyphicon glyphicon-align-left"></i>
-                            <span class="korean">사이드바 접기/펼치기</span>
+                            <span class="korean sidebar_flag">사이드바 접기/펼치기</span>
                             </button>
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -453,6 +453,7 @@ example_batch, label_betch = tf.train.shuffle_batch(
             if(cnt<=1){
                 $("#prev_button").hide();
                 $("#next_button").hide();
+                $(".sidebar_flag").show();
             }
             var current = 1;
             var local_id = "#content"+current;
