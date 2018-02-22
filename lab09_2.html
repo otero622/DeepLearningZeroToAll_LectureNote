@@ -17,7 +17,7 @@
         <script>hljs.initHighlightingOnLoad();</script>
     </head>
     <body>
-        <div class="wrapper">
+        <div class="wrapper container">
             <!-- Sidebar Holder -->
             <nav id="sidebar">
                 <div class="sidebar-header">
@@ -29,7 +29,7 @@
                     <li>
                         <a href="index.html">Intro</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Lect</a>
                         <ul class="korean collapse list-unstyled" id="homeSubmenu">
                             <li><a href="lect01.html">Lect01. 머신러닝의 개념과 용어</a></li>
@@ -40,7 +40,7 @@
                             <li><a href="lect06.html">Lect06. Softmax Regression (Multinomial Logistic Regression)</a></li>
                             <li><a href="lect07.html">Lect07. ML의 실용과 몇 가지 팁</a></li>
                             <li><a href="lect08.html">Lect08. 딥러닝의 기본 개념과 문제, 그리고 해결</a></li>
-                            <li class="active"><a href="lect09.html">Lect09. Neural Network 1 : XOR 문제와 학습방법, Backpropagation</a></li>
+                            <li><a href="lect09.html">Lect09. Neural Network 1 : XOR 문제와 학습방법, Backpropagation</a></li>
                             <li><a href="lect10.html">Lect10. Neural Network 2 : ReLU and 초기 값 정하기 (2006/2007 breakthrough)</a></li>
                             <li><a href="lect11.html">Lect11. Convolutional Neural Networks (a.k.a CNN)</a></li>
                             <li><a href="lect12.html">Lect12. Recurrent Neural Network (a.k.a RNN)</a></li>
@@ -49,7 +49,7 @@
                             <li><a href="lect15.html">Lect15. Google Cloud ML을 이용해 TensorFlow 실행하기</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">TF example</a>
                         <ul class="korean collapse list-unstyled" id="pageSubmenu">
                             <li><a href="lab01.html">Lab 01. TensorFlow의 설치 및 기본적인 operations</a></li>
@@ -64,7 +64,7 @@
                             <li><a href="lab07_2.html">Lab 07_2. Meet MNIST Dataset</a></li>
                             <li><a href="lab08.html">Lab 08. Tensor Manipulation</a></li>
                             <li><a href="lab09_1.html">Lab 09_1. XOR을 위한 TensorFlow Deep Network</a></li>
-                            <li><a href="lab09_2.html">Lab 09_2. Tensor Board로 Deep Network 들여다 보기</a></li>
+                            <li class="active"><a href="lab09_2.html">Lab 09_2. Tensor Board로 Deep Network 들여다 보기</a></li>
                             <li><a href="lab10.html">Lab 10. 딥러닝으로 MNIST 98%이상 해보기</a></li>
                             <li><a href="lab11_1.html">Lab 11_1. TensorFlow의 CNN 기본</a></li>
                             <li><a href="lab11_2.html">Lab 11_2. TensorFlow로 구현하는 MNIST 99%</a></li>
@@ -82,7 +82,13 @@
                 <ul class="list-unstyled CTAs">
                     <li><a href="https://github.com/hunkim/DeepLearningZeroToAll/archive/master.zip" class="download">Download source</a></li>
                     <br>
-
+                    <!-- <p class="korean">만든이에게</p>
+                    <li>
+                        <a href="https://www.facebook.com/yoonbaeJeon" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; 페이스북 연락하기</a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/u/0/103969879362546932609" target="_blank"><i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>&nbsp; 구글plus 연락하기</a>
+                    </li> -->
                     <p>reference</p>
                     <li>
                         <a href="https://www.facebook.com/groups/TensorFlowKR/?fref=nf" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow KR 페이스북</a>
@@ -92,7 +98,6 @@
                     </li>
                 </ul>
             </nav>
-
             <!-- Page Content Holder -->
             <div id="content">
                 <nav class="navbar navbar-default">
@@ -105,64 +110,160 @@
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
-                                <li id="content1_list" class="selected"><a>XOR 문제 딥러닝으로 풀기</a></li>
-                                <li id="content2_list"><a>딥넷트웍 학습 시키기(backpropagation)</a></li>
+                                <li id="content1_list" class="selected"><a>Tensor Board로 딥네트웍 들여다보기</a></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
                 <!-- content1 always all content start from index 1 -->
-                <div id="content1" hidden="true">
-                    <h3>One logistic regression unit cannot separate XOR</h3><br>
-                    <img src="img/lect09_1.png" class="img-responsive">
-                    <p>한 개의 logistic regression으로는 XOR을 해결할 수 없다는 것이 증명됨 - marvin minsky</p>
+                <div id="content1" hidden>
+                    <h2>TensorBoard : TF logging/debugging tool</h2><br>
+                    <h4>&#8226; 5 steps for using TensorBoard</h4><br>
+                    <!-- Create an icon wrapped by the fa-stack class -->
+                    <span class="fa-stack text-danger" >
+                        <span class="fa fa-circle-o fa-stack-2x"></span>
+                        <strong class="fa-stack-1x">1</strong> 
+                    </span><span>From TF graph, decide which tensors you want to log</span>
+                    <pre><code class="python">w2_hist = tf.summary.histogram("weights2", W2)
+cost_sum = tf.summary.scalar("cost", cost)</code></pre>
+                    <span class="fa-stack text-success" >
+                        <span class="fa fa-circle-o fa-stack-2x"></span>
+                        <strong class="fa-stack-1x">2</strong> 
+                    </span><span>Merge all summaries</span>
+                    <pre><code class="python">summary = tf.summary.merge_all()</code></pre>
+                    <span class="fa-stack text-primary" >
+                        <span class="fa fa-circle-o fa-stack-2x"></span>
+                        <strong class="fa-stack-1x">3</strong> 
+                    </span><span>Create writer and add graph</span>
+                    <pre><code class="python"># Create summary writer
+writer = tf.summary.FileWriter('./logs')
+writer.add_graph(sess.graph)</code></pre>
+                    <span class="fa-stack text-warning" >
+                        <span class="fa fa-circle-o fa-stack-2x"></span>
+                        <strong class="fa-stack-1x">4</strong> 
+                    </span><span>Run summary merge and add_summary</span>
+                    <pre><code class="python">s, _ = sess.run([summary, optimizer], feed_dict=feed_dict)
+writer.add_summary(s, global_step=global_step)</code></pre>
+                    <span class="fa-stack text-violet" >
+                        <span class="fa fa-circle-o fa-stack-2x"></span>
+                        <strong class="fa-stack-1x">5</strong> 
+                    </span><span>Launch TesnorBoard</span>
+                    <pre><code class="Bash"># bash in tty, console, cmd in windows or any CLI
+$user tensorboard --logdir=./logs</code></pre>
 
                     <div class="line"></div>
 
-                    <h2>XOR using NN</h2><br>
-                    <img src="img/lect09_2.png" class="img-responsive">
-                    <br>
-                    <p>위의 XOR을 linear하게 구분 할 수 없던 문제를 3개의 network로 해결해본다.</p><br>
-                    <h3>Neural Net</h3>
-                    <p>3개의 Network로 정말 XOR을 풀 수 있는지 증명해보자.</p><br>
-                    <img src="img/lect09_3.png" class="img-responsive">
-                    <br>
-                    <p><img alt="Y_{1}=sigmoid(XW_{1}+b_{1})" src="https://latex.codecogs.com/gif.latex?Y_%7B1%7D%3Dsigmoid%28XW_%7B1%7D&amp;plus;b_%7B1%7D%29"><br></p>
-                    <p><img alt="Y_{2}=sigmoid(XW_{2}+b_{2})" src="https://latex.codecogs.com/gif.latex?Y_%7B2%7D%3Dsigmoid%28XW_%7B2%7D&amp;plus;b_%7B2%7D%29"><br></p>
-                    <p><img alt="\bar{Y}=sigmoid(YW_{3}+b_{3})" src="https://latex.codecogs.com/gif.latex?%5Cbar%7BY%7D%3Dsigmoid%28YW_%7B3%7D&amp;plus;b_%7B3%7D%29"><br></p>
-                    <p>위의 식을 차례대로 계산해서 결과를 얻을 수 있다.</p><br>
+                    <h2>Histogram <small>multi-dimensional tensors</small></h2><br>
+                    <p>sample <small>- layer1/weights1</small></p>
+                    <pre><code class="python">with tf.name_scope("layer1") as scope:
+    W1 = tf.Variable(tf.random_normal([2, 2]), name='weight1')
+    b1 = tf.Variable(tf.random_normal([2]), name='bias1')
+    layer1 = tf.sigmoid(tf.matmul(X, W1) + b1)
 
-                    <p><img alt="{\color{Blue} w_{1}=\begin{bmatrix} 5 \\ 5 \end{bmatrix},\;b_{1}=-8}" src="https://latex.codecogs.com/gif.latex?%7B%5Ccolor%7BDarkBlue%7D%20w_%7B1%7D%3D%5Cbegin%7Bbmatrix%7D%205%20%5C%5C%205%20%5Cend%7Bbmatrix%7D%2C%5C%3Bb_%7B1%7D%3D-8%7D"><br></p>
-                    <p><img alt="{\color{Magenta} w_{2}=\begin{bmatrix} -7 \\ -7 \end{bmatrix},\;b_{2}=3}" src="https://latex.codecogs.com/gif.latex?%7B%5Ccolor%7BMagenta%7D%20w_%7B2%7D%3D%5Cbegin%7Bbmatrix%7D%20-7%20%5C%5C%20-7%20%5Cend%7Bbmatrix%7D%2C%5C%3Bb_%7B2%7D%3D3%7D"><br></p>
-                    <p><img alt="{\color{Orange} w_{3}=\begin{bmatrix} -11 \\ -11\end{bmatrix},\;b_{3}=6}" src="https://latex.codecogs.com/gif.latex?%7B%5Ccolor%7BOrange%7D%20w_%7B3%7D%3D%5Cbegin%7Bbmatrix%7D%20-11%20%5C%5C%20-11%5Cend%7Bbmatrix%7D%2C%5C%3Bb_%7B3%7D%3D6%7D"><br></p><br>
-                    <p>각 weight와 bias가 위와 같이 주어졌다고 가정하고 문제를 풀어보면,<br>아래와 같은 결과가 나온다.</p>
-                    <img src="img/lect09_4.png" class="img-responsive">
-                    <p><small><span class="text-danger">p.s.</span>&nbsp;직접 계산해보는 것을 강력히 권장한다.</small></p>
-
-                    <div class="line"></div>
-
-                    <h2>Forward propagation</h2><br>
+    w1_hist = tf.summary.histogram("weights1", W1)
+    b1_hist = tf.summary.histogram("biases1", b1)
+    layer1_hist = tf.summary.histogram("layer1", layer1)</code></pre><br>
+                    <p>tensorboard histogram</p>
+                    <img src="img/lab09_7.png" class="img-responsive">
                     
-                </div>
-                <div id="content2" hidden="true"> 
-                    <h2>How can get </h2>
+                    <p>위의 samplecode의 histogram parameter로 넘겨준 <kbd>weights1</kbd>과 <kbd>layer1</kbd>의 히스토그램 그래프를 tensorboard로 확인할 수 있다.</p>
+
                     <div class="line"></div>
 
-                    <h2>Backpropagation (chain rule)</h2><br>
-                    <p>chain rule</p>
-                    <p><img alt="\frac{\partial f}{\partial x}=\frac{\partial f}{\partial {\color{DarkGreen} g}}\cdot \frac{\partial {\color{DarkGreen} g}}{\partial x}" src="https://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20x%7D%3D%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20%7B%5Ccolor%7BDarkGreen%7D%20g%7D%7D%5Ccdot%20%5Cfrac%7B%5Cpartial%20%7B%5Ccolor%7BDarkGreen%7D%20g%7D%7D%7B%5Cpartial%20x%7D"><br></p><br>
-                    
-                    <p><img alt="f={\color{DarkGreen} wx}+b,\;{\color{DarkGreen} g=wx},\;f={\color{DarkGreen} g}+b" src="https://latex.codecogs.com/gif.latex?f%3D%7B%5Ccolor%7BDarkGreen%7D%20wx%7D&amp;plus;b%2C%5C%3B%7B%5Ccolor%7BDarkGreen%7D%20g%3Dwx%7D%2C%5C%3Bf%3D%7B%5Ccolor%7BDarkGreen%7D%20g%7D&amp;plus;b"><br></p>
-                    <ol>
-                        <li>
-                            forward (w=-2, x=5, b=3)
-                        </li>
-                        <li>
-                            backward 
-                        </li>
-                    </ol>
-                </div>
+                    <h2>Add scope for better graph hierarchy</h2><br>
+                    <p>main graph</p>
+                    <pre><code class="python">with tf.name_scope("layer1") as scope:
+    W1 = tf.Variable(tf.random_normal([2, 2]), name='weight1')
+    b1 = tf.Variable(tf.random_normal([2]), name='bias1')
+    layer1 = tf.sigmoid(tf.matmul(X, W1) + b1)
 
+    w1_hist = tf.summary.histogram("weights1", W1)
+    b1_hist = tf.summary.histogram("biases1", b1)
+    layer1_hist = tf.summary.histogram("layer1", layer1)
+
+
+with tf.name_scope("layer2") as scope:
+    W2 = tf.Variable(tf.random_normal([2, 1]), name='weight2')
+    b2 = tf.Variable(tf.random_normal([1]), name='bias2')
+    hypothesis = tf.sigmoid(tf.matmul(layer1, W2) + b2)
+
+    w2_hist = tf.summary.histogram("weights2", W2)
+    b2_hist = tf.summary.histogram("biases2", b2)
+    hypothesis_hist = tf.summary.histogram("hypothesis", hypothesis)</code></pre><br>
+                    <p>tensorboard main graph</p>
+                    <img src="img/lab09_8.png" class="img-responsive">
+                    <p>각 <kbd>layer</kbd>별로 scoping하면 <kbd>main graph</kbd>에서 깔끔하게 정리된 형태로 볼 수 있다.</p>
+
+                    <div class="line"></div>
+
+                    <h2><span class="text-success">Merge summaries and create writer</span><br><span class="text-primary">after creating session</span></h2><br>
+
+                    <pre><code class="python"># Summary
+summary = tf.summary.merge_all()
+
+# initialize
+sess = tf.Session()
+sess.run(tf.global_variables_initializer())
+
+# Cerate summary writer
+writer = tf.summary.FileWriter(TB_SUMMARY_DIR)
+# 경로(TB_SUMMARY_DIR)설정은 본인 맘대로, 경로 설정 예 : "./logs/ex1"
+writer.<span class="text-primary">add_graph</span>(sess.graph) <a href="https://www.tensorflow.org/api_docs/python/tf/summary/FileWriter#add_graph" target="_blank"><u style="color:green;"># add_graph method 이해하기</u></a></code></pre>
+                    
+                    <div class="line"></div>
+
+                    <h2><span class="text-warning">Run merged summary and write <small>(add summary)</small></span></h2><br>
+                    <pre><code class="python">s, _ = sess.run([summary, optimizer], feed_dict=feed_dict)
+wrtier.<span class="text-primary">add_summary</span>(s, global_step=global_step)
+global_step += 1
+<a href="https://www.tensorflow.org/api_docs/python/tf/summary/FileWriter#add_summary" target="_blank"><u style="color:green;"># add_summary method 이해하기</u></a></code></pre></code></pre>
+
+                    <div class="line"></div>
+
+                    <h2><span class="text-violet">Launch tensorboard <small>(local)</small></span></h2><br>
+                    <pre><code class="bash">$username tensorboard -logdir=./logs
+TensorBoard 0.4.0 at http://DESKTOP-750L8O0:6006 (Press CTRL+C to quit)</code></pre><br>
+                    <h2><span class="text-violet">Launch tensorboard <small>(remote)</small></span></h2><br>
+                    <p>Usage</p>
+                    <h4>ssh -L <span class="text-primary">local_port</span>:127.0.0.1:<span class="text-warning">remote_port</span> username@server.com</h4><br>
+                    <p>example</p>
+                    <pre><code class="bash">local&gt; $local_user ssh -L 7007:121.0.0.1:6006 hongkildong@myserver.com
+<span class="hljs-built_in">server</span>&gt; $server_user tensorboard -logdir=./logs</code></pre>
+                    <h5>&nbsp;위의 command 실행 후 <kbd>local</kbd>컴퓨터에서 http://127.0.0.1:<span class="text-primary">7007</span>로 확인 가능하다<br><br>실제로는 <kbd>server</kbd>컴퓨터로 tensorflow가 실행되는 것이고, 확인은 <kbd>local</kbd>에서 한다!<br><br>일종의 포트포워딩을 해주는 것.</h5>
+
+                    <div class="line"></div>
+
+                    <h2>Multiple runs</h2><br>
+                    <p>learning_rate=0.1</p>
+                    <pre><code class="python">with tf.name_scope("train") as scope:
+    train = tf.train.AdamOptimizer(learning_rate=0.1).minimize(cost)
+...
+# Launch graph
+with tf.Session() as sess:
+    # tensorboard --logdir=./logs/xor_logs
+    merged_summary = tf.summary.merge_all()
+    writer = tf.summary.FileWriter("./logs/xor_logs_lr0_1")
+...</code></pre>
+                    <p>learning_rate=0.01</p>
+                    <pre><code class="python">with tf.name_scope("train") as scope:
+    train = tf.train.AdamOptimizer(learning_rate=0.01).minimize(cost)
+...
+# Launch graph
+with tf.Session() as sess:
+    # tensorboard --logdir=./logs/xor_logs
+    merged_summary = tf.summary.merge_all()
+    writer = tf.summary.FileWriter("./logs/xor_logs_lr0_01")
+...</code></pre><br>
+                    <h4>콘솔에 <kbd>tensorboard -logdir=./logs</kbd> 실행</h4><br>
+                    <img src="img/lab09_9.png" class="img-responsive">
+
+                    <div class="line"></div>
+
+                    <h2>Exercise</h2><br>
+                    <p>&#8226; Wide and Deep NN for MNIST<br>&#8226; Add tensorboard</p>
+                </div>
+                
+                <!-- page navigation -->
                 <div class="footer">
                     <ul class="pager">
                         <li class="previous" id="prev_button" style="color:#00BFFF;"><a href="#">Previous</a></li>
@@ -231,15 +332,12 @@
         $(local_id).addClass("selected");
         }
         });
-        $(".recap_question").hover(function(){
-            $(this).css("color","red");
-            $(this).find(".recap_answer").show();
-            }, function(){
-            $(this).css("color","black");
-            $(this).find(".recap_answer").hide();
-        }); 
         $('[data-toggle="tooltip"]').tooltip();
         });
+        $("#showfullcode").click(function(){
+            $("#fullcode").toggle();
+            $(this).html($("#showfullcode").text()=='show full code'? 'hide full code' : 'show full code');
+        })
         </script>
     </body>
 </html>
