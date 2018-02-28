@@ -293,6 +293,18 @@ optimizer = tf.train.GradientDescentOptimizer(learning_rate).minimize(cost) # Gr
             $(this).find(".recap_answer").hide();
         }); 
         $('[data-toggle="tooltip"]').tooltip();
+        if($(window).width() <= 1200){
+            $("#bs-example-navbar-collapse-1").css("font-size","86%");
+        }else{
+            $("#bs-example-navbar-collapse-1").css("font-size","100%");
+        }
+        $(window).resize(function(){
+            if($(window).width() <= 1200){
+                $("#bs-example-navbar-collapse-1").css("font-size","86%");
+            }else{
+                $("#bs-example-navbar-collapse-1").css("font-size","100%");
+            }
+        });
         });
         </script>
     </body>

@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>lecture note</title>
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/vs2015.min.css">
+        <script src="js/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+        <div class="wrapper container">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3 class="korean">김성훈 교수님</h3>
+                    <a href="https://www.inflearn.com/course/%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%EB%94%A5%EB%9F%AC%EB%8B%9D-%EA%B0%95%EC%A2%8C/" target="_blank" data-toggle="tooltip" title="강의 보러 가기 click me"><h5 class="korean">모두를 위한 머신러닝/딥러닝</h5></a>
+                </div>
+                <ul class="list-unstyled components">
+                    <p class="korean">INDEX</p>
+                    <li>
+                        <a href="index.html">Intro</a>
+                    </li>
+                    <li>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Lect</a>
+                        <ul class="korean collapse list-unstyled" id="homeSubmenu">
+                            <li><a href="lect01.html">Lect01. 머신러닝의 개념과 용어</a></li>
+                            <li><a href="lect02.html">Lect02. Linear Regression의 개념</a></li>
+                            <li><a href="lect03.html">Lect03. Linear Regression cost 함수 최소화</a></li>
+                            <li><a href="lect04.html">Lect04. 여러개의 입력(feature)의 Linear Regression</a></li>
+                            <li><a href="lect05.html">Lect05. Logistic Classification (Regression)</a></li>
+                            <li><a href="lect06.html">Lect06. Softmax Regression (Multinomial Logistic Regression)</a></li>
+                            <li><a href="lect07.html">Lect07. ML의 실용과 몇 가지 팁</a></li>
+                            <li><a href="lect08.html">Lect08. 딥러닝의 기본 개념과 문제, 그리고 해결</a></li>
+                            <li><a href="lect09.html">Lect09. Neural Network 1 : XOR 문제와 학습방법, Backpropagation</a></li>
+                            <li><a href="lect10.html">Lect10. Neural Network 2 : ReLU and 초기 값 정하기 (2006/2007 breakthrough)</a></li>
+                            <li><a href="lect11.html">Lect11. Convolutional Neural Networks (a.k.a CNN)</a></li>
+                            <li><a href="lect12.html">Lect12. Recurrent Neural Network (a.k.a RNN)</a></li>
+                            <li><a href="lect13.html">Lect13. Deep Deep Network AWD에서 GPU와 돌려보기 (powered by AWS)</a></li>
+                            <li><a href="lect14.html">Lect14. AWS에서 저렴하게 Spot Instance를 터미네이션 걱정 없이 사용하기</a></li>
+                            <li><a href="lect15.html">Lect15. Google Cloud ML을 이용해 TensorFlow 실행하기</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">TF example</a>
+                        <ul class="korean collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="lab01.html">Lab 01. TensorFlow의 설치 및 기본적인 operations</a></li>
+                            <li><a href="lab02.html">Lab 02. Tensorflow로 간단한 linear regression을 구현</a></li>
+                            <li><a href="lab03.html">Lab 03. Linear Regression의 cost 최소화의 TensorFlow 구현</a></li>
+                            <li><a href="lab04_1.html">Lab 04_1. Multi-variable Linear Regression을 TensorFlow에서 구현하기</a></li>
+                            <li><a href="lab04_2.html">Lab 04_2. TensorFlow로 파일에서 데이타 읽어오기</a></li>
+                            <li><a href="lab05.html">Lab 05. TensorFlow로 Logistic Classification 구현하기</a></li>
+                            <li><a href="lab06_1.html">Lab 06_1. TensorFlow로 SoftmaxClassification 구현하기</a></li>
+                            <li><a href="lab06_2.html">Lab 06_2. TensorFlow로 Fancy Softmax Classification 구현하기</a></li>
+                            <li><a href="lab07_1.html">Lab 07_1. training/test dataset, learning rate, normalization</a></li>
+                            <li><a href="lab07_2.html">Lab 07_2. Meet MNIST Dataset</a></li>
+                            <li><a href="lab08.html">Lab 08. Tensor Manipulation</a></li>
+                            <li><a href="lab09_1.html">Lab 09_1. XOR을 위한 TensorFlow Deep Network</a></li>
+                            <li><a href="lab09_2.html">Lab 09_2. Tensor Board로 Deep Network 들여다 보기</a></li>
+                            <li class="active"><a href="lab10.html">Lab 10. 딥러닝으로 MNIST 98%이상 해보기</a></li>
+                            <li><a href="lab11_1.html">Lab 11_1. TensorFlow의 CNN 기본</a></li>
+                            <li><a href="lab11_2.html">Lab 11_2. TensorFlow로 구현하는 MNIST 99%</a></li>
+                            <li><a href="lab11_3.html">Lab 11_3. Class, tf.layers, Ensemble (MNIST 99.5%)</a></li>
+                            <li><a href="lab12_1.html">Lab 12_1. RNN - Basic</a></li>
+                            <li><a href="lab12_2.html">Lab 12_2. RNN - Hi Hello Training</a></li>
+                            <li><a href="lab12_3.html">Lab 12_3. Long Sequence RNN</a></li>
+                            <li><a href="lab12_4.html">Lab 12_4. Stacked RNN + Softmax Layer</a></li>
+                            <li><a href="lab12_5.html">Lab 12_5. Dynamic RNN</a></li>
+                            <li><a href="lab12_6.html">Lab 12_6. RNN with Time Series Data</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                <ul class="list-unstyled CTAs">
+                    <li><a href="https://github.com/hunkim/DeepLearningZeroToAll/archive/master.zip" class="download">Download source</a></li>
+                    <br>
+                    <!-- <p class="korean">만든이에게</p>
+                    <li>
+                        <a href="https://www.facebook.com/yoonbaeJeon" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; 페이스북 연락하기</a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/u/0/103969879362546932609" target="_blank"><i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>&nbsp; 구글plus 연락하기</a>
+                    </li> -->
+                    <p>reference</p>
+                    <li>
+                        <a href="https://www.facebook.com/groups/TensorFlowKR/?fref=nf" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow KR 페이스북</a>
+                    </li>
+                    <li>
+                        <a href="https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/api_docs/" target="_blank"><i class="fa fa-book fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow API doc(KR)</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Page Content Holder -->
+            <div id="content">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="glyphicon glyphicon-align-left"></i>
+                            <span class="korean sidebar_flag">사이드바 접기/펼치기</span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li id="content1_list" class="selected"><a>딥러닝으로 MNIST 98%이상 해보기</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- content1 always all content start from index 1 -->
+                <div id="content1" hidden>
+                    <h3>Softmax classifier for MNIST</h3><br>
+                    <span><a href="lab07_2.html" target="_blank" class="text-primary" data-toggle="tooltip" title="lab07-2 펼쳐보기">lab07_2에서</a> softmax를 이용하여 MNIST를 실행해보았고, 나름 준수한 결과를 얻은 적이 있다.</span><br><br>
+                    <p>Softmax를 이용한 MNIST 결과</p>
+                    <pre><code class="md"># result
+Epoch: 0001 cost = 2.826302696
+Epoch: 0002 cost = 1.061668970
+Epoch: 0003 cost = 0.838061318
+Epoch: 0004 cost = 0.733232738
+Epoch: 0005 cost = 0.669279872
+Epoch: 0006 cost = 0.624611815
+Epoch: 0007 cost = 0.591160336
+Epoch: 0008 cost = 0.563868977
+Epoch: 0009 cost = 0.541745163
+Epoch: 0010 cost = 0.522673563
+Epoch: 0011 cost = 0.506782313
+Epoch: 0012 cost = 0.492447635
+Epoch: 0013 cost = 0.479955829
+Epoch: 0014 cost = 0.468893664
+Epoch: 0015 cost = 0.458703465
+Learning finished
+Accuracy:  0.8951 &lt;-- 90% 정도의 결과 --&gt;</code></pre><br>
+                    
+                    <div class="line"></div>
+
+                    <h2>NN for MNIST <small class="text-violet">using relu</small></h2><br>
+                    <p>code 핵심부분 <small>using 3 layers</small></p>
+                    <pre><code class="python"># input place holders
+X = tf.placeholder(tf.float32, [None, 784])
+Y = tf.placeholder(tf.float32, [None, 10])
+
+# weights &amp; bias for nn layers
+W1 = tf.Variable(tf.random_normal([784, 256]))
+b1 = tf.Variable(tf.random_normal([256]))
+L1 = tf.nn.relu(tf.matmul(X, W1) + b1)
+
+W2 = tf.Variable(tf.random_normal([256, 256]))
+b2 = tf.Variable(tf.random_normal([256]))
+L2 = tf.nn.relu(tf.matmul(L1, W2) + b2)
+
+W3 = tf.Variable(tf.random_normal([256, 10]))
+b3 = tf.Variable(tf.random_normal([10]))
+hypothesis = tf.matmul(L2, W3) + b3
+
+# define cost/loss &amp; optimizer
+cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(
+    logits=hypothesis, labels=Y))
+optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)
+</code></pre><br>
+                    <pre><code class="md"># result
+Epoch: 0001 cost = 142.399869111
+Epoch: 0002 cost = 38.906668132
+Epoch: 0003 cost = 24.252295870
+Epoch: 0004 cost = 16.849258239
+Epoch: 0005 cost = 12.325592435
+Epoch: 0006 cost = 9.175948052
+Epoch: 0007 cost = 6.853954748
+Epoch: 0008 cost = 5.075524841
+Epoch: 0009 cost = 3.765994710
+Epoch: 0010 cost = 2.864708748
+Epoch: 0011 cost = 2.183029293
+Epoch: 0012 cost = 1.654323858
+Epoch: 0013 cost = 1.159541916
+Epoch: 0014 cost = 1.003832678
+Epoch: 0015 cost = 0.793592348
+Learning Finished!
+Accuracy: 0.9424
+</code></pre>
+                    <h5>결과가 무려 94%까지 향상된 것을 확인할 수 있었다.</h5><br>
+
+                    <h4 class="text-violet">Challenge : weight의 rank를 늘려보자!</h4><br>
+                    <p>위의 코드에서 weight과 bias의 rank를 좀 더 넓혀서 테스트 해본다. <em>wide NN</em></p>
+                    <pre><code class="python"># weights &amp; bias for nn layers
+W1 = tf.Variable(tf.random_normal([784, 512]))  # 256 -&gt; 512
+b1 = tf.Variable(tf.random_normal([512]))
+L1 = tf.nn.relu(tf.matmul(X, W1) + b1)
+
+W2 = tf.Variable(tf.random_normal([512, 512]))
+b2 = tf.Variable(tf.random_normal([512]))
+L2 = tf.nn.relu(tf.matmul(L1, W2) + b2)
+
+W3 = tf.Variable(tf.random_normal([512, 10]))
+b3 = tf.Variable(tf.random_normal([10]))
+hypothesis = tf.matmul(L2, W3) + b3</code></pre><br>
+                    <p>그래서 결과는?</p>
+                    <pre><code class="md"># result
+Epoch: 0001 cost = 246.997005315
+Epoch: 0002 cost = 62.049182392
+Epoch: 0003 cost = 35.778883777
+Epoch: 0004 cost = 22.377492089
+...
+Epoch: 0012 cost = 1.933066514
+Epoch: 0013 cost = 1.512607044
+Epoch: 0014 cost = 1.691754463
+Epoch: 0015 cost = 1.605405745
+Learning Finished!
+Accuracy: 0.9512
+</code></pre>
+                    <h5>약간의 성능향상 효과가 있었다! GOOOD!</h5><br>
+                    <div class="showfullcode" style="cursor: pointer;">
+                        <span class="querytext text-primary" data-toggle="tooltip" title="lab-10-2-mnist_nn.py" >show full code</span>
+                        <!-- lab07 full code, toggled by click method  -->
+                        <pre class="fullcode" hidden="true"><code class="python"># Lab 10 MNIST and NN
+import tensorflow as tf
+import random
+# import matplotlib.pyplot as plt
+
+from tensorflow.examples.tutorials.mnist import input_data
+
+tf.set_random_seed(777)  # reproducibility
+
+mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+# Check out https://www.tensorflow.org/get_started/mnist/beginners for
+# more information about the mnist dataset
+
+# parameters
+learning_rate = 0.001
+training_epochs = 15
+batch_size = 100
+
+# input place holders
+X = tf.placeholder(tf.float32, [None, 784])
+Y = tf.placeholder(tf.float32, [None, 10])
+
+# weights &amp; bias for nn layers
+W1 = tf.Variable(tf.random_normal([784, 256]))
+b1 = tf.Variable(tf.random_normal([256]))
+L1 = tf.nn.relu(tf.matmul(X, W1) + b1)
+
+W2 = tf.Variable(tf.random_normal([256, 256]))
+b2 = tf.Variable(tf.random_normal([256]))
+L2 = tf.nn.relu(tf.matmul(L1, W2) + b2)
+
+W3 = tf.Variable(tf.random_normal([256, 10]))
+b3 = tf.Variable(tf.random_normal([10]))
+hypothesis = tf.matmul(L2, W3) + b3
+
+# define cost/loss &amp; optimizer
+cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(
+    logits=hypothesis, labels=Y))
+optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)
+
+# initialize
+sess = tf.Session()
+sess.run(tf.global_variables_initializer())
+
+# train my model
+for epoch in range(training_epochs):
+    avg_cost = 0
+    total_batch = int(mnist.train.num_examples / batch_size)
+
+    for i in range(total_batch):
+        batch_xs, batch_ys = mnist.train.next_batch(batch_size)
+        feed_dict = {X: batch_xs, Y: batch_ys}
+        c, _ = sess.run([cost, optimizer], feed_dict=feed_dict)
+        avg_cost += c / total_batch
+
+    print('Epoch:', '%04d' % (epoch + 1), 'cost =', '{:.9f}'.format(avg_cost))
+
+print('Learning Finished!')
+
+# Test model and check accuracy
+correct_prediction = tf.equal(tf.argmax(hypothesis, 1), tf.argmax(Y, 1))
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+print('Accuracy:', sess.run(accuracy, feed_dict={
+      X: mnist.test.images, Y: mnist.test.labels}))
+
+# Get one and predict
+r = random.randint(0, mnist.test.num_examples - 1)
+print("Label: ", sess.run(tf.argmax(mnist.test.labels[r:r + 1], 1)))
+print("Prediction: ", sess.run(
+    tf.argmax(hypothesis, 1), feed_dict={X: mnist.test.images[r:r + 1]}))
+
+# plt.imshow(mnist.test.images[r:r + 1].
+#           reshape(28, 28), cmap='Greys', interpolation='nearest')
+# plt.show()</code></pre>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <h2>더 나은 initialization <small>Xavier initialization</small></h2><br>
+                    <p>lab-10-3-mnist_nn_xavier.py (snippet)</p>
+                    <pre><code class="python"># weights &amp; bias for nn layers
+# http://stackoverflow.com/questions/33640581/how-to-do-xavier-initialization-on-tensorflow
+W1 = tf.get_variable("W1", shape=[784, 512],
+                     initializer=<b class="text-warning">tf.contrib.layers.xavier_initializer())</b>
+b1 = tf.Variable(tf.random_normal([512]))
+L1 = tf.nn.relu(tf.matmul(X, W1) + b1)
+
+W2 = tf.get_variable("W2", shape=[512, 512],
+                     initializer=<b class="text-warning">tf.contrib.layers.xavier_initializer())</b>
+b2 = tf.Variable(tf.random_normal([512]))
+L2 = tf.nn.relu(tf.matmul(L1, W2) + b2)
+
+W3 = tf.get_variable("W3", shape=[512, 10],
+                     initializer=<b class="text-warning">tf.contrib.layers.xavier_initializer())</b>
+b3 = tf.Variable(tf.random_normal([10]))
+hypothesis = tf.matmul(L2, W3) + b3</code></pre><br>
+                    <p>결과 창 (with xavier)</p>
+                    <pre><code class="md"># result
+Epoch: 0001 cost = 0.260459478  &lt;-- 상당히 낮은 cost에서부터 시작된다 --&gt;
+Epoch: 0002 cost = 0.096834997
+Epoch: 0003 cost = 0.060386360
+Epoch: 0004 cost = 0.041559046
+Epoch: 0005 cost = 0.029837496
+Epoch: 0006 cost = 0.024664492
+Epoch: 0007 cost = 0.022381218
+Epoch: 0008 cost = 0.017822251
+Epoch: 0009 cost = 0.015752621
+Epoch: 0010 cost = 0.012656607
+Epoch: 0011 cost = 0.013528413
+Epoch: 0012 cost = 0.012523621
+Epoch: 0013 cost = 0.011630711
+Epoch: 0014 cost = 0.010825225
+Epoch: 0015 cost = 0.007762966
+Learning Finished!
+Accuracy:<span class="text-warning"> 0.9813</span>        &lt;-- OMG.. 벌써 title 달성 --&gt;</code></pre><br>
+                    <h4 class="text-violet">Challenge : Deep &amp; Wide NN 도전</h4><br>
+                    <h5>아래와 같이 <kbd>hidden layer</kbd>를 늘려 Deep NN을 생성한다.</h5>
+                    <p>lab-10-4-mnist_nn_deep.py (snippet)</p>
+                    <pre><code class="python"># weights &amp; bias for nn layers
+# http://stackoverflow.com/questions/33640581/how-to-do-xavier-initialization-on-tensorflow
+W1 = tf.get_variable("W1", shape=[784, 512],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b1 = tf.Variable(tf.random_normal([512]))
+L1 = tf.nn.relu(tf.matmul(X, W1) + b1)
+
+W2 = tf.get_variable("W2", shape=[512, 512],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b2 = tf.Variable(tf.random_normal([512]))
+L2 = tf.nn.relu(tf.matmul(L1, W2) + b2)
+
+W3 = tf.get_variable("W3", shape=[512, 512],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b3 = tf.Variable(tf.random_normal([512]))
+L3 = tf.nn.relu(tf.matmul(L2, W3) + b3)
+
+W4 = tf.get_variable("W4", shape=[512, 512],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b4 = tf.Variable(tf.random_normal([512]))
+L4 = tf.nn.relu(tf.matmul(L3, W4) + b4)
+
+W5 = tf.get_variable("W5", shape=[512, 512],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b5 = tf.Variable(tf.random_normal([512]))
+L5 = tf.nn.relu(tf.matmul(L4, W5) + b5)
+
+W6 = tf.get_variable("W6", shape=[512, 512],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b6 = tf.Variable(tf.random_normal([512]))
+L6 = tf.nn.relu(tf.matmul(L5, W6) + b6)
+
+W7 = tf.get_variable("W7", shape=[512, 10],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b7 = tf.Variable(tf.random_normal([10]))
+hypothesis = tf.matmul(L6, W7) + b7</code></pre><br>
+                    <p>결과 무엇?</p>
+                    <pre><code class="md"># result
+Epoch: 0001 cost = 0.346822281
+Epoch: 0002 cost = 0.123760407
+Epoch: 0003 cost = 0.088959570
+...
+Epoch: 0013 cost = 0.025918571
+Epoch: 0014 cost = 0.020347715
+Epoch: 0015 cost = 0.020104995
+Learning Finished!
+Accuracy: 0.9789        ???
+</code></pre>
+                    <h5>오히려 결과가 안좋아졌다?</h5>
+                    <h5><span class="text-danger">overfitting</span>이 일어난 케이스라고 볼 수 있다.</h5><br>
+
+
+                   <div class="showfullcode" style="cursor: pointer;">
+                        <span class="querytext text-primary" data-toggle="tooltip" title="lab-10-4-mnist_deep.py" >show full code</span>
+                        <!-- lab07 full code, toggled by click method  -->
+                        <pre class="fullcode" hidden="true"><code class="python"># Lab 10 MNIST and Deep learning
+import tensorflow as tf
+import random
+# import matplotlib.pyplot as plt
+
+from tensorflow.examples.tutorials.mnist import input_data
+
+tf.set_random_seed(777)  # reproducibility
+
+mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+# Check out https://www.tensorflow.org/get_started/mnist/beginners for
+# more information about the mnist dataset
+
+# parameters
+learning_rate = 0.001
+training_epochs = 15
+batch_size = 100
+
+# input place holders
+X = tf.placeholder(tf.float32, [None, 784])
+Y = tf.placeholder(tf.float32, [None, 10])
+
+# weights &amp; bias for nn layers
+# http://stackoverflow.com/questions/33640581/how-to-do-xavier-initialization-on-tensorflow
+W1 = tf.get_variable("W1", shape=[784, 512],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b1 = tf.Variable(tf.random_normal([512]))
+L1 = tf.nn.relu(tf.matmul(X, W1) + b1)
+
+W2 = tf.get_variable("W2", shape=[512, 512],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b2 = tf.Variable(tf.random_normal([512]))
+L2 = tf.nn.relu(tf.matmul(L1, W2) + b2)
+
+W3 = tf.get_variable("W3", shape=[512, 512],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b3 = tf.Variable(tf.random_normal([512]))
+L3 = tf.nn.relu(tf.matmul(L2, W3) + b3)
+
+W4 = tf.get_variable("W4", shape=[512, 512],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b4 = tf.Variable(tf.random_normal([512]))
+L4 = tf.nn.relu(tf.matmul(L3, W4) + b4)
+
+W5 = tf.get_variable("W5", shape=[512, 512],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b5 = tf.Variable(tf.random_normal([512]))
+L5 = tf.nn.relu(tf.matmul(L4, W5) + b5)
+
+W6 = tf.get_variable("W6", shape=[512, 512],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b6 = tf.Variable(tf.random_normal([512]))
+L6 = tf.nn.relu(tf.matmul(L5, W6) + b6)
+
+W7 = tf.get_variable("W7", shape=[512, 10],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b7 = tf.Variable(tf.random_normal([10]))
+hypothesis = tf.matmul(L6, W7) + b7
+
+# define cost/loss &amp; optimizer
+cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(
+    logits=hypothesis, labels=Y))
+optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)
+
+# initialize
+sess = tf.Session()
+sess.run(tf.global_variables_initializer())
+
+# train my model
+for epoch in range(training_epochs):
+    avg_cost = 0
+    total_batch = int(mnist.train.num_examples / batch_size)
+
+    for i in range(total_batch):
+        batch_xs, batch_ys = mnist.train.next_batch(batch_size)
+        feed_dict = {X: batch_xs, Y: batch_ys}
+        c, _ = sess.run([cost, optimizer], feed_dict=feed_dict)
+        avg_cost += c / total_batch
+
+    print('Epoch:', '%04d' % (epoch + 1), 'cost =', '{:.9f}'.format(avg_cost))
+
+print('Learning Finished!')
+
+# Test model and check accuracy
+correct_prediction = tf.equal(tf.argmax(hypothesis, 1), tf.argmax(Y, 1))
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+print('Accuracy:', sess.run(accuracy, feed_dict={
+      X: mnist.test.images, Y: mnist.test.labels}))
+
+# Get one and predict
+r = random.randint(0, mnist.test.num_examples - 1)
+print("Label: ", sess.run(tf.argmax(mnist.test.labels[r:r + 1], 1)))
+print("Prediction: ", sess.run(
+    tf.argmax(hypothesis, 1), feed_dict={X: mnist.test.images[r:r + 1]}))
+
+# plt.imshow(mnist.test.images[r:r + 1].
+#           reshape(28, 28), cmap='Greys', interpolation='nearest')
+# plt.show()</code></pre></div>
+
+                    <div class="line"></div>
+
+                    <h2>Network overfitting방지 대책 : <small>Dropout</small></h2><br>
+
+                    <p>lab-10-5-mnist_nn_dropout.py (snippet)</p>
+                    <pre><code class="python"># dropout (keep_prob) rate  0.7 on training, but should be 1 for testing
+keep_prob = tf.placeholder(tf.float32)
+
+W1 = tf.get_variable("W1", shape=[784, 512],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b1 = tf.Variable(tf.random_normal([512]))
+L1 = tf.nn.relu(tf.matmul(X, W1) + b1)
+L1 = tf.nn.dropout(L1, <span class="text-warning">keep_prob</span>=keep_prob)
+
+W2 = tf.get_variable("W2", shape=[512, 512],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b2 = tf.Variable(tf.random_normal([512]))
+L2 = tf.nn.relu(tf.matmul(L1, W2) + b2)
+L2 = tf.nn.dropout(L2, <span class="text-warning">keep_prob</span>=keep_prob)
+
+...
+W5 = tf.get_variable("W5", shape=[512, 10],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b5 = tf.Variable(tf.random_normal([10]))
+hypothesis = tf.matmul(L4, W5) + b5     # 마지막은 당연히 dropout안 들어감!
+...
+# train my model
+for epoch in range(training_epochs):
+    avg_cost = 0
+    total_batch = int(mnist.train.num_examples / batch_size)
+
+    for i in range(total_batch):
+        batch_xs, batch_ys = mnist.train.next_batch(batch_size)
+        feed_dict = {X: batch_xs, Y: batch_ys, <span class="text-warning">keep_prob: 0.5</span>}    # 0.7보다 0.5가 더 잘먹힌다.
+        c, _ = sess.run([cost, optimizer], feed_dict=feed_dict)
+        avg_cost += c / total_batch
+        ...
+
+# Test model and check accuracy
+correct_prediction = tf.equal(tf.argmax(hypothesis, 1), tf.argmax(Y, 1))
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+print('Accuracy:', sess.run(accuracy, feed_dict={
+      X: mnist.test.images, Y: mnist.test.labels, <span class="text-warning">keep_prob: 1</span>}))</code></pre><br>
+
+                    <p>결과</p>
+                    <pre><code class="md"># result
+...
+Accuracy: 0.9825        # better than 0.9789</code></pre><br>
+                    <h5>숫자상으론(1%정도 accuracy 향상) 사실 이제 별 차이가 안 나타나 보일 수 있다.</h5>
+                    <h5>하지만, 고작 15세대 학습시킨 모델인 것으로 미루어 보았을 때</h5>
+                    <h5>만약 네트워크가 더 복잡해진다면 훨씬 더 많은 성능 향상을 기대할 수 있을 것이다.</h5><br>
+
+                    <div class="showfullcode" style="cursor: pointer;">
+                        <span class="querytext text-primary" data-toggle="tooltip" title="lab-10-5-mnist_nn_dropout.py" >show full code</span>
+                        <!-- lab07 full code, toggled by click method  -->
+                        <pre class="fullcode" hidden="true"><code class="python"># Lab 10 MNIST and Dropout
+import tensorflow as tf
+import random
+# import matplotlib.pyplot as plt
+
+from tensorflow.examples.tutorials.mnist import input_data
+
+tf.set_random_seed(777)  # reproducibility
+
+mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+# Check out https://www.tensorflow.org/get_started/mnist/beginners for
+# more information about the mnist dataset
+
+# parameters
+learning_rate = 0.001
+training_epochs = 15
+batch_size = 100
+
+# input place holders
+X = tf.placeholder(tf.float32, [None, 784])
+Y = tf.placeholder(tf.float32, [None, 10])
+
+# dropout (keep_prob) rate  0.7 on training, but should be 1 for testing
+keep_prob = tf.placeholder(tf.float32)
+
+# weights &amp; bias for nn layers
+# http://stackoverflow.com/questions/33640581/how-to-do-xavier-initialization-on-tensorflow
+W1 = tf.get_variable("W1", shape=[784, 512],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b1 = tf.Variable(tf.random_normal([512]))
+L1 = tf.nn.relu(tf.matmul(X, W1) + b1)
+L1 = tf.nn.dropout(L1, keep_prob=keep_prob)
+
+W2 = tf.get_variable("W2", shape=[512, 512],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b2 = tf.Variable(tf.random_normal([512]))
+L2 = tf.nn.relu(tf.matmul(L1, W2) + b2)
+L2 = tf.nn.dropout(L2, keep_prob=keep_prob)
+
+W3 = tf.get_variable("W3", shape=[512, 512],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b3 = tf.Variable(tf.random_normal([512]))
+L3 = tf.nn.relu(tf.matmul(L2, W3) + b3)
+L3 = tf.nn.dropout(L3, keep_prob=keep_prob)
+
+W4 = tf.get_variable("W4", shape=[512, 512],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b4 = tf.Variable(tf.random_normal([512]))
+L4 = tf.nn.relu(tf.matmul(L3, W4) + b4)
+L4 = tf.nn.dropout(L4, keep_prob=keep_prob)
+
+W5 = tf.get_variable("W5", shape=[512, 10],
+                     initializer=tf.contrib.layers.xavier_initializer())
+b5 = tf.Variable(tf.random_normal([10]))
+hypothesis = tf.matmul(L4, W5) + b5
+
+# define cost/loss &amp; optimizer
+cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(
+    logits=hypothesis, labels=Y))
+optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)
+
+# initialize
+sess = tf.Session()
+sess.run(tf.global_variables_initializer())
+
+# train my model
+for epoch in range(training_epochs):
+    avg_cost = 0
+    total_batch = int(mnist.train.num_examples / batch_size)
+
+    for i in range(total_batch):
+        batch_xs, batch_ys = mnist.train.next_batch(batch_size)
+        feed_dict = {X: batch_xs, Y: batch_ys, keep_prob: 0.5}
+        # 0.5 better than 0.7 in mycase
+        c, _ = sess.run([cost, optimizer], feed_dict=feed_dict)
+        avg_cost += c / total_batch
+
+    print('Epoch:', '%04d' % (epoch + 1), 'cost =', '{:.9f}'.format(avg_cost))
+
+print('Learning Finished!')
+
+# Test model and check accuracy
+correct_prediction = tf.equal(tf.argmax(hypothesis, 1), tf.argmax(Y, 1))
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+print('Accuracy:', sess.run(accuracy, feed_dict={
+      X: mnist.test.images, Y: mnist.test.labels, keep_prob: 1}))
+
+# Get one and predict
+r = random.randint(0, mnist.test.num_examples - 1)
+print("Label: ", sess.run(tf.argmax(mnist.test.labels[r:r + 1], 1)))
+print("Prediction: ", sess.run(
+    tf.argmax(hypothesis, 1), feed_dict={X: mnist.test.images[r:r + 1], keep_prob: 1}))
+
+# plt.imshow(mnist.test.images[r:r + 1].
+#           reshape(28, 28), cmap='Greys', interpolation='nearest')
+# plt.show()</code></pre></div>
+
+                    <div class="line"></div>          
+
+                    <h2>Optimizers</h2><br>
+                    <pre><code class="python">train = tf.train.<b>GradientDescentOptimizer</b>(<span class="text-primary">learning_rate</span>=0.1).minimize(cost)</code></pre>
+                    <p>여태까지 주로 사용한 <code>optimizer</code>는 <kbd>GradientDescentOptimizer</kbd>였다.</p>
+                    <p>그 외에도 여러 <code>optimizer</code>가 존재하는데...</p><br>
+                    <ul>
+                        <li class="text-primary">
+                            <big><a href="https://www.tensorflow.org/api_docs/python/tf/train/AdadeltaOptimizer" target="_blank" data-toggle="tooltip" title="공식 API 펼치기">tf.train.AdadeltaOptimizer</a></big>
+                        </li><br>
+                        <li class="text-primary">
+                            <big><a href="https://www.tensorflow.org/api_docs/python/tf/train/AdagradOptimizer" target="_blank" data-toggle="tooltip" title="공식 API 펼치기">tf.train.AdagradOptimizer</a></big>
+                        </li><br>
+                        <li class="text-primary">
+                            <big><a href="https://www.tensorflow.org/api_docs/python/tf/train/AdagradDAOptimizer" target="_blank" data-toggle="tooltip" title="공식 API 펼치기">tf.train.AdagradDAOptimizer</a></big>
+                        </li><br>
+                        <li class="text-primary">
+                            <big><a href="https://www.tensorflow.org/api_docs/python/tf/train/MomentumOptimizer" target="_blank" data-toggle="tooltip" title="공식 API 펼치기">tf.train.MomentumOptimizer</a></big>
+                        </li><br>
+                        <li class="text-primary">
+                            <big><a href="https://www.tensorflow.org/api_docs/python/tf/train/AdamOptimizer" target="_blank" data-toggle="tooltip" title="공식 API 펼치기">tf.train.AdamOptimizer</a></big>
+                        </li><br>
+                        <li class="text-primary">
+                            <big><a href="https://www.tensorflow.org/api_docs/python/tf/train/FtrlOptimizer" target="_blank" data-toggle="tooltip" title="공식 API 펼치기">tf.train.FtrlOptimizer</a></big>
+                        </li><br>
+                        <li class="text-primary">
+                            <big><a href="https://www.tensorflow.org/api_docs/python/tf/train/ProximalGradientDescentOptimizer" target="_blank" data-toggle="tooltip" title="공식 API 펼치기">tf.train.ProximalGradientDescentOptimizer</a></big>
+                        </li><br>
+                        <li class="text-primary">
+                            <big><a href="https://www.tensorflow.org/api_docs/python/tf/train/ProximalAdagradOptimizer" target="_blank" data-toggle="tooltip" title="공식 API 펼치기">tf.train.ProximalAdagradOptimizer</a></big>
+                        </li><br>
+                        <li class="text-primary">
+                            <big><a href="https://www.tensorflow.org/api_docs/python/tf/train/RMSPropOptimizer" target="_blank" data-toggle="tooltip" title="공식 API 펼치기">tf.train.RMSPropOptimizer</a></big>
+                        </li>
+                    </ul><br>
+
+                    <h3>simulation</h3><br>
+                    <img src="img/lab10_1.gif" class="img-responsive">
+                    <a href="http://www.denizyuret.com/2015/03/alec-radfords-animations-for.html" target="_blank">source : http://www.denizyuret.com/2015/03/alec-radfords-animations-for.html</a><br>
+                    <br>
+                    <br>
+
+                    <h3>ADAM <small>a method for stochastic optimization [Kingma et al. 2015]</small></h3>
+                    <img src="img/lab10_1.png" class="img-responsive">
+                    <p>그림 해석 : <code>Adam optimizer</code>가 상당히 좋은 결과를 내준다~</p>
+
+                    <div class="line"></div>
+
+                    <h2>Exercise</h2><br>
+                    <ul>
+                        <li>
+                            <big>
+                                Adam and other optimization 테스트 해보기
+                            </big>
+                        </li><br>
+                        <p>Application 방법</p>
+                        <pre><code class="python"># define cost/loss &mp; optimizer
+cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=hypothesis, labels=Y)
+optimizer = tf.train.<span class="text-warning">AdamOptimizer</span>(learning_rate=learning_rate).minimize(cost)</code></pre>
+                        <p>기존 <kbd>GradientDescentOptimizer</kbd>와 적용 방법은 같다.</p><br>
+
+                        <li>
+                            <big>
+                                Batch Normalization 적용시키기
+                            </big>
+                        </li><br>
+                        <p>직접 해보는 것을 강력히 권장</p>
+                    </ul>
+                </div>
+                
+                <!-- page navigation -->
+                <div class="footer">
+                    <ul class="pager">
+                        <li class="previous" id="prev_button" style="color:#00BFFF;"><a href="#">Previous</a></li>
+                        <li class="next" id="next_button" style="color:#00BFFF;"><a href="#">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- jQuery CDN -->
+        <script src="js/jquery-1.12.0.min.js"></script>
+        <!-- Bootstrap Js CDN -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        
+        <script type="text/javascript">
+        $(document).ready(function () {
+        $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+        });
+        $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+        var cnt = 0;
+        for(i=1;;i++){
+        var local_id = "#content"+i;
+        if($(local_id).length==0) break;
+        cnt++;
+        }
+        if(cnt<=1){
+        $("#prev_button").hide();
+        $("#next_button").hide();
+        $(".sidebar_flag").show();
+        }
+        var current = 1;
+        var local_id = "#content"+current;
+        $(local_id).show();
+        local_id+="_list";
+        $(local_id).addClass("selected");
+        $("#prev_button").click(function(){
+        if(current>1){
+        local_id = "#content"+current;
+        $(local_id).hide();
+        local_id += "_list";
+        $(local_id).removeClass("selected");
+        current--;
+        local_id = "#content"+current;
+        $(local_id).show();
+        local_id += "_list";
+        $(local_id).addClass("selected");
+        }
+        });
+        $("#next_button").click(function(){
+        if(current<cnt){
+        local_id = "#content"+current;
+        $(local_id).hide();
+        local_id += "_list";
+        $(local_id).removeClass("selected");
+        current++;
+        local_id = "#content"+current;
+        $(local_id).show();
+        local_id += "_list";
+        $(local_id).addClass("selected");
+        }
+        });
+        $('[data-toggle="tooltip"]').tooltip();
+        });
+            
+        $(".showfullcode").click(function(){
+            $(this).find(".fullcode").toggle();
+            $(this).find(".querytext").html($(this).find(".querytext").text()=='show full code'? 'hide full code' : 'show full code');
+        });
+        </script>
+    </body>
+</html>

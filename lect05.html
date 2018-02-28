@@ -164,15 +164,15 @@
                     </ul>
                     <br>
                     <h3>결국 Linear Regression과 같다?</h3><br>
-                    <p>Y값은 결국 0 or 1인데,
+                    <p>&nbsp;Y값은 결국 0 or 1인데,
                     기존의 linear regression의 hypothesis 함수는&nbsp;<img alt="H(x)=Wx+b" src="https://latex.codecogs.com/gif.latex?H%28x%29%3DWx&amp;plus;b"><br>위 식에 의하면 hypothesis 값은 충분히 1보다 크거나 0보다 작을 수 있다.<br>그렇기 때문에 linear regression과는 엄연히 다르다.</p>
                     <br>
-                    <h3>그래서 등장한 대안</h3>
-                    <h5>&nbsp;sigmoid function의 등장</h5>
+                    <h3>그래서 등장한 대안
+                    <small>&nbsp;sigmoid function의 등장</small></h3><br>
                     <p><img class="img-responsive" alt="g(z)=\frac{1}{(1+e^{-z})}" src="https://latex.codecogs.com/gif.latex?g%28z%29%3D%5Cfrac%7B1%7D%7B%281&amp;plus;e%5E%7B-z%7D%29%7D"><br></p><br>
                     <p>그래프로 나타내보자.</p>
                     <img src="img/lect05_1.png" class="img-responsive" alt="Responsive image">
-                    <span>z --&gt;&nbsp;&infin; : g(z) --&gt;&nbsp;1<br>z --&gt;&nbsp;-&infin; : g(z) --&gt;&nbsp;0</span>
+                    <kbd>z --&gt;&nbsp;&infin;&nbsp; : g(z) --&gt;&nbsp;1</kbd><br><br><kbd>z --&gt;&nbsp;-&infin; : g(z) --&gt;&nbsp;0</kbd>
                     <div class="line"></div>
                     <h2>Logistic Hypothesis</h2>
                     <br>
@@ -305,6 +305,18 @@ train = optimizer.minimize(cost)</code></pre>
             $(this).find(".recap_answer").hide();
         }); 
         $('[data-toggle="tooltip"]').tooltip();
+        if($(window).width() <= 1200){
+            $("#bs-example-navbar-collapse-1").css("font-size","86%");
+        }else{
+            $("#bs-example-navbar-collapse-1").css("font-size","100%");
+        }
+        $(window).resize(function(){
+            if($(window).width() <= 1200){
+                $("#bs-example-navbar-collapse-1").css("font-size","86%");
+            }else{
+                $("#bs-example-navbar-collapse-1").css("font-size","100%");
+            }
+        });
         });
         </script>
     </body>

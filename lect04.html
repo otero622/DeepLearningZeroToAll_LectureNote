@@ -145,25 +145,22 @@
                     </li>
                 </ul>
                 <div class="line"></div>
-                <h2>Predicting exam score :<small>&nbsp;기존에 얻은 3가지 점수로 final term 점수를 예상해보기</small></h2>
+                <h2>Predicting exam score<br><small>&nbsp;:&nbsp;기존에 얻은 3가지 점수로 final term 점수를 예상해보기</small></h2>
                 <h3>regerssion using three input ( <em>x1</em>, <em>x2</em>, <em>x3 </em>)</h3><br>
                 <br>
-                <h2>Hypothesis</h2>
+                <h2>Hypothesis</h2><br>
                 <br>
                 <p><img alt="H(x)=Wx+b" src="https://latex.codecogs.com/gif.latex?H%28x%29%3DWx&amp;plus;b" class="img-responsive"><br></p>
-                <br>
                 <p><img alt="H(x_{1}, x_{2}, x_{3}) = w_{1}x_{1} + w_{2}x_{2} + w_{3}x_{3} + b" src="https://latex.codecogs.com/gif.latex?H%28x_%7B1%7D%2C%20x_%7B2%7D%2C%20x_%7B3%7D%29%20%3D%20w_%7B1%7Dx_%7B1%7D%20&amp;plus;%20w_%7B2%7Dx_%7B2%7D%20&amp;plus;%20w_%7B3%7Dx_%7B3%7D%20&amp;plus;%20b" class="img-responsive"><br></p><br><br>
 
-                <h2>Cost function</h2>
+                <h2>Cost function</h2><br>
                 <br>
                 <p><img alt="cost(W,b)=\frac{1}{m}\sum_{I=1}^{m}(H(x^{(i)}_{1},x^{(i)}_{2},x^{(i)}_{3})-y^{(i)})^{2}" src="https://latex.codecogs.com/gif.latex?cost%28W%2Cb%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7BI%3D1%7D%5E%7Bm%7D%28H%28x%5E%7B%28i%29%7D_%7B1%7D%2Cx%5E%7B%28i%29%7D_%7B2%7D%2Cx%5E%7B%28i%29%7D_%7B3%7D%29-y%5E%7B%28i%29%7D%29%5E%7B2%7D" class="img-responsive"><br></p>
                 <div class="line"></div>
-                <h2>Multi-variable</h2><br>
+                <h2>Multi-variable</h2><br><br>
                 <p><img alt="H(x_{1},x_{2},x_{3},...,x_{n})= w_{1}x_{1}+w_{2}x_{2}+w_{3}x_{3}+...+w_{n}x_{n}+b" src="https://latex.codecogs.com/gif.latex?H%28x_%7B1%7D%2Cx_%7B2%7D%2Cx_%7B3%7D%2C...%2Cx_%7Bn%7D%29%3D%20w_%7B1%7Dx_%7B1%7D&amp;plus;w_%7B2%7Dx_%7B2%7D&amp;plus;w_%7B3%7Dx_%7B3%7D&amp;plus;...&amp;plus;w_%7Bn%7Dx_%7Bn%7D&amp;plus;b" class="img-responsive"><br></p>
-                <br>
                 <p><img alt="H(x)=Wx" src="https://latex.codecogs.com/gif.latex?H%28x%29%3DWx" class="img-responsive"><br></p>
-                <br>
-                <p>위와 같이 변수가 너무 많아지면 복잡성의 문제 때문에 Matrix개념을 도입</p><br>
+                <p>위와 같이 변수가 너무 많아지면 복잡성의 문제가 생기기 때문에 <kbd>Matrix</kbd> 개념을 도입</p><br>
 
                 <h2>Hypothesis using matrix</h2><br>
                 <p><img alt="(x_{1} \; x_{2}\; x_{3}) \begin{pmatrix} w_{1} \\w_{2}\\w_{3} \end{pmatrix}=(x_{1}w_{1}+x_{2}w_{2}+x_{3}w_{3})" src="https://latex.codecogs.com/gif.latex?%28x_%7B1%7D%20%5C%3B%20x_%7B2%7D%5C%3B%20x_%7B3%7D%29%20%5Cbegin%7Bpmatrix%7D%20w_%7B1%7D%20%5C%5Cw_%7B2%7D%5C%5Cw_%7B3%7D%20%5Cend%7Bpmatrix%7D%3D%28x_%7B1%7Dw_%7B1%7D&amp;plus;x_%7B2%7Dw_%7B2%7D&amp;plus;x_%7B3%7Dw_%7B3%7D%29" class="img-responsive"><br></p><br>

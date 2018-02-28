@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>lecture note</title>
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/vs2015.min.css">
+        <script src="js/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3 class="korean">김성훈 교수님</h3>
+                    <a href="https://www.inflearn.com/course/%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%EB%94%A5%EB%9F%AC%EB%8B%9D-%EA%B0%95%EC%A2%8C/" target="_blank" data-toggle="tooltip" title="강의 보러 가기 click me"><h5 class="korean">모두를 위한 머신러닝/딥러닝</h5></a>
+                </div>
+                <ul class="list-unstyled components">
+                    <p class="korean">INDEX</p>
+                    <li>
+                        <a href="index.html">Intro</a>
+                    </li>
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Lect</a>
+                        <ul class="korean collapse list-unstyled" id="homeSubmenu">
+                            <li><a href="lect01.html">Lect01. 머신러닝의 개념과 용어</a></li>
+                            <li><a href="lect02.html">Lect02. Linear Regression의 개념</a></li>
+                            <li><a href="lect03.html">Lect03. Linear Regression cost 함수 최소화</a></li>
+                            <li><a href="lect04.html">Lect04. 여러개의 입력(feature)의 Linear Regression</a></li>
+                            <li><a href="lect05.html">Lect05. Logistic Classification (Regression)</a></li>
+                            <li><a href="lect06.html">Lect06. Softmax Regression (Multinomial Logistic Regression)</a></li>
+                            <li><a href="lect07.html">Lect07. ML의 실용과 몇 가지 팁</a></li>
+                            <li><a href="lect08.html">Lect08. 딥러닝의 기본 개념과 문제, 그리고 해결</a></li>
+                            <li><a href="lect09.html">Lect09. Neural Network 1 : XOR 문제와 학습방법, Backpropagation</a></li>
+                            <li class="active"><a href="lect10.html">Lect10. Neural Network 2 : ReLU and 초기 값 정하기 (2006/2007 breakthrough)</a></li>
+                            <li><a href="lect11.html">Lect11. Convolutional Neural Networks (a.k.a CNN)</a></li>
+                            <li><a href="lect12.html">Lect12. Recurrent Neural Network (a.k.a RNN)</a></li>
+                            <li><a href="lect13.html">Lect13. Deep Deep Network AWD에서 GPU와 돌려보기 (powered by AWS)</a></li>
+                            <li><a href="lect14.html">Lect14. AWS에서 저렴하게 Spot Instance를 터미네이션 걱정 없이 사용하기</a></li>
+                            <li><a href="lect15.html">Lect15. Google Cloud ML을 이용해 TensorFlow 실행하기</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">TF example</a>
+                        <ul class="korean collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="lab01.html">Lab 01. TensorFlow의 설치 및 기본적인 operations</a></li>
+                            <li><a href="lab02.html">Lab 02. Tensorflow로 간단한 linear regression을 구현</a></li>
+                            <li><a href="lab03.html">Lab 03. Linear Regression의 cost 최소화의 TensorFlow 구현</a></li>
+                            <li><a href="lab04_1.html">Lab 04_1. Multi-variable Linear Regression을 TensorFlow에서 구현하기</a></li>
+                            <li><a href="lab04_2.html">Lab 04_2. TensorFlow로 파일에서 데이타 읽어오기</a></li>
+                            <li><a href="lab05.html">Lab 05. TensorFlow로 Logistic Classification 구현하기</a></li>
+                            <li><a href="lab06_1.html">Lab 06_1. TensorFlow로 SoftmaxClassification 구현하기</a></li>
+                            <li><a href="lab06_2.html">Lab 06_2. TensorFlow로 Fancy Softmax Classification 구현하기</a></li>
+                            <li><a href="lab07_1.html">Lab 07_1. training/test dataset, learning rate, normalization</a></li>
+                            <li><a href="lab07_2.html">Lab 07_2. Meet MNIST Dataset</a></li>
+                            <li><a href="lab08.html">Lab 08. Tensor Manipulation</a></li>
+                            <li><a href="lab09_1.html">Lab 09_1. XOR을 위한 TensorFlow Deep Network</a></li>
+                            <li><a href="lab09_2.html">Lab 09_2. Tensor Board로 Deep Network 들여다 보기</a></li>
+                            <li><a href="lab10.html">Lab 10. 딥러닝으로 MNIST 98%이상 해보기</a></li>
+                            <li><a href="lab11_1.html">Lab 11_1. TensorFlow의 CNN 기본</a></li>
+                            <li><a href="lab11_2.html">Lab 11_2. TensorFlow로 구현하는 MNIST 99%</a></li>
+                            <li><a href="lab11_3.html">Lab 11_3. Class, tf.layers, Ensemble (MNIST 99.5%)</a></li>
+                            <li><a href="lab12_1.html">Lab 12_1. RNN - Basic</a></li>
+                            <li><a href="lab12_2.html">Lab 12_2. RNN - Hi Hello Training</a></li>
+                            <li><a href="lab12_3.html">Lab 12_3. Long Sequence RNN</a></li>
+                            <li><a href="lab12_4.html">Lab 12_4. Stacked RNN + Softmax Layer</a></li>
+                            <li><a href="lab12_5.html">Lab 12_5. Dynamic RNN</a></li>
+                            <li><a href="lab12_6.html">Lab 12_6. RNN with Time Series Data</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                <ul class="list-unstyled CTAs">
+                    <li><a href="https://github.com/hunkim/DeepLearningZeroToAll/archive/master.zip" class="download">Download source</a></li>
+                    <br>
+
+                    <p>reference</p>
+                    <li>
+                        <a href="https://www.facebook.com/groups/TensorFlowKR/?fref=nf" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow KR 페이스북</a>
+                    </li>
+                    <li>
+                        <a href="https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/api_docs/" target="_blank"><i class="fa fa-book fa-3x" aria-hidden="true"></i>&nbsp; TensorFlow API doc(KR)</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Page Content Holder -->
+            <div id="content">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="glyphicon glyphicon-align-left"></i>
+                            <span class="korean sidebar_flag">사이드바 접기/펼치기</span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li id="content1_list" class="selected"><a>Sigmoid 보다 ReLU</a></li>
+                                <li id="content2_list"><a>Weight 초기화 잘하기</a></li>
+                                <li id="content3_list"><a>Dropout과 앙상블</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- content1 always all content start from index 1 -->
+                <div id="content1" hidden="true">
+                    <h2>NN for XOR</h2><br>
+                    <img src="img/lect10_1.png" class="img-responsive">
+                    <pre><code class="python">W1 = tf.Variable(tf.random_uniform([2, 2] -1.0, 1.0))
+W2 = tf.Variable(tf.random_uniform([2, 1] -1.0, 1.0))
+
+b1 = tf.Variable(tf.zeros([2]), name="Bias1")
+b2 = tf.Variable(tf.zeros([1]), name="Bias2")
+
+# Our hypothesis
+L2 = tf.sigmoid(tf.matmul(X, W1) + b1)
+hypothesis = tf.sigmoid(tf.matmul(L2, W2) + b2)</code></pre><br>
+                    <h3>3단 layer 설계 <small>어렵지 않다!</small></h3><br>
+                    <img src="img/lect10_2.png" class="img-responsive">
+                    <pre><code class="python">W1 = tf.Variable(tf.random_uniform([2, 5] -1.0, 1.0))
+W2 = tf.Variable(tf.random_uniform([5, 4] -1.0, 1.0))
+W3 = tf.Variable(tf.random_uniform([4, 1] -1.0, 1.0))
+
+b1 = tf.Variable(tf.zeros([5]), name="Bias1")
+b2 = tf.Variable(tf.zeros([4]), name="Bias2")
+b3 = tf.Variable(tf.zeros([1]), name="Bias3")
+
+# Our hypothesis
+L2 = tf.sigmoid(tf.matmul(X, W1) + b1)
+L3 = tf.sigmoid(tf.matmul(L2, W2) + b2)
+hypothesis = tf.sigmoid(tf.matmul(L3, W3) + b3)</code></pre><br>
+                    <h3>9 hidden layers</h3><br>
+                    <p><code>hidden layers</code>가 9개 이므로 <code>total layers</code> 는 11개</p>
+                    <pre><code class="python">W1 = tf.Variable(tf.random_uniform([2, 5] -1.0, 1.0), name="Weight1")
+W2 = tf.Variable(tf.random_uniform([5, 5] -1.0, 1.0), name="Weigth2")
+...
+W10 = tf.Variable(tf.random_uniform([5, 5] -1.0, 1.0), name="Weigth10")
+W11 = tf.Variable(tf.random_uniform([5, 1] -1.0, 1.0), name="Weigth11")
+
+b1 = tf.Variable(tf.zeros([5]), name="Bias1")
+b2 = tf.Variable(tf.zeros([5]), name="Bias2")
+...
+b10 = tf.Variable(tf.zeros([5]), name="Bias10")
+b11 = tf.Variable(tf.zeros([1]), name="Bias11")</code></pre>
+                    <p>chain 적용 시키기</p>
+                    <pre><code class="python"># our hypothesis
+with tf.name_scope("layer1") as scope:
+    L1 = tf.sigmoid(tf.matmul(X, W1) + b1)
+with tf.name_scope("layer2") as scope:
+    L2 = tf.sigmoid(tf.matmul(L1, W2) + b2)
+...
+with tf.name_scope("layer10") as scope:
+    L10 = tf.sigmoid(tf.matmul(L9, W10) + b10)
+
+with tf.name_scope("last") as scope:
+    hypothesis = tf.sigmoid(tf.matmul(L10, W11) + b11)</code><code class="md"># TensorBoard로 그래프를 그리기위해 반드시 scoping 해야함</code></pre><br>
+                    <h3>Poor result?</h3><br>
+                    <span>분명 Deep &amp; wide NN을 사용하였는데, 결과가 형편없다?</span><br>
+                    <span><a href="lab09_1.html#exercise" target="_blank" class="text-primary">lab09_1의 exercise</a>에서 이미 결과가 좋지 않게 나오는 것을 확인할 수 있었다.<br><small>원인분석은 아래에서...</small></span>
+
+                    <div class="line"></div>
+
+                    <h2>lect9-2 : Backpropagation <small>chain rule</small></h2><br>
+                    <img src="img/lect10_3.png" class="img-responsive"><br>
+                    <h4>Sigmoid의 모순</h4>
+                    <p>&nbsp;각 노드들의 미분 값은 0보다 크고 1보다 작은 값을 갖는다.<br>Chain Rule에 의해 각 노드들의 미분값의 곱으로 계산되는데, 곱할수록 값은 더욱 더 작아지게 되어 앞 단 layer의 영향도가 현저히 줄어든다.</p>
+
+                    <div class="line"></div>
+
+                    <h2>Vanishing gradient <small>NN winter2 : 1986 - 2006</small></h2><br>
+                    <img src="img/lect10_4.png" class="img-responsive">
+                    <p>&nbsp;86년도에 <kbd>backpropagation</kbd>으로 여러 문제가 해결되면서 NN은 다시 각광받지만, layer가 두터워질 수록 <u>입력단과 가까운</u> 기울기는 <u>결과에 미미한 영향을 미치게 되는</u> 현상이 발생한다.</p><br>
+
+                    <h3>Geoffrey Hinton's summary of findings up to today</h3><br>
+                    <ul>
+                        <li>
+                            <big>"연구에 사용된 라벨링된 데이터의 크기는 매우 작았다"</big>
+                        </li><br>
+                        <li>
+                            <big>"현재 컴퓨터의 컴퓨팅 파워가 너무 딸린다"</big>
+                        </li><br>
+                        <li>
+                            <big>"weights의 초기화를 멍청한 방법으로 하고 있었다"</big>
+                        </li><br>
+                        <li class="text-primary">
+                            <big>"잘못된 비 선형 알고리즘(sigmoid)을 사용하고 있었다"</big>
+                        </li>
+                    </ul>
+                    <br>
+
+                    <h3>Sigmoid!</h3><br>
+                    <img src="img/lect10_5.png" class="img-responsive">
+                    <h5>ReLU의 신박한 Mechanism</h5>
+                    <ul>
+                        <li>
+                            <p>0보다 작아? = 0</p>
+                        </li>
+                        <li>
+                            <p>0보다 커? = az</p>
+                        </li>
+                    </ul>
+                    
+                    <div class="line"></div>
+
+                    <h2>ReLU <small>Rectified Linear Unit</small></h2><br>
+                    <h4 style="text-decoration:line-through">&nbsp;L1 = tf.sigmoid(tf.matmul(X, W1) + b1)</h4>
+                    <h4>&nbsp;L1 = tf.nn.relu(tf.matmul(X, W1) + b1)</h4><br>
+
+                    <p>더 이상 NN에서 <kbd style="text-decoration:line-through">sigmoid</kbd>는 과감히 버린다.<br>대신 <code>ReLU</code>를 사용하자!</p><br>
+
+                    <h3>그 외의 Activation Functions</h3><br>
+                    <p>ReLU의 등장 이후에도 여러 연구를 거쳐 다양한 <kbd>Activation Function</kbd>들이 등장하였다.</p>
+                    <h4><b>&bullet;Sigmoid</b></h4>
+                    <p>&nbsp;&nbsp;&nbsp;<img alt="\sigma (x)=\frac{1}{(1+e^{-x})}" src="https://latex.codecogs.com/gif.latex?%5Csigma%20%28x%29%3D%5Cfrac%7B1%7D%7B%281&amp;plus;e%5E%7B-x%7D%29%7D"><br></p><br>
+
+                    <img src="img/lect10_6.png" class="img-responsive"><br>
+
+                    <h4><b>&bullet;tanh</b></h4>
+                    <p>&nbsp;&nbsp;&nbsp;<img alt="tanh(x)" src="https://latex.codecogs.com/gif.latex?tanh%28x%29"><br></p>
+                    <img src="img/lect10_7.png" class="img-responsive"><br>
+
+                    <h4><b>&bullet;Leaky ReLU</b></h4>
+                    <h5 style="font-family: Courier">max(0.1x, x)</h5>
+                    <img src="img/lect10_8.png" class="img-responsive">
+                    <br>
+
+                    <h4><b>&bullet;Maxout</b></h4>
+                    <p>&nbsp;&nbsp;&nbsp;<img alt="max(w^{T}_{1}x+b_{1},\;w^{T}_{2}x+b_{2})" src="https://latex.codecogs.com/gif.latex?max%28w%5E%7BT%7D_%7B1%7Dx&amp;plus;b_%7B1%7D%2C%5C%3Bw%5E%7BT%7D_%7B2%7Dx&amp;plus;b_%7B2%7D%29"><br></p>
+                    <br>
+
+                    <h4><b>&bullet;ELU</b></h4>
+                    <p>&nbsp;&nbsp;&nbsp;<img alt="f(x)=\left\{\begin{matrix} \;\;\;\;\;x\;\;\;\;\;\;\;\;\;\;\;x>0\\ \alpha (e^{x}-1)\;\;\;\;x\leq 0 \end{matrix}\right." src="https://latex.codecogs.com/gif.latex?f%28x%29%3D%5Cleft%5C%7B%5Cbegin%7Bmatrix%7D%20%5C%3B%5C%3B%5C%3B%5C%3B%5C%3Bx%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3Bx%3E0%5C%5C%20%5Calpha%20%28e%5E%7Bx%7D-1%29%5C%3B%5C%3B%5C%3B%5C%3Bx%5Cleq%200%20%5Cend%7Bmatrix%7D%5Cright."><br></p>
+                    <img src="img/lect10_9.png" class="img-responsive">
+                </div>
+                <div id="content2" hidden="true"> 
+                    <h3>Geoffrey Hinton's summary of findings up to today</h3><br>
+                    <ul>
+                        <li>
+                            <big>"연구에 사용된 라벨링된 데이터의 크기는 매우 작았다"</big>
+                        </li><br>
+                        <li>
+                            <big>"현재 컴퓨터의 컴퓨팅 파워가 너무 딸린다"</big>
+                        </li><br>
+                        <li class="text-primary">
+                            <big>"weights의 초기화를 멍청한 방법으로 하고 있었다"</big>
+                        </li><br>
+                        <li>
+                            <big>"잘못된 비 선형 알고리즘(sigmoid)을 사용하고 있었다"</big>
+                        </li>
+                    </ul>
+                    <img src="img/lect10_10.png" class="img-responsive"><br>
+                    <h2>Need to set the initial weight values wisely</h2><br>
+
+                    <ul>
+                        <li>
+                            <p>Not all 0's</p>
+                        </li>
+                        <li>
+                            <p>Challenging issue</p>
+                        </li>
+                        <li>
+                            <p>hinton et al.(2006) <span class="text-danger">"A Fast Learning Algorithm for Deep Belief Nets"</span><br>- Restricted Boltzmann Machine (RBM)</p>
+                        </li>
+                    </ul>
+                    <br>
+                    <a href="https://deeplearning4j.org/kr/restrictedboltzmannmachine#define#rbm의-정의와-구조" target="_blank" class="text-primary">RBM의 정의와 구조에 대해 알아보기</a>
+
+                    <div class="line"></div>
+
+                    <h3>How can we use RBM to initialize weights?</h3><br>
+                    <ul>
+                        <li>
+                            <p>RBM 아이디어를 인접한 두 layer에 pre-training 단계로 적용시킨다.<br>(fine tuning이라고도 한다)</p>
+                        </li>
+                        <li>
+                            <p>위의 과정을 모든 layer에 걸쳐 반복한다.</p>
+                        </li>
+                        <li>
+                            <p>반복이 끝난 후 모든 노드들에 대하여 초기 weight이 주어진다.</p>
+                        </li>
+                        <li>
+                            <p>Example : Deep Belief Network<br>- weight initialized by RBM</p>
+                        </li>
+                    </ul>
+
+                    <div class="line"></div>
+
+                    <h2>더 나은 initialization 등장</h2><br>
+                    <h3>Xavier/He initilization</h3><br>
+                    <ul>
+                        <li>
+                            <big>Makes sure the weights are "just right", not too small, not too big</big>
+                        </li><br>
+                        <li>
+                            <big>Using number of input <kbd>(fan_in)</kbd> and output <kbd>(fan_out)</kbd></big>
+                        </li>
+                    </ul>
+                    <br>
+                    <pre><code class="python"># Xavier initialization
+# Glorot et al. 2010
+W = np.random.randn(fan_in, fan_out)/np.sqrt(fan_in)
+
+# He et al. 2015
+W = np.random.randn(fan_in, fan_out)/np.sqrt(fan_in/2)</code></pre>
+
+                        <h2>Still an active area of research <small>아직도 기회의 땅!</small></h2><br>
+                        <ul>
+                            <li>
+                                <big>We don't know how to initialize perfect weight values, yet</big>
+                            </li><br>
+                            <li>
+                                <big>Many new algorithm</big>
+                                <p>- Batch normalization<br>- layer sequential uniform variance<br>- ...</p>
+                            </li>
+                            <li>
+                                <span class="text-primary">P.S.</span> 교수님의 조언 : 여러가지 알고리즘을 적용시켜서 성능향상을 꾀하라~
+                            </li>
+                        </ul>
+                </div>
+                <div id="content3" hidden="true">
+                    <h2>Overfitting</h2><br>
+                    <img src="img/lect10_11.png" class="img-responsive">
+                    <h3>Am I overfitting?<small> 점검하는 법</small></h3><br>
+                    <ul>
+                        <li>
+                            <big>training dataset에 대해 매우 높은 정확도가 나왔지만,(ex: 0.99)</big>
+                        </li><br>
+                        <li>
+                            <big>test dataset에 대해 낮은 정확도가 나온다? (ex: 0.85)</big>
+                        </li><br>
+                        <li>
+                            <big>Overfitting이 일어난 케이스</big>
+                        </li>
+                    </ul><br>
+
+                    <h3>Solutions for overfitting</h3>
+                    <br>
+                    <ul>
+                        <li>
+                            <big>More training data !</big>
+                        </li><br>
+                        <li class="text-muted">
+                            <big>Reduce the number of features</big>
+                        </li><br>
+                        <li>
+                            <big><b>Regularization</b></big>
+                        </li>
+                    </ul><br>
+
+                    <div class="line"></div>
+
+                    <h2>Regularization</h2><br>
+                    <ul>
+                        <li>
+                            <big>Let's not have too big numbers in the weight</big>
+                        </li><br>
+                        <li>
+                            <p>ex) l2regularization</p>
+                        </li>
+                    </ul>
+                    
+                    <p>&nbsp;&nbsp;&nbsp;<img alt="cost + {\color{Red} \lambda} \sum W^{2}\;\;\;where\;{\color{Red} \lambda} \;is\;{\color{Red} regularization\;strength}" src="https://latex.codecogs.com/gif.latex?cost%20&amp;plus;%20%7B%5Ccolor%7BRed%7D%20%5Clambda%7D%20%5Csum%20W%5E%7B2%7D%5C%3B%5C%3B%5C%3Bwhere%5C%3B%7B%5Ccolor%7BRed%7D%20%5Clambda%7D%20%5C%3Bis%5C%3B%7B%5Ccolor%7BRed%7D%20regularization%5C%3Bstrength%7D"><br></p>
+                    <pre><code class="python">l2reg = 0.001 * tf.reduce_sum(tf.square(W))</code></pre>
+
+                    <div class="line"></div>
+
+                    <h2>Dropout<br><br><small>A simple way to Prevent Neural Networks from Overfitting</small></h2><br>
+                    <img src="img/lect10_12.png" class="img-responsive">
+                    <h4>"randomly set some neurons to zero in the forward pass"</h4><br>
+
+                    <h2><small>Forces the network to have a redundant representation.</small></h2><br>
+                    <img src="img/lect10_13.png" class="img-responsive">
+                    <p>한 번은 특정 노드들로만 학습시키고, 다음 번엔 그 외의 노드들로 또 학습시켜서 정확도를 높힌다?<br>아이러니하게도 이런 어처구니 없는 방법으로 꽤 성능향상을 볼 수 있다고 한다.</p><br>
+
+                    <h3>TensorFlow implementation</h3><br>
+                    <pre><code class="python">dropout_rate = tf.placeholder("float")
+_L1 = tf.nn.relu(tf.add(tf.matmul(X, W1), B1))
+L1 = tf.nn.dropout(_L1, dropout_rate)
+
+# TRAIN :
+sess.run(optimizer, feed_dict={X : batch_xs, Y : batch_ys, droput_rate : 0.7})
+# 학습할 때는 dropout으로 70% 비율로 node를 골라서 학습시키고
+
+# EVALUATION :
+print "Accuracy:", accuracy.eval({X: mnist.test.images, Y: mnist.test.labels, dropout_rate: 1})
+# 검증할 때는 dropout 비율을 다시 100%로 해야한다.</code></pre>
+                    
+                    <div class="line"></div>
+
+                    <h2>What is ensemble? <small>앙상블이란?</small></h2><br>
+
+                    <ul>
+                        <li>
+                            <big>
+                                Aggregation of multiple learned models with the goal of impoving accuracy.
+                            </big>
+                        </li><br>
+                        <li>
+                            설문조사를 할 때 1명에게만 물어보는 것보다 여러명에게 물어보는 것이 정확도가 높아진다는 점을 이용한 것.
+                        </li><br>
+                        <li>
+                            <big>
+                                실제로 4~5%까지의 성능향상을 기대할 수 있음.
+                            </big>
+                        </li>
+                    </ul><br>
+
+                    <h3><small>크게 2가지 방법으로 사용된다</small></h3><br>
+                    <ul>
+                        <li>
+                            <big>Different feature weightings</big>
+                        </li>
+                        <img src="img/lect10_14.png" class="img-responsive"><br>
+                        <li>
+                            <big>Divide up training data among models</big>
+                        </li>
+                        <img src="img/lect10_15.png" class="img-responsive">
+                    </ul>
+
+                </div>
+
+                <div class="footer">
+                    <ul class="pager">
+                        <li class="previous" id="prev_button" style="color:#00BFFF;"><a href="#">Previous</a></li>
+                        <li class="next" id="next_button" style="color:#00BFFF;"><a href="#">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- jQuery CDN -->
+        <script src="js/jquery-1.12.0.min.js"></script>
+        <!-- Bootstrap Js CDN -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        
+        <script type="text/javascript">
+        $(document).ready(function () {
+        $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+        });
+        $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+        var cnt = 0;
+        for(i=1;;i++){
+        var local_id = "#content"+i;
+        if($(local_id).length==0) break;
+        cnt++;
+        }
+        if(cnt<=1){
+        $("#prev_button").hide();
+        $("#next_button").hide();
+        $(".sidebar_flag").show();
+        }
+        var current = 1;
+        var local_id = "#content"+current;
+        $(local_id).show();
+        local_id+="_list";
+        $(local_id).addClass("selected");
+        $("#prev_button").click(function(){
+        if(current>1){
+        local_id = "#content"+current;
+        $(local_id).hide();
+        local_id += "_list";
+        $(local_id).removeClass("selected");
+        current--;
+        local_id = "#content"+current;
+        $(local_id).show();
+        local_id += "_list";
+        $(local_id).addClass("selected");
+        }
+        });
+        $("#next_button").click(function(){
+        if(current<cnt){
+        local_id = "#content"+current;
+        $(local_id).hide();
+        local_id += "_list";
+        $(local_id).removeClass("selected");
+        current++;
+        local_id = "#content"+current;
+        $(local_id).show();
+        local_id += "_list";
+        $(local_id).addClass("selected");
+        }
+        });
+        $(".recap_question").hover(function(){
+            $(this).css("color","red");
+            $(this).find(".recap_answer").show();
+            }, function(){
+            $(this).css("color","black");
+            $(this).find(".recap_answer").hide();
+        }); 
+        $('[data-toggle="tooltip"]').tooltip();
+        if($(window).width() <= 1200){
+            $("#bs-example-navbar-collapse-1").css("font-size","86%");
+        }else{
+            $("#bs-example-navbar-collapse-1").css("font-size","100%");
+        }
+        $(window).resize(function(){
+            if($(window).width() <= 1200){
+                $("#bs-example-navbar-collapse-1").css("font-size","86%");
+            }else{
+                $("#bs-example-navbar-collapse-1").css("font-size","100%");
+            }
+        });
+        });
+        </script>
+    </body>
+</html>
