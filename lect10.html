@@ -206,7 +206,7 @@ with tf.name_scope("last") as scope:
                             <p>0보다 작아? = 0</p>
                         </li>
                         <li>
-                            <p>0보다 커? = az</p>
+                            <p>0보다 커? = z</p>
                         </li>
                     </ul>
                     
@@ -230,7 +230,7 @@ with tf.name_scope("last") as scope:
                     <img src="img/lect10_7.png" class="img-responsive"><br>
 
                     <h4><b>&bullet;Leaky ReLU</b></h4>
-                    <h5 style="font-family: Courier">max(0.1x, x)</h5>
+                    <p>&nbsp;&nbsp;&nbsp;<img alt="max(0.1x, \; x)" src="https://latex.codecogs.com/gif.latex?max%280.1x%2C%20%5C%3B%20x%29"><br></p>
                     <img src="img/lect10_8.png" class="img-responsive">
                     <br>
 
@@ -239,7 +239,7 @@ with tf.name_scope("last") as scope:
                     <br>
 
                     <h4><b>&bullet;ELU</b></h4>
-                    <p>&nbsp;&nbsp;&nbsp;<img alt="f(x)=\left\{\begin{matrix} \;\;\;\;\;x\;\;\;\;\;\;\;\;\;\;\;x>0\\ \alpha (e^{x}-1)\;\;\;\;x\leq 0 \end{matrix}\right." src="https://latex.codecogs.com/gif.latex?f%28x%29%3D%5Cleft%5C%7B%5Cbegin%7Bmatrix%7D%20%5C%3B%5C%3B%5C%3B%5C%3B%5C%3Bx%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3Bx%3E0%5C%5C%20%5Calpha%20%28e%5E%7Bx%7D-1%29%5C%3B%5C%3B%5C%3B%5C%3Bx%5Cleq%200%20%5Cend%7Bmatrix%7D%5Cright."><br></p>
+                    <p>&nbsp;&nbsp;&nbsp;<img alt="f(x)=\left\{\begin{matrix} \;\;\;\;\;x\;\;\;\;\;\;\;\;\;\;\;x>0\\ \alpha (e^{x}-1)\;\;\;\;x\leq 0 \end{matrix}\right." src="https://latex.codecogs.com/gif.latex?f%28x%29%3D%5Cleft%5C%7B%5Cbegin%7Bmatrix%7D%20%5C%3B%5C%3B%5C%3B%5C%3B%5C%3Bx%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3B%5C%3Bx%3E0%5C%5C%20%5Calpha%20%28e%5E%7Bx%7D-1%29%5C%3B%5C%3B%5C%3B%5C%3Bx%5Cleq%200%20%5Cend%7Bmatrix%7D%5Cright."><br></p><br>
                     <img src="img/lect10_9.png" class="img-responsive">
                 </div>
                 <div id="content2" hidden="true"> 
@@ -506,7 +506,7 @@ print "Accuracy:", accuracy.eval({X: mnist.test.images, Y: mnist.test.labels, dr
         }); 
         $('[data-toggle="tooltip"]').tooltip();
         if($(window).width() <= 1200){
-            $("#bs-example-navbar-collapse-1").css("font-size","86%");
+            $("#bs-example-navbar-collapse-1").css("font-size","89%");
         }else{
             $("#bs-example-navbar-collapse-1").css("font-size","100%");
         }
