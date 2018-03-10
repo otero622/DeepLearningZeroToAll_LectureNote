@@ -241,7 +241,175 @@
 
                 </div>
                 <div id="content3" hidden="true">
+                    <h1>Case Study</h1>
+                    <blockquote><small class="mb0">CNN의 활용을 과거 이미지 넷의 우승 모델들로 비추어보자.</small></blockquote><br>
 
+                    <h3>LeNet-5</h3>
+                    <span class="text-violet">[LeCun et al., 1998]</span><br><br>
+                    <img src="img/lect11_15.png" class="img-responsive"><br>
+                    <p>Convolutions에 적용되는 filter는 5 x 5 사이즈며, stride = 1 이다.<br>
+                    Subsampling(Pooling) layer는 2 x 2 사이즈며, stride = 2 이다.</p>
+                    <p>architecture is <kbd>[CONV-POOL-CONV-POOL-CONV-FC]</kbd></p>
+
+                    <div class="line"></div>
+
+                    <h3>AlexNet</h3>
+                    <span class="text-violet">[krizhevsky et al. 2012]</span><br><br>
+                    <img src="img/lect11_16.png" class="img-responsive">
+                    <span>source : <a href="http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf" target="_blank" class="text-primary">http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf</a></span><br><br>
+                    <p>Input : 227 x 227 x 3 <span class="text-danger">R</span><span class="text-success">G</span><span class="text-primary">B</span> images</p>
+                    <p><b>First layer</b> (CONV1) : 96@ 11 x 11 filters applied at stride = 4<br>&nbsp; Output volume <b>[55 x 55 x 96]</b><br>&nbsp; Parameters : ( 11 x 11 x 3 ) x 96 = <b>35k</b></p>
+                    <p><b>Second layer</b> (POOL1) : 3 x 3 filters applied at stride = 2<br>&nbsp; Output volume : <b>[27 x 27 x 96]</b><br>&nbsp; Parameters : 0!</p>
+                    <p>... and ...</p><br>
+
+                    <h4>Full (simplified) AlexNet architecture</h4>
+                    <p>[227 x 227 x 3] INPUT<br>
+                        [55 x 55 x 96] <span class="text-danger">CONV1</span> : 96@ 11 x 11 filters at stride = 4, pad = 0
+                        <br>
+                        [27 x 27 x 96] <span class="text-primary">MAX POOL1</span> : 3 x 3 filters at stride = 2
+                        <br>
+                        [27 x 27 x 96] <span class="text-success">NORM1</span> : Normalization layer
+                        <br>
+                        [27 x 27 x 256] <span class="text-danger">CONV2</span> : 256@ 5 x 5 filters at stride = 1, pad = 2
+                        <br>
+                        [13 x 13 x 256] <span class="text-primary">MAX POOL2</span> : 3 x 3 filters at stride = 2
+                        <br>
+                        [13 x 13 x 256] <span class="text-success">NOMR2</span> : Normalization layer
+                        <br>
+                        [13 x 13 x 384] <span class="text-danger">CONV3</span> : 384@ 3 x 3 filters at stride = 1, pad = 1
+                        <br>
+                        [13 x 13 x 384] <span class="text-danger">CONV4</span> : 384@ 3 x 3 filters at stride = 1, pad = 1
+                        <br>
+                        [13 x 13 x 256] <span class="text-danger">CONV4</span> : 256@ 3 x 3 filters at stride = 1, pad = 1
+                        <br>
+                        [6 x 6 x 256] <span class="text-primary">MAX POOL3</span> : 3 x 3 filters at stride = 2
+                        <br>
+                        [4096] <span class="text-warning">FC6</span> : 4096 neurons
+                        <br>
+                        [4096] <span class="text-warning">FC7</span> : 4096 neurons
+                        <br>
+                        [4096] <span class="text-warning">FC8</span> : 1000 neurons (class scores)
+                        <br>
+                        <small><span class="text-primary">p.s.</span>&nbsp;Image Net은 1000개의 레이블을 맞추는 대회이다.</small>
+                    </p><br>
+
+                    <h4 class="text-violet">Details/Retrospectives : </h4>
+                    <ul>
+                        <li>
+                            <p>first use of ReLU&nbsp;&nbsp;&nbsp;<span class="text-danger">awesome...</span></p>
+                        </li>
+                        <li>
+                            <p>used Norm layers (not common anymore)</p>
+                        </li>
+                        <li>
+                            <p>heavy data augmentation</p>
+                        </li>
+                        <li>
+                            <p>dropout = 0.5</p>
+                        </li>
+                        <li>
+                            <p>batch size : 128</p>
+                        </li>
+                        <li>
+                            <p>SGD Momentum : 0.9</p>
+                        </li>
+                        <li>
+                            <p>Learning rate = 1e-2, reduced by 10 manually when val accuracy plateaus</p>
+                        </li>
+                        <li>
+                            <p>L2 weight decay 5e-4</p>
+                        </li>
+                        <li>
+                            <p>7 CNN ensemble : 18.2% -&gt; 15.4%</p>
+                        </li>
+                    </ul>
+
+                    <div class="line"></div>
+
+                    <h3>GoogLeNet</h3>
+                    <span class="text-violet">[Szegedy et al. 2014]</span><br><br>
+                    <a href="img/lect11_17_origin.png" target="_blank" data-toggle="tooltip" title="원본보기"><img src="img/lect11_17.png" class="img-responsive"></a>
+                    <span>source : <a href="https://www.cs.unc.edu/~wliu/papers/GoogLeNet.pdf" target="_blank" class="text-primary">https://www.cs.unc.edu/~wliu/papers/GoogLeNet.pdf</a></span><br><br>
+                    <p>2014년 ILSVRC winner <span class="text-primary">(6.7% top 5 error)</span></p><br>
+                    <p>Inception Module을 처음으로 사용한 모델이다.<br>Inception이란 작은 Conv 레이어 여러개로 연산 density를 높히는 방식</p>
+                    <img src="img/lect11_18.png" class="img-responsive">
+                    <span>source : <a href="https://www.cs.unc.edu/~wliu/papers/GoogLeNet.pdf" target="_blank" class="text-primary">https://www.cs.unc.edu/~wliu/papers/GoogLeNet.pdf</a></span>
+
+                    <div class="line"></div>
+
+                    <h3>ResNet</h3>
+                    <span class="text-violet">[He et al., 2015]</span><br><br>
+
+                    <h4>MSRA <small>Microsoft Research Asia</small> @ ILSVRC &amp; COCO 2015 Competitions</h4><br>
+                    <h5><span class="text-danger">1st places</span> in all five main tracks</h5>
+                    <ul>
+                        <li>
+                            <p><span class="text-primary">ImageNet Classification : </span><em class="text-black">"Ultra-deep"</em> <small>(quote Yann)</small> <span class="text-danger">152-layer</span> nets</p>
+                        </li>
+                        <li>
+                            <p><span class="text-primary">ImageNet Detection : </span> <span class="text-danger">16%</span> better than 2nd</p>
+                        </li>
+                        <li>
+                            <p><span class="text-primary">ImageNet Localization : </span> <span class="text-danger">27%</span> better than 2nd</p>
+                        </li>
+                        <li>
+                            <p><span class="text-primary">COCO Detection : </span> <span class="text-danger">11%</span> better than 2nd</p>
+                        </li>
+                        <li>
+                            <p><span class="text-primary">COCO Segmentation : </span> <span class="text-danger">12%</span> better than 2nd</p>
+                        </li>
+                    </ul><br>
+
+                    <p>2015년 ILSVRC winner <span class="text-primary">(3.6% top 5 error)</span></p><br>
+
+                    <h4>Revolution of Depth</h4>
+                    <br>
+                    <img src="img/lect11_19.png" class="img-responsive"><br>
+                    <ul>
+                        <li>
+                            <p>8개의 GPU로 2~3주간 학습 시간 소요</p>
+                        </li>
+                        <li>
+                            <p>8배 이상의 layer를 갖고도 VGGNet보다 runtime이 빠름</p>
+                        </li>
+                    </ul><br>
+
+                    <h4>forward pass 방식 사용.</h4><br>
+                    <img src="img/lect11_20.png" class="img-responsive"><span>source : <a href="http://image-net.org/challenges/talks/ilsvrc2015_deep_residual_learning_kaiminghe.pdf" target="_blank" class="text-primary">http://image-net.org/challenges/talks/ilsvrc2015_deep_residual_learning_kaiminghe.pdf</a></span>
+
+                    <div class="line"></div>
+
+                    <h4>Convolutional Neural Networks for Sentence Clssification</h4>
+                    <span class="text-violet">[Yoon Kim, 2014]</span><br><br>
+                    <img src="img/lect11_21.png" class="img-responsive">
+                    <span>source : <a href="http://www.aclweb.org/anthology/D14-1181" target="_blank" class="text-primary">http://www.aclweb.org/anthology/D14-1181</a></span><br><br>
+                    <p>text에 대한 분류도 CNN을 활용한 논문이 있다.</p>
+
+                    <div class="line"></div>
+
+                    <h3>DeepMind's AlphaGo</h3><br>
+                    <p>2016년 3월 15일 바둑의 역사를 새로 쓴 알파고 역시 CNN을 사용하였다.</p><br>
+                    <img src="img/google-deepmind-go.jpg" class="img-responsive">
+                    <span>source : <a href="https://www.cnet.com/news/google-deepmind-hooked-us-on-go-the-geekiest-game-youve-never-heard-of/" target="_blank" class="text-primary">https://www.cnet.com/news/google-deepmind-hooked-us-on-go-the-geekiest-game-youve-never-heard-of/</a></span><br><br>
+
+                    <h4>part of nature article</h4>
+                    <img src="img/lect11_22.png" class="img-responsive">
+                    <span>source : <a href="https://www.nature.com/articles/nature16961" target="_blank" class="text-primary">https://www.nature.com/articles/nature16961</a></span><br><br>
+                    <p><b>policy network:</b></p>
+                    <ul>
+                        <li>
+                            <p>[19 x 19 x 48] Input</p>        
+                        </li>
+                        <li>
+                            <p>CONV1 : 192@ 5 x 5 filters, stride = 1, pad = 2 <span class="text-violet">=&gt;</span> output : [19 x 19 x 192]</p>
+                        </li>
+                        <li>
+                            <p>CONV2 : 192@ 3 x 3 filters, stride = 1, pad = 1 <span class="text-violet">=&gt;</span> output : [19 x 19 x 192]</p>
+                        </li>
+                        <li>
+                            <p>Final CONV : 1@ 1 x 1 filters, stride = 1, pad = 0 <span class="text-violet">=&gt;</span> output : [19 x 19] <small><em>(probability map of promising moves)</em></small></p>
+                        </li>
+                    </ul>
                 </div>
 
                 <div class="footer">
